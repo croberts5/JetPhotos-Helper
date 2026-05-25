@@ -5,11 +5,12 @@ A Chrome/Firefox extension that improves the photo upload experience on [JetPhot
 ## Features
 
 ### Upload page enhancements
-- **Registration check** — on auto-fill, verifies whether the user already has accepted photos with the provided registration number
+- **Registration check** — on auto-fill, verifies whether the user already has accepted photos with the provided registration number (JP currently only does this if the given registration and airport combo are in their database)
 - **Latest photo date** — fetches the most recent shoot date for a given registration
 - **Manual date entry** — type the photo date as text (MM/DD/YYYY) instead of using the date picker
 - **IATA → ICAO autocomplete** — automatically swaps a 3-letter IATA airport code for its 4-letter ICAO equivalent in the location field
 - **Hide submission guidelines** — collapses the left-column guidelines panel for a cleaner upload view
+
 
 ### Offline mode
 A standalone image inspector (no upload required) for previewing how JetPhotos will process your photo:
@@ -24,15 +25,25 @@ A standalone image inspector (no upload required) for previewing how JetPhotos w
 
 ```
 ├── src/
-│   ├── offline/        # Offline mode page (offline.ts, offline.html, offline.css)
-│   ├── options/        # Popup (jp.html/css, config.ts) and content script (jp.ts)
-│   ├── content.ts      # Injected at document_start on the upload page
-│   ├── page-hook.js    # Web-accessible page hook
-│   └── i18n.ts         # Thin wrapper around browser.i18n
-├── _locales/           # i18n strings (en, es, fr, de, it, pt, zh_CN, ja, tr, ru)
-├── dist/               # Build output — load this directory as the extension
+│   ├── offline/
+│   │   ├── equalize.ts     # Histogram equalization + gamma correction + resize helpers
+│   │   ├── offline.ts      # Offline mode logic (canvas rendering, histogram, overlays)
+│   │   ├── offline.html
+│   │   └── offline.css
+│   ├── options/
+│   │   ├── config.ts       # Popup script — settings, language picker, storage
+│   │   ├── jp.ts           # Content script — upload page enhancements
+│   │   ├── about.ts        # About page script
+│   │   ├── jp.html / jp.css
+│   │   └── about.html / about.css
+│   ├── content.ts          # Injected at document_start — bootstraps page-hook
+│   ├── page-hook.js        # Web-accessible page hook (intercepts XHR responses)
+│   ├── i18n.ts             # t(), loadLocale(), initDomI18n()
+│   └── globals.d.ts        # TypeScript ambient declarations
+├── _locales/               # i18n strings (en, es, fr, de, it, pt, zh_CN, ja, tr, ru)
+├── dist/                   # Build output — load this directory as the extension
 ├── scripts/
-│   └── build.js        # esbuild bundler + static asset copier
+│   └── build.js            # esbuild bundler + static asset copier
 └── manifest.json
 ```
 
