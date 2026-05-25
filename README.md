@@ -8,6 +8,7 @@ A Chrome/Firefox extension that improves the photo upload experience on [JetPhot
 - **Registration check** — on auto-fill, verifies whether the user already has accepted photos with the provided registration number
 - **Latest photo date** — fetches the most recent shoot date for a given registration
 - **Manual date entry** — type the photo date as text (MM/DD/YYYY) instead of using the date picker
+- **IATA → ICAO autocomplete** — automatically swaps a 3-letter IATA airport code for its 4-letter ICAO equivalent in the location field
 - **Hide submission guidelines** — collapses the left-column guidelines panel for a cleaner upload view
 
 ### Offline mode
