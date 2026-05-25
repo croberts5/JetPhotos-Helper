@@ -33,8 +33,7 @@
   "about_feature_reg":       { "message": "Recherche d'immatriculation et de date à la saisie automatique" },
   "about_feature_date":      { "message": "Saisie manuelle de la date" },
   "about_feature_guidelines":{ "message": "Masquer les directives de soumission" },
-  "about_feature_offline":   { "message": "Égalisation hors ligne et aperçu de l'histogramme" },
-  "about_feature_overlay":   { "message": "Lignes de centrage et grille d'horizon" },
+  "about_feature_offline":   { "message": "Outils hors ligne : lignes de centrage, grille d'horizon, égalisation, aperçu de l'histogramme" },
 
   "content_existing_entry": { "message": "Cliquez ici pour voir vos soumissions existantes" },
   "content_serial_number":  { "message": "Numéro de série" },

@@ -33,8 +33,7 @@
   "about_feature_reg":       { "message": "Поиск регистрации и даты при автозаполнении" },
   "about_feature_date":      { "message": "Ручной ввод даты" },
   "about_feature_guidelines":{ "message": "Скрыть руководство по отправке" },
-  "about_feature_offline":   { "message": "Офлайн-выравнивание и предпросмотр гистограммы" },
-  "about_feature_overlay":   { "message": "Линии центрирования и сетка горизонта" },
+  "about_feature_offline":   { "message": "Офлайн-инструменты: линии центрирования, сетка горизонта, выравнивание, предпросмотр гистограммы" },
 
   "content_existing_entry": { "message": "Нажмите здесь, чтобы просмотреть существующие отправки" },
   "content_serial_number":  { "message": "Серийный номер" },

@@ -33,8 +33,7 @@
   "about_feature_reg":       { "message": "Kennzeichen- und Datumssuche beim Ausfüllen" },
   "about_feature_date":      { "message": "Manuelle Datumseingabe" },
   "about_feature_guidelines":{ "message": "Einreichungsrichtlinien ausblenden" },
-  "about_feature_offline":   { "message": "Offline-Egalisierung und Histogramm-Vorschau" },
-  "about_feature_overlay":   { "message": "Zentrierlinien und Horizontgitter" },
+  "about_feature_offline":   { "message": "Offline-Tools: Zentrierlinien, Horizontgitter, Egalisierung, Histogramm-Vorschau" },
 
   "content_existing_entry": { "message": "Klicken Sie hier, um Ihre vorhandenen Einreichungen anzuzeigen" },
   "content_serial_number":  { "message": "Seriennummer" },

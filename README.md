@@ -62,7 +62,15 @@ The compiled extension lives in `dist/`. Load it in Chrome via `chrome://extensi
 
 ## Internationalization
 
-Strings live in `_locales/<locale>/messages.json` following the standard Chrome extension i18n format. The helper `t(key)` in `src/i18n.ts` wraps `browser.i18n.getMessage`. HTML elements use `data-i18n="key"` attributes hydrated at load time by `initDomI18n()`.
+Strings live in `_locales/<locale>/messages.json` following the standard Chrome extension i18n format.
+
+`src/i18n.ts` exposes three helpers:
+
+- **`t(key)`** — returns the string for `key`. Checks a user-override cache first; falls back to `browser.i18n.getMessage` if no override is loaded.
+- **`loadLocale(locale)`** — fetches `_locales/{locale}/messages.json` and populates the override cache. Called on page load when the user has a stored language preference.
+- **`initDomI18n()`** — walks the DOM and hydrates `data-i18n="key"` (sets `textContent`) and `data-i18n-tooltip="key"` (sets `data-tooltip`) attributes.
+
+Users can override the browser's default language from the popup's language picker. The selection is stored in `browser.storage.local` under the key `jpHelper.locale` and is applied by every extension page on load.
 
 Supported locales: English, Spanish, French, German, Italian, Portuguese, Mandarin (Simplified), Japanese, Turkish, Russian.
 

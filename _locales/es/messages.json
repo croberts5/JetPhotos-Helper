@@ -33,8 +33,7 @@
   "about_feature_reg":       { "message": "Búsqueda de matrícula y fecha al autocompletar" },
   "about_feature_date":      { "message": "Entrada de fecha manual" },
   "about_feature_guidelines":{ "message": "Ocultar directrices de envío" },
-  "about_feature_offline":   { "message": "Ecualización sin conexión y previsualización de histograma" },
-  "about_feature_overlay":   { "message": "Líneas de centrado y cuadrícula de horizonte" },
+  "about_feature_offline":   { "message": "Herramientas sin conexión: líneas de centrado, cuadrícula de horizonte, ecualización, previsualización de histograma" },
 
   "content_existing_entry": { "message": "Haz clic aquí para ver tus envíos existentes" },
   "content_serial_number":  { "message": "Número de serie" },

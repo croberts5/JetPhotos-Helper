@@ -33,8 +33,7 @@
   "about_feature_reg":       { "message": "自动填充时的注册号和日期查询" },
   "about_feature_date":      { "message": "手动文本输入日期" },
   "about_feature_guidelines":{ "message": "隐藏提交指南" },
-  "about_feature_offline":   { "message": "离线均衡化与直方图预览" },
-  "about_feature_overlay":   { "message": "居中线与水平网格叠加" },
+  "about_feature_offline":   { "message": "离线工具：居中线、水平网格叠加、均衡化、直方图预览" },
 
   "content_existing_entry": { "message": "点击此处查看您的现有提交" },
   "content_serial_number":  { "message": "序列号" },

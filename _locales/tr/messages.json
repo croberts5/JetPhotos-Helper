@@ -33,8 +33,7 @@
   "about_feature_reg":       { "message": "Otomatik doldurma sırasında tescil ve tarih arama" },
   "about_feature_date":      { "message": "Manuel tarih girişi" },
   "about_feature_guidelines":{ "message": "Gönderim yönergelerini gizle" },
-  "about_feature_offline":   { "message": "Çevrimdışı eşitleme ve histogram önizleme" },
-  "about_feature_overlay":   { "message": "Ortalama çizgileri ve ufuk ızgarası" },
+  "about_feature_offline":   { "message": "Çevrimdışı araçlar: ortalama çizgileri, ufuk ızgarası, eşitleme, histogram önizleme" },
 
   "content_existing_entry": { "message": "Mevcut gönderimleri görüntülemek için tıklayın" },
   "content_serial_number":  { "message": "Seri numarası" },

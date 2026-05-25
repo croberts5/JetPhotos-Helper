@@ -33,8 +33,7 @@
   "about_feature_reg":       { "message": "Pesquisa de matrícula e data no preenchimento automático" },
   "about_feature_date":      { "message": "Inserção manual de data" },
   "about_feature_guidelines":{ "message": "Ocultar diretrizes de envio" },
-  "about_feature_offline":   { "message": "Equalização offline e pré-visualização de histograma" },
-  "about_feature_overlay":   { "message": "Linhas de centramento e grelha de horizonte" },
+  "about_feature_offline":   { "message": "Ferramentas offline: linhas de centramento, grelha de horizonte, equalização, pré-visualização de histograma" },
 
   "content_existing_entry": { "message": "Clique aqui para ver as suas submissões existentes" },
   "content_serial_number":  { "message": "Número de série" },

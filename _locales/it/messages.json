@@ -33,8 +33,7 @@
   "about_feature_reg":       { "message": "Ricerca registrazione e data al completamento automatico" },
   "about_feature_date":      { "message": "Inserimento manuale della data" },
   "about_feature_guidelines":{ "message": "Nascondi le linee guida per l'invio" },
-  "about_feature_offline":   { "message": "Equalizzazione offline e anteprima istogramma" },
-  "about_feature_overlay":   { "message": "Linee di centratura e griglia orizzonte" },
+  "about_feature_offline":   { "message": "Strumenti offline: linee di centratura, griglia orizzonte, equalizzazione, anteprima istogramma" },
 
   "content_existing_entry": { "message": "Clicca qui per visualizzare i tuoi invii esistenti" },
   "content_serial_number":  { "message": "Numero di serie" },
