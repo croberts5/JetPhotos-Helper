@@ -29,6 +29,13 @@
   "option_hide_guidelines_desc":  { "message": "隐藏上传页面左侧的提交指南文本。" },
   "option_launch_offline":        { "message": "启动离线模式" },
 
+  "about_bmc_prompt":        { "message": "觉得这个扩展有用？请我喝杯咖啡！☕" },
+  "about_feature_reg":       { "message": "自动填充时的注册号和日期查询" },
+  "about_feature_date":      { "message": "手动文本输入日期" },
+  "about_feature_guidelines":{ "message": "隐藏提交指南" },
+  "about_feature_offline":   { "message": "离线均衡化与直方图预览" },
+  "about_feature_overlay":   { "message": "居中线与水平网格叠加" },
+
   "content_existing_entry": { "message": "点击此处查看您的现有提交" },
   "content_serial_number":  { "message": "序列号" },
   "content_registration":   { "message": "注册号" }

@@ -1,14 +1,18 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" href="../favicon.png" />
     <link rel="stylesheet" href="jp.css" />
   </head>
   <body>
     <div class="header-row">
       <h1 data-i18n="app_name">JetPhotos Helper</h1>
       <div class="header-actions">
-        <button id="settingsBtn" aria-label="Settings" title="Settings">&#x2699;</button>
-        <button id="aboutBtn"    aria-label="About"    title="About">&#x2139;</button>
+        <div class="lang-wrap">
+          <button id="langBtn" aria-label="Language">🌐</button>
+          <div id="lang-dropdown" class="lang-dropdown"></div>
+        </div>
+        <button id="aboutBtn" aria-label="About" title="About">&#x2139;</button>
       </div>
     </div>
     <h4 data-i18n="app_subtitle">Less "Bad info" more "Too much or too little contrast"</h4>

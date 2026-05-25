@@ -29,6 +29,13 @@
   "option_hide_guidelines_desc":  { "message": "Yükleme sayfasının sol tarafındaki gönderim yönergeleri metnini gizler." },
   "option_launch_offline":        { "message": "Çevrimdışı modu başlat" },
 
+  "about_bmc_prompt":        { "message": "Bu eklentiyi faydalı buldunuz mu? Bana bir kahve ısmarlayın! ☕" },
+  "about_feature_reg":       { "message": "Otomatik doldurma sırasında tescil ve tarih arama" },
+  "about_feature_date":      { "message": "Manuel tarih girişi" },
+  "about_feature_guidelines":{ "message": "Gönderim yönergelerini gizle" },
+  "about_feature_offline":   { "message": "Çevrimdışı eşitleme ve histogram önizleme" },
+  "about_feature_overlay":   { "message": "Ortalama çizgileri ve ufuk ızgarası" },
+
   "content_existing_entry": { "message": "Mevcut gönderimleri görüntülemek için tıklayın" },
   "content_serial_number":  { "message": "Seri numarası" },
   "content_registration":   { "message": "Tescil" }

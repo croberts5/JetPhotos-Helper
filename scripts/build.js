@@ -29,6 +29,8 @@ function copyStaticAssets() {
     copy('src/offline/offline.css',  'dist/offline/offline.css');
     copy('src/options/jp.html',      'dist/options/jp.html');
     copy('src/options/jp.css',       'dist/options/jp.css');
+    copy('src/options/about.html',   'dist/options/about.html');
+    copy('src/options/about.css',    'dist/options/about.css');
     // Plain JS / other assets
     copy('src/page-hook.js', 'dist/page-hook.js');
     // Locale files
@@ -40,6 +42,7 @@ const config = {
         { in: 'src/offline/offline.ts', out: 'offline/offline' },
         { in: 'src/options/jp.ts',      out: 'options/jp'      },
         { in: 'src/options/config.ts',  out: 'options/config'  },
+        { in: 'src/options/about.ts',   out: 'options/about'   },
         { in: 'src/content.ts',         out: 'content'         },
     ],
     bundle:    true,

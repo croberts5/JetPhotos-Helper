@@ -1,5 +1,6 @@
+import browser from 'webextension-polyfill';
 import { equalizeImageData, loadFileToCanvas, resizeToLongSide } from './equalize';
-import { t, initDomI18n } from '../i18n';
+import { t, loadLocale, initDomI18n } from '../i18n';
 
 const dropzone         = document.getElementById('dropzone') as HTMLDivElement;
 const fileInput        = document.getElementById('fileInput') as HTMLInputElement;
@@ -197,7 +198,12 @@ async function processFile(file: File): Promise<void> {
 
 // --- Init ---
 
-initDomI18n();
+(async () => {
+    const stored = await browser.storage.local.get('jpHelper.locale');
+    const locale = stored['jpHelper.locale'] as string | undefined;
+    if (locale) await loadLocale(locale);
+    initDomI18n();
+})();
 
 // --- Listeners ---
 

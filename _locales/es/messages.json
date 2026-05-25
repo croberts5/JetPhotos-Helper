@@ -29,6 +29,13 @@
   "option_hide_guidelines_desc":  { "message": "Oculta el texto de directrices de envío del lado izquierdo de la página de subida." },
   "option_launch_offline":        { "message": "Iniciar modo sin conexión" },
 
+  "about_bmc_prompt":        { "message": "¿Te resulta útil esta extensión? ¡Invítame a un café! ☕" },
+  "about_feature_reg":       { "message": "Búsqueda de matrícula y fecha al autocompletar" },
+  "about_feature_date":      { "message": "Entrada de fecha manual" },
+  "about_feature_guidelines":{ "message": "Ocultar directrices de envío" },
+  "about_feature_offline":   { "message": "Ecualización sin conexión y previsualización de histograma" },
+  "about_feature_overlay":   { "message": "Líneas de centrado y cuadrícula de horizonte" },
+
   "content_existing_entry": { "message": "Haz clic aquí para ver tus envíos existentes" },
   "content_serial_number":  { "message": "Número de serie" },
   "content_registration":   { "message": "Matrícula" }

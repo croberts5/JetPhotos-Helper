@@ -1,0 +1,114 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 40px 32px;
+  background: #1a1a1a;
+  color: #f0f0f0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.about-wrap {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 22px;
+  margin: 0 0 6px;
+}
+
+.version {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 10px;
+}
+
+.tagline {
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #2e2e2e;
+  margin: 24px 0;
+}
+
+.features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.features li {
+  font-size: 13px;
+  color: #ccc;
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.4;
+}
+
+.features li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #555;
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+}
+
+.links a {
+  font-size: 13px;
+  color: #2a6edd;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.bmc-prompt {
+  font-size: 13px;
+  color: #888;
+  margin: 24px 0 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.bmc {
+  margin-top: 0;
+  display: inline-block;
+}
+
+.bmc img {
+  height: 48px;
+  width: auto;
+  border-radius: 8px;
+}

@@ -29,6 +29,13 @@
   "option_hide_guidelines_desc":  { "message": "アップロードページ左側の投稿ガイドラインテキストを非表示にします。" },
   "option_launch_offline":        { "message": "オフラインモードを起動する" },
 
+  "about_bmc_prompt":        { "message": "この拡張機能が役に立ちましたか？コーヒーをおごってください！☕" },
+  "about_feature_reg":       { "message": "自動入力時の登録番号・日付検索" },
+  "about_feature_date":      { "message": "日付の手動テキスト入力" },
+  "about_feature_guidelines":{ "message": "投稿ガイドラインを非表示" },
+  "about_feature_offline":   { "message": "オフライン均等化とヒストグラムプレビュー" },
+  "about_feature_overlay":   { "message": "センターラインと水平グリッドオーバーレイ" },
+
   "content_existing_entry": { "message": "クリックして既存の投稿を確認する" },
   "content_serial_number":  { "message": "シリアル番号" },
   "content_registration":   { "message": "登録番号" }

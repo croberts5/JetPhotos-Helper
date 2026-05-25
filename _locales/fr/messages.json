@@ -29,6 +29,13 @@
   "option_hide_guidelines_desc":  { "message": "Masque le texte des directives de soumission sur le côté gauche de la page d'envoi." },
   "option_launch_offline":        { "message": "Lancer le mode hors ligne" },
 
+  "about_bmc_prompt":        { "message": "Cette extension vous est utile ? Offrez-moi un café ! ☕" },
+  "about_feature_reg":       { "message": "Recherche d'immatriculation et de date à la saisie automatique" },
+  "about_feature_date":      { "message": "Saisie manuelle de la date" },
+  "about_feature_guidelines":{ "message": "Masquer les directives de soumission" },
+  "about_feature_offline":   { "message": "Égalisation hors ligne et aperçu de l'histogramme" },
+  "about_feature_overlay":   { "message": "Lignes de centrage et grille d'horizon" },
+
   "content_existing_entry": { "message": "Cliquez ici pour voir vos soumissions existantes" },
   "content_serial_number":  { "message": "Numéro de série" },
   "content_registration":   { "message": "Immatriculation" }

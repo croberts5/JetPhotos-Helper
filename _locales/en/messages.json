@@ -29,6 +29,13 @@
   "option_hide_guidelines_desc":  { "message": "Hides the submission guidelines text found on the left-hand side of the upload page." },
   "option_launch_offline":        { "message": "Launch offline mode" },
 
+  "about_bmc_prompt":        { "message": "Find this extension helpful? Send me a coffee! ☕" },
+  "about_feature_reg":       { "message": "Registration & date lookup on auto-fill" },
+  "about_feature_date":      { "message": "Manual date text entry" },
+  "about_feature_guidelines":{ "message": "Hide submission guidelines" },
+  "about_feature_offline":   { "message": "Offline equalization & histogram preview" },
+  "about_feature_overlay":   { "message": "Centering lines & horizon grid overlay" },
+
   "content_existing_entry": { "message": "Click here to view your existing submission(s)" },
   "content_serial_number":  { "message": "Serial number" },
   "content_registration":   { "message": "Registration" }
