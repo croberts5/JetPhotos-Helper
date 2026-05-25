@@ -1,0 +1,35 @@
+{
+  "app_name":        { "message": "JetPhotos Помощник" },
+  "app_description": { "message": "Улучшения для загрузки фотографий на JetPhotos." },
+  "app_subtitle":    { "message": "Меньше «Неверная информация», больше «Слишком много или мало контраста»" },
+
+  "offline_title":    { "message": "JetPhotos Helper: Автономный режим" },
+  "offline_subtitle": { "message": "Предварительный просмотр того, как JetPhotos выровняет вашу фотографию перед загрузкой." },
+  "offline_dropzone": { "message": "Перетащите изображение сюда или нажмите для выбора" },
+
+  "offline_btn_centering": { "message": "Центр" },
+  "offline_btn_horizon":   { "message": "Горизонт" },
+  "offline_btn_equalize":  { "message": "Выровнять" },
+  "offline_btn_histogram": { "message": "Гистограмма" },
+  "offline_btn_reset":     { "message": "Загрузить другое изображение" },
+  "offline_compress_label":   { "message": "Сжать до 1024px" },
+  "offline_compress_tooltip": { "message": "Инструменты загрузки JetPhotos создают сжатую версию загруженного изображения. Используйте этот параметр для наиболее точного отображения результата онлайн-инструментов." },
+
+  "offline_status_processing":  { "message": "Обработка…" },
+  "offline_status_jpeg_only":   { "message": "Поддерживаются только файлы JPEG." },
+  "offline_status_load_failed": { "message": "Не удалось загрузить изображение." },
+
+  "option_fetch_reg_label":       { "message": "Проверять фото пользователя при автозаполнении" },
+  "option_fetch_reg_desc":        { "message": "Проверяет, есть ли у пользователя принятые фото с указанным регистрационным номером." },
+  "option_latest_date_label":     { "message": "Получить дату последней фотографии" },
+  "option_latest_date_desc":      { "message": "Возвращает самую последнюю дату съёмки для указанного регистрационного номера." },
+  "option_manual_date_label":     { "message": "Ручной ввод даты" },
+  "option_manual_date_desc":      { "message": "Позволяет вводить дату фотографии в виде текста (ММ/ДД/ГГГГ) вместо использования выбора даты." },
+  "option_hide_guidelines_label": { "message": "Скрыть руководство по отправке" },
+  "option_hide_guidelines_desc":  { "message": "Скрывает текст руководства по отправке в левой части страницы загрузки." },
+  "option_launch_offline":        { "message": "Запустить автономный режим" },
+
+  "content_existing_entry": { "message": "Нажмите здесь, чтобы просмотреть существующие отправки" },
+  "content_serial_number":  { "message": "Серийный номер" },
+  "content_registration":   { "message": "Регистрационный номер" }
+}

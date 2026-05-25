@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/es6-promise": "^0.0.33",
+    "playwright": "^1.57.0",
+    "webextension-polyfill": "^0.12.0"
+  },
+  "devDependencies": {
+    "@types/webextension-polyfill": "^0.12.4",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.0.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.0.0"
+  },
+  "scripts": {
+    "build": "tsc --noEmit && node scripts/build.js",
+    "dev": "node scripts/build.js --dev",
+    "watch": "node scripts/build.js --dev --watch",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "build:airports": "node scripts/build-airports.js"
+  }
+}

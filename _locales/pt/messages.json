@@ -1,0 +1,35 @@
+{
+  "app_name":        { "message": "JetPhotos Helper" },
+  "app_description": { "message": "Melhorias na experiência de upload do JetPhotos." },
+  "app_subtitle":    { "message": "Menos \"Informação incorreta\", mais \"Contraste excessivo ou insuficiente\"" },
+
+  "offline_title":    { "message": "JetPhotos Helper: Modo offline" },
+  "offline_subtitle": { "message": "Pré-visualize como o JetPhotos vai equalizar a sua foto antes de carregar." },
+  "offline_dropzone": { "message": "Arraste uma imagem aqui ou clique para selecionar" },
+
+  "offline_btn_centering": { "message": "Centrar" },
+  "offline_btn_horizon":   { "message": "Horizonte" },
+  "offline_btn_equalize":  { "message": "Equalizar" },
+  "offline_btn_histogram": { "message": "Histograma" },
+  "offline_btn_reset":     { "message": "Carregar outra imagem" },
+  "offline_compress_label":   { "message": "Comprimir para 1024px" },
+  "offline_compress_tooltip": { "message": "As ferramentas de upload do JetPhotos geram uma versão comprimida da imagem. Use esta opção para ver a representação mais fiel do que as ferramentas online produzem." },
+
+  "offline_status_processing":  { "message": "A processar…" },
+  "offline_status_jpeg_only":   { "message": "Apenas ficheiros JPEG são suportados." },
+  "offline_status_load_failed": { "message": "Falha ao carregar a imagem." },
+
+  "option_fetch_reg_label":       { "message": "Verificar fotos do utilizador no preenchimento automático" },
+  "option_fetch_reg_desc":        { "message": "Verifica se o utilizador tem fotos aceites com a matrícula fornecida." },
+  "option_latest_date_label":     { "message": "Obter data da foto mais recente" },
+  "option_latest_date_desc":      { "message": "Devolve a data de captura mais recente para a matrícula fornecida." },
+  "option_manual_date_label":     { "message": "Inserção manual da data" },
+  "option_manual_date_desc":      { "message": "Permite introduzir a data da foto como texto (MM/DD/AAAA) em vez de usar o seletor de datas." },
+  "option_hide_guidelines_label": { "message": "Ocultar diretrizes de envio" },
+  "option_hide_guidelines_desc":  { "message": "Oculta o texto das diretrizes de envio no lado esquerdo da página de carregamento." },
+  "option_launch_offline":        { "message": "Iniciar modo offline" },
+
+  "content_existing_entry": { "message": "Clique aqui para ver as suas submissões existentes" },
+  "content_serial_number":  { "message": "Número de série" },
+  "content_registration":   { "message": "Matrícula" }
+}

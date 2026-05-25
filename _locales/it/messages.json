@@ -1,0 +1,35 @@
+{
+  "app_name":        { "message": "JetPhotos Helper" },
+  "app_description": { "message": "Miglioramenti all'esperienza di caricamento di JetPhotos." },
+  "app_subtitle":    { "message": "Meno \"Informazioni errate\", più \"Contrasto eccessivo o insufficiente\"" },
+
+  "offline_title":    { "message": "JetPhotos Helper: Modalità offline" },
+  "offline_subtitle": { "message": "Anteprima di come JetPhotos egalizzerà la tua foto prima del caricamento." },
+  "offline_dropzone": { "message": "Trascina un'immagine qui o clicca per selezionare" },
+
+  "offline_btn_centering": { "message": "Centra" },
+  "offline_btn_horizon":   { "message": "Orizzonte" },
+  "offline_btn_equalize":  { "message": "Equalizza" },
+  "offline_btn_histogram": { "message": "Istogramma" },
+  "offline_btn_reset":     { "message": "Carica un'altra immagine" },
+  "offline_compress_label":   { "message": "Comprimi a 1024px" },
+  "offline_compress_tooltip": { "message": "Gli strumenti di caricamento di JetPhotos generano una versione compressa dell'immagine. Usa questa opzione per vedere la rappresentazione più fedele degli strumenti online." },
+
+  "offline_status_processing":  { "message": "Elaborazione in corso…" },
+  "offline_status_jpeg_only":   { "message": "Sono supportati solo i file JPEG." },
+  "offline_status_load_failed": { "message": "Impossibile caricare l'immagine." },
+
+  "option_fetch_reg_label":       { "message": "Controlla le foto dell'utente al completamento automatico" },
+  "option_fetch_reg_desc":        { "message": "Verifica se l'utente ha foto accettate con la registrazione fornita." },
+  "option_latest_date_label":     { "message": "Recupera la data dell'ultima foto" },
+  "option_latest_date_desc":      { "message": "Restituisce la data di scatto più recente per la registrazione fornita." },
+  "option_manual_date_label":     { "message": "Inserimento manuale della data" },
+  "option_manual_date_desc":      { "message": "Consente di inserire la data della foto come testo (GG/MM/AAAA) invece di usare il selettore data." },
+  "option_hide_guidelines_label": { "message": "Nascondi le linee guida per l'invio" },
+  "option_hide_guidelines_desc":  { "message": "Nasconde il testo delle linee guida sul lato sinistro della pagina di caricamento." },
+  "option_launch_offline":        { "message": "Avvia la modalità offline" },
+
+  "content_existing_entry": { "message": "Clicca qui per visualizzare i tuoi invii esistenti" },
+  "content_serial_number":  { "message": "Numero di serie" },
+  "content_registration":   { "message": "Registrazione" }
+}

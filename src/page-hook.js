@@ -1,0 +1,61 @@
+/* ---- FETCH ---- */
+const originalFetch = window.fetch;
+window.fetch = async (...args) => {
+    const response = await originalFetch(...args);
+
+    try {
+        const [url, options] = args;
+        if (options?.method === 'POST') {
+            const clone = response.clone();
+            const text = await clone.text();
+
+            console.log('[POST fetch response]', {
+                url,
+                status: response.status,
+                body: text
+            });
+        }
+    } catch (e) {
+        console.error('fetch intercept error', e);
+    }
+
+    return response;
+};
+
+/* ---- XHR ---- */
+const open = XMLHttpRequest.prototype.open;
+XMLHttpRequest.prototype.open = function (method, url, ...rest) {
+    this._method = method;
+    this._url = url;
+    return open.call(this, method, url, ...rest);
+};
+
+const send = XMLHttpRequest.prototype.send;
+XMLHttpRequest.prototype.send = function (body) {
+    this.addEventListener('load', function () {
+        if (this._method === 'POST') {
+            console.log('[POST XHR response]', {
+                url: this._url,
+                status: this.status,
+                body: this.responseText
+            });
+
+            sendToExtension({
+                type: 'POST_RESPONSE',
+                url: this._url,
+                body: this.responseText
+            });
+        }
+    });
+    return send.call(this, body);
+};
+
+function sendToExtension(payload) {
+    window.postMessage(
+        {
+            source: 'POST_HOOK',
+            payload
+        },
+        '*'
+    );
+}

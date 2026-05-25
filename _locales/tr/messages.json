@@ -1,0 +1,35 @@
+{
+  "app_name":        { "message": "JetPhotos Yardımcısı" },
+  "app_description": { "message": "JetPhotos yükleme deneyimini iyileştirmeler." },
+  "app_subtitle":    { "message": "Daha az \"Hatalı bilgi\", daha fazla \"Çok fazla veya çok az kontrast\"" },
+
+  "offline_title":    { "message": "JetPhotos Helper: Çevrimdışı Mod" },
+  "offline_subtitle": { "message": "JetPhotos'un fotoğrafınızı yüklemeden önce nasıl eşitleyeceğini önizleyin." },
+  "offline_dropzone": { "message": "Buraya bir görüntü bırakın veya seçmek için tıklayın" },
+
+  "offline_btn_centering": { "message": "Ortala" },
+  "offline_btn_horizon":   { "message": "Ufuk" },
+  "offline_btn_equalize":  { "message": "Eşitle" },
+  "offline_btn_histogram": { "message": "Histogram" },
+  "offline_btn_reset":     { "message": "Başka bir görüntü yükle" },
+  "offline_compress_label":   { "message": "1024px'e sıkıştır" },
+  "offline_compress_tooltip": { "message": "JetPhotos'un yükleme araçları, yüklenen görselin sıkıştırılmış bir sürümünü oluşturur. Çevrimiçi araçların sonucuna en yakın önizleme için bu seçeneği kullanın." },
+
+  "offline_status_processing":  { "message": "İşleniyor…" },
+  "offline_status_jpeg_only":   { "message": "Yalnızca JPEG dosyaları desteklenmektedir." },
+  "offline_status_load_failed": { "message": "Görüntü yüklenemedi." },
+
+  "option_fetch_reg_label":       { "message": "Otomatik doldurma sırasında kullanıcı fotoğraflarını kontrol et" },
+  "option_fetch_reg_desc":        { "message": "Kullanıcının verilen tescil numarasıyla kabul edilmiş fotoğrafları olup olmadığını kontrol eder." },
+  "option_latest_date_label":     { "message": "En son fotoğraf tarihini getir" },
+  "option_latest_date_desc":      { "message": "Verilen tescil numarası için en son çekim tarihini döndürür." },
+  "option_manual_date_label":     { "message": "Manuel tarih girişi" },
+  "option_manual_date_desc":      { "message": "Tarih seçici yerine fotoğraf tarihini metin olarak (AA/GG/YYYY) girmeyi sağlar." },
+  "option_hide_guidelines_label": { "message": "Gönderim yönergelerini gizle" },
+  "option_hide_guidelines_desc":  { "message": "Yükleme sayfasının sol tarafındaki gönderim yönergeleri metnini gizler." },
+  "option_launch_offline":        { "message": "Çevrimdışı modu başlat" },
+
+  "content_existing_entry": { "message": "Mevcut gönderimleri görüntülemek için tıklayın" },
+  "content_serial_number":  { "message": "Seri numarası" },
+  "content_registration":   { "message": "Tescil" }
+}

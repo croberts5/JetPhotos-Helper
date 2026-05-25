@@ -1,0 +1,35 @@
+{
+  "app_name":        { "message": "JetPhotos 助手" },
+  "app_description": { "message": "改善 JetPhotos 上传体验。" },
+  "app_subtitle":    { "message": "减少「信息错误」，更多「对比度过高或过低」" },
+
+  "offline_title":    { "message": "JetPhotos Helper: 离线模式" },
+  "offline_subtitle": { "message": "预览 JetPhotos 在上传前如何均衡化您的照片。" },
+  "offline_dropzone": { "message": "将图片拖放至此处，或点击选择" },
+
+  "offline_btn_centering": { "message": "居中" },
+  "offline_btn_horizon":   { "message": "地平线" },
+  "offline_btn_equalize":  { "message": "均衡化" },
+  "offline_btn_histogram": { "message": "直方图" },
+  "offline_btn_reset":     { "message": "加载其他图片" },
+  "offline_compress_label":   { "message": "压缩至1024像素" },
+  "offline_compress_tooltip": { "message": "JetPhotos的上传工具会对上传的图片进行压缩处理。勾选此选项，可获得与在线工具最接近的预览效果。" },
+
+  "offline_status_processing":  { "message": "处理中…" },
+  "offline_status_jpeg_only":   { "message": "仅支持 JPEG 文件。" },
+  "offline_status_load_failed": { "message": "图片加载失败。" },
+
+  "option_fetch_reg_label":       { "message": "自动填充时检查用户照片" },
+  "option_fetch_reg_desc":        { "message": "检查用户是否有使用所提供注册号码的已接受照片。" },
+  "option_latest_date_label":     { "message": "获取最新照片日期" },
+  "option_latest_date_desc":      { "message": "返回所提供注册号码的最新拍摄日期。" },
+  "option_manual_date_label":     { "message": "手动输入日期" },
+  "option_manual_date_desc":      { "message": "允许以文本形式（MM/DD/YYYY）输入照片日期，而无需使用日期选择器。" },
+  "option_hide_guidelines_label": { "message": "隐藏提交指南" },
+  "option_hide_guidelines_desc":  { "message": "隐藏上传页面左侧的提交指南文本。" },
+  "option_launch_offline":        { "message": "启动离线模式" },
+
+  "content_existing_entry": { "message": "点击此处查看您的现有提交" },
+  "content_serial_number":  { "message": "序列号" },
+  "content_registration":   { "message": "注册号" }
+}

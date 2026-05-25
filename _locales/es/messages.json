@@ -1,0 +1,35 @@
+{
+  "app_name":        { "message": "JetPhotos Helper" },
+  "app_description": { "message": "Mejoras a la experiencia de subida de JetPhotos." },
+  "app_subtitle":    { "message": "Menos \"Información incorrecta\", más \"Demasiado o muy poco contraste\"" },
+
+  "offline_title":    { "message": "JetPhotos Helper: Modo sin conexión" },
+  "offline_subtitle": { "message": "Vista previa de cómo JetPhotos ecualizará tu foto antes de subirla." },
+  "offline_dropzone": { "message": "Suelta una imagen aquí, o haz clic para seleccionar" },
+
+  "offline_btn_centering": { "message": "Centrar" },
+  "offline_btn_horizon":   { "message": "Horizonte" },
+  "offline_btn_equalize":  { "message": "Ecualizar" },
+  "offline_btn_histogram": { "message": "Histograma" },
+  "offline_btn_reset":     { "message": "Cargar otra imagen" },
+  "offline_compress_label":   { "message": "Comprimir a 1024px" },
+  "offline_compress_tooltip": { "message": "Las herramientas de subida de JetPhotos generan una versión comprimida de la imagen. Usa esta opción para ver la representación más fiel de lo que producen las herramientas en línea." },
+
+  "offline_status_processing":  { "message": "Procesando…" },
+  "offline_status_jpeg_only":   { "message": "Solo se admiten archivos JPEG." },
+  "offline_status_load_failed": { "message": "Error al cargar la imagen." },
+
+  "option_fetch_reg_label":       { "message": "Verificar fotos del usuario al autocompletar" },
+  "option_fetch_reg_desc":        { "message": "Comprueba si el usuario tiene fotos aceptadas con la matrícula proporcionada." },
+  "option_latest_date_label":     { "message": "Obtener fecha de la última foto" },
+  "option_latest_date_desc":      { "message": "Devuelve la fecha más reciente de foto tomada para la matrícula proporcionada." },
+  "option_manual_date_label":     { "message": "Entrada de fecha manual" },
+  "option_manual_date_desc":      { "message": "Permite introducir la fecha de la foto como texto (MM/DD/YYYY) en lugar de usar el selector de fecha." },
+  "option_hide_guidelines_label": { "message": "Ocultar directrices de envío" },
+  "option_hide_guidelines_desc":  { "message": "Oculta el texto de directrices de envío del lado izquierdo de la página de subida." },
+  "option_launch_offline":        { "message": "Iniciar modo sin conexión" },
+
+  "content_existing_entry": { "message": "Haz clic aquí para ver tus envíos existentes" },
+  "content_serial_number":  { "message": "Número de serie" },
+  "content_registration":   { "message": "Matrícula" }
+}

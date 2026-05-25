@@ -1,0 +1,35 @@
+{
+  "app_name":        { "message": "JetPhotos Helper" },
+  "app_description": { "message": "Améliorations de l'expérience de téléchargement JetPhotos." },
+  "app_subtitle":    { "message": "Moins \"Mauvaises infos\", plus \"Trop ou pas assez de contraste\"" },
+
+  "offline_title":    { "message": "JetPhotos Helper: Mode hors ligne" },
+  "offline_subtitle": { "message": "Prévisualisez comment JetPhotos égalisera votre photo avant de l'envoyer." },
+  "offline_dropzone": { "message": "Déposez une image ici, ou cliquez pour sélectionner" },
+
+  "offline_btn_centering": { "message": "Centrer" },
+  "offline_btn_horizon":   { "message": "Horizon" },
+  "offline_btn_equalize":  { "message": "Égaliser" },
+  "offline_btn_histogram": { "message": "Histogramme" },
+  "offline_btn_reset":     { "message": "Charger une autre image" },
+  "offline_compress_label":   { "message": "Compresser à 1024px" },
+  "offline_compress_tooltip": { "message": "Les outils d'envoi de JetPhotos génèrent une version compressée de l'image. Utilisez cette option pour obtenir la représentation la plus fidèle du rendu des outils en ligne." },
+
+  "offline_status_processing":  { "message": "Traitement en cours…" },
+  "offline_status_jpeg_only":   { "message": "Seuls les fichiers JPEG sont pris en charge." },
+  "offline_status_load_failed": { "message": "Échec du chargement de l'image." },
+
+  "option_fetch_reg_label":       { "message": "Vérifier les photos lors du remplissage automatique" },
+  "option_fetch_reg_desc":        { "message": "Vérifie si l'utilisateur a des photos acceptées avec l'immatriculation fournie." },
+  "option_latest_date_label":     { "message": "Récupérer la date de la dernière photo" },
+  "option_latest_date_desc":      { "message": "Renvoie la date de prise de vue la plus récente pour l'immatriculation fournie." },
+  "option_manual_date_label":     { "message": "Saisie manuelle de la date" },
+  "option_manual_date_desc":      { "message": "Permet d'entrer la date de la photo sous forme de texte (MM/JJ/AAAA) au lieu d'utiliser le sélecteur de date." },
+  "option_hide_guidelines_label": { "message": "Masquer les directives de soumission" },
+  "option_hide_guidelines_desc":  { "message": "Masque le texte des directives de soumission sur le côté gauche de la page d'envoi." },
+  "option_launch_offline":        { "message": "Lancer le mode hors ligne" },
+
+  "content_existing_entry": { "message": "Cliquez ici pour voir vos soumissions existantes" },
+  "content_serial_number":  { "message": "Numéro de série" },
+  "content_registration":   { "message": "Immatriculation" }
+}

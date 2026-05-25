@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="jp.css" />
+  </head>
+  <body>
+    <div class="header-row">
+      <h1 data-i18n="app_name">JetPhotos Helper</h1>
+      <div class="header-actions">
+        <button id="settingsBtn" aria-label="Settings" title="Settings">&#x2699;</button>
+        <button id="aboutBtn"    aria-label="About"    title="About">&#x2139;</button>
+      </div>
+    </div>
+    <h4 data-i18n="app_subtitle">Less "Bad info" more "Too much or too little contrast"</h4>
+
+    <div class="option">
+      <div class="option-header">
+        <input type="checkbox" id="fetchExistingReg" name="fetchExistingReg" />
+        <label for="fetchExistingReg" data-i18n="option_fetch_reg_label">Check user photos on auto-fill</label>
+      </div>
+      <div class="option-description" data-i18n="option_fetch_reg_desc">
+        Checks whether the user has accepted photos with the provided registration.
+      </div>
+    </div>
+
+    <div class="option">
+      <div class="option-header">
+        <input type="checkbox" id="showLatestDate" name="showLatestDate" />
+        <label for="showLatestDate" data-i18n="option_latest_date_label">Fetch latest photo date</label>
+      </div>
+      <div class="option-description" data-i18n="option_latest_date_desc">
+        Returns the most recent photo taken date for the provided registration.
+      </div>
+    </div>
+
+    <div class="option">
+      <div class="option-header">
+        <input type="checkbox" id="allowManualDateEntry" name="allowManualDateEntry" />
+        <label for="allowManualDateEntry" data-i18n="option_manual_date_label">Manual date entry</label>
+      </div>
+      <div class="option-description" data-i18n="option_manual_date_desc">
+        Allows inputting the photo date as a string (MM/DD/YYYY) instead of being forced to use the date picker.
+      </div>
+    </div>
+
+    <div class="option">
+      <div class="option-header">
+        <input type="checkbox" id="hideLeftColumnUpload" name="hideLeftColumnUpload" />
+        <label for="hideLeftColumnUpload" data-i18n="option_hide_guidelines_label">Hide submission guidelines</label>
+      </div>
+      <div class="option-description" data-i18n="option_hide_guidelines_desc">
+        Hides the submission guidelines text found on the left-hand side of the upload page.
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <button id="launchOfflineMode" data-i18n="option_launch_offline">Launch offline mode</button>
+    <script src="config.js"></script>
+  </body>
+</html>

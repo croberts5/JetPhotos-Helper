@@ -1,0 +1,35 @@
+{
+  "app_name":        { "message": "JetPhotos Helper" },
+  "app_description": { "message": "Verbesserungen des JetPhotos-Upload-Erlebnisses." },
+  "app_subtitle":    { "message": "Weniger \"Falsche Angaben\", mehr \"Zu viel oder zu wenig Kontrast\"" },
+
+  "offline_title":    { "message": "JetPhotos Helper: Offline-Modus" },
+  "offline_subtitle": { "message": "Vorschau, wie JetPhotos Ihr Foto vor dem Hochladen egalisiert." },
+  "offline_dropzone": { "message": "Bild hier ablegen oder klicken zur Auswahl" },
+
+  "offline_btn_centering": { "message": "Zentrieren" },
+  "offline_btn_horizon":   { "message": "Horizont" },
+  "offline_btn_equalize":  { "message": "Egalisieren" },
+  "offline_btn_histogram": { "message": "Histogramm" },
+  "offline_btn_reset":     { "message": "Anderes Bild laden" },
+  "offline_compress_label":   { "message": "Auf 1024px komprimieren" },
+  "offline_compress_tooltip": { "message": "Die Upload-Tools von JetPhotos erstellen eine komprimierte Version des hochgeladenen Bildes. Verwenden Sie diese Option für die genaueste Vorschau der Online-Tools." },
+
+  "offline_status_processing":  { "message": "Verarbeitung…" },
+  "offline_status_jpeg_only":   { "message": "Nur JPEG-Dateien werden unterstützt." },
+  "offline_status_load_failed": { "message": "Bild konnte nicht geladen werden." },
+
+  "option_fetch_reg_label":       { "message": "Nutzerfotos beim Ausfüllen prüfen" },
+  "option_fetch_reg_desc":        { "message": "Prüft, ob der Nutzer akzeptierte Fotos mit dem angegebenen Kennzeichen hat." },
+  "option_latest_date_label":     { "message": "Neuestes Fotodatum abrufen" },
+  "option_latest_date_desc":      { "message": "Gibt das neueste Aufnahmedatum für das angegebene Kennzeichen zurück." },
+  "option_manual_date_label":     { "message": "Manuelle Datumseingabe" },
+  "option_manual_date_desc":      { "message": "Ermöglicht die Eingabe des Fotodatums als Text (TT.MM.JJJJ) statt des Datumsauswählers." },
+  "option_hide_guidelines_label": { "message": "Einreichungsrichtlinien ausblenden" },
+  "option_hide_guidelines_desc":  { "message": "Blendet den Richtlinientext auf der linken Seite der Upload-Seite aus." },
+  "option_launch_offline":        { "message": "Offline-Modus starten" },
+
+  "content_existing_entry": { "message": "Klicken Sie hier, um Ihre vorhandenen Einreichungen anzuzeigen" },
+  "content_serial_number":  { "message": "Seriennummer" },
+  "content_registration":   { "message": "Kennzeichen" }
+}

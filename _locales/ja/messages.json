@@ -1,0 +1,35 @@
+{
+  "app_name":        { "message": "JetPhotos ヘルパー" },
+  "app_description": { "message": "JetPhotos のアップロード体験を改善します。" },
+  "app_subtitle":    { "message": "「情報が不正確」を減らし、「コントラストが多すぎる、または少なすぎる」を増やす" },
+
+  "offline_title":    { "message": "JetPhotos Helper: オフラインモード" },
+  "offline_subtitle": { "message": "アップロード前に JetPhotos が写真をどのように均等化するかをプレビューします。" },
+  "offline_dropzone": { "message": "ここに画像をドロップするか、クリックして選択してください" },
+
+  "offline_btn_centering": { "message": "センター" },
+  "offline_btn_horizon":   { "message": "水平線" },
+  "offline_btn_equalize":  { "message": "均等化" },
+  "offline_btn_histogram": { "message": "ヒストグラム" },
+  "offline_btn_reset":     { "message": "別の画像を読み込む" },
+  "offline_compress_label":   { "message": "1024pxに圧縮する" },
+  "offline_compress_tooltip": { "message": "JetPhotosのアップロードツールは、アップロードした画像を圧縮して表示します。このオプションを使用すると、オンラインツールの結果に最も近いプレビューが得られます。" },
+
+  "offline_status_processing":  { "message": "処理中…" },
+  "offline_status_jpeg_only":   { "message": "JPEG ファイルのみサポートされています。" },
+  "offline_status_load_failed": { "message": "画像の読み込みに失敗しました。" },
+
+  "option_fetch_reg_label":       { "message": "自動入力時にユーザー写真を確認する" },
+  "option_fetch_reg_desc":        { "message": "指定された登録番号で承認済みの写真があるか確認します。" },
+  "option_latest_date_label":     { "message": "最新の写真日付を取得する" },
+  "option_latest_date_desc":      { "message": "指定された登録番号の最新の撮影日を返します。" },
+  "option_manual_date_label":     { "message": "日付を手動入力する" },
+  "option_manual_date_desc":      { "message": "日付ピッカーを使わずに写真の日付をテキスト（MM/DD/YYYY）で入力できます。" },
+  "option_hide_guidelines_label": { "message": "投稿ガイドラインを非表示にする" },
+  "option_hide_guidelines_desc":  { "message": "アップロードページ左側の投稿ガイドラインテキストを非表示にします。" },
+  "option_launch_offline":        { "message": "オフラインモードを起動する" },
+
+  "content_existing_entry": { "message": "クリックして既存の投稿を確認する" },
+  "content_serial_number":  { "message": "シリアル番号" },
+  "content_registration":   { "message": "登録番号" }
+}

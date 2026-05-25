@@ -1,0 +1,35 @@
+{
+  "app_name":        { "message": "JetPhotos Helper" },
+  "app_description": { "message": "Improvements to the JetPhotos upload experience." },
+  "app_subtitle":    { "message": "Less \"Bad info\" more \"Too much or too little contrast\"" },
+
+  "offline_title":    { "message": "JetPhotos Helper: Offline Mode" },
+  "offline_subtitle": { "message": "Preview how JetPhotos will equalize your photo before uploading." },
+  "offline_dropzone": { "message": "Drop an image here, or click to select" },
+
+  "offline_btn_centering": { "message": "Center" },
+  "offline_btn_horizon":   { "message": "Horizon" },
+  "offline_btn_equalize":  { "message": "Equalize" },
+  "offline_btn_histogram": { "message": "Histogram" },
+  "offline_btn_reset":     { "message": "Load another image" },
+  "offline_compress_label":   { "message": "Compress to 1024px" },
+  "offline_compress_tooltip": { "message": "JetPhoto's upload tools renders a compressed version of your uploaded image. Use this option to see the most faithful representation of what the online tools are like." },
+
+  "offline_status_processing":  { "message": "Processing…" },
+  "offline_status_jpeg_only":   { "message": "Only JPEG files are supported." },
+  "offline_status_load_failed": { "message": "Failed to load image." },
+
+  "option_fetch_reg_label":       { "message": "Check user photos on auto-fill" },
+  "option_fetch_reg_desc":        { "message": "Checks whether the user has accepted photos with the provided registration." },
+  "option_latest_date_label":     { "message": "Fetch latest photo date" },
+  "option_latest_date_desc":      { "message": "Returns the most recent photo taken date for the provided registration." },
+  "option_manual_date_label":     { "message": "Manual date entry" },
+  "option_manual_date_desc":      { "message": "Allows inputting the photo date as a string (MM/DD/YYYY) instead of being forced to use the date picker." },
+  "option_hide_guidelines_label": { "message": "Hide submission guidelines" },
+  "option_hide_guidelines_desc":  { "message": "Hides the submission guidelines text found on the left-hand side of the upload page." },
+  "option_launch_offline":        { "message": "Launch offline mode" },
+
+  "content_existing_entry": { "message": "Click here to view your existing submission(s)" },
+  "content_serial_number":  { "message": "Serial number" },
+  "content_registration":   { "message": "Registration" }
+}

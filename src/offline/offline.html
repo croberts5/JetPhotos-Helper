@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JetPhotos Helper — Offline Mode</title>
+  <link rel="stylesheet" href="offline.css" />
+</head>
+<body>
+  <h1 data-i18n="offline_title">JetPhotos Helper: Offline Mode</h1>
+
+  <div id="options-bar">
+    <label class="option-toggle">
+      <input type="checkbox" id="compressCheckbox" />
+      <span data-i18n="offline_compress_label">Compress to 1024px</span>
+      <span class="tooltip-icon" data-i18n-tooltip="offline_compress_tooltip">?</span>
+    </label>
+  </div>
+
+  <div id="dropzone">
+    <span data-i18n="offline_dropzone">Drop an image here, or click to select</span>
+    <input type="file" id="fileInput" accept="image/jpeg,.jpg,.jpeg" style="display:none" />
+  </div>
+
+  <div id="preview-area">
+    <div class="preview-wrap">
+      <img id="display-img" alt="Preview" />
+      <button id="resetBtn" aria-label="Remove current image" title="Remove current image">✕</button>
+    </div>
+    <div class="actions">
+      <button id="centeringBtn"  data-i18n="offline_btn_centering">Center</button>
+      <button id="horizonBtn"    data-i18n="offline_btn_horizon">Horizon</button>
+      <button id="equalizeBtn"   data-i18n="offline_btn_equalize">Equalize</button>
+      <button id="histogramBtn"  data-i18n="offline_btn_histogram">Histogram</button>
+      <span id="status"></span>
+    </div>
+    <canvas id="histogram-canvas" width="512" height="180"></canvas>
+  </div>
+
+  <script src="offline.js"></script>
+</body>
+</html>

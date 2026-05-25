@@ -1,0 +1,41 @@
+{
+    "name": "__MSG_app_name__",
+    "description": "__MSG_app_description__",
+    "default_locale": "en",
+    "version": "1.0",
+    "manifest_version": 3,
+    "browser_specific_settings": {
+        "gecko": { "id": "jetphotos-helper@extension" }
+    },
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage",
+        "tabs"
+    ],
+    "action": {
+        "default_popup": "options/jp.html",
+        "default_icon": "favicon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.jetphotos.com/addphotos*"
+            ],
+            "js": ["content.js"],
+            "run_at": "document_start"
+        },
+        {
+            "matches": [
+                "https://*.jetphotos.com/addphotos*"
+            ],
+            "js": ["options/jp.js"]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["page-hook.js", "airports.json"],
+            "matches": ["<all_urls>"]
+        }
+    ]
+}
