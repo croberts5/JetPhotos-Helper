@@ -332,16 +332,17 @@ async function hideLeftColumnUpload() {
 
 async function getUserPreferences() {
     const NAMESPACE = 'jpHelper';
-    const keys = ['fetchExistingReg', 'showLatestDate', 'hideLeftColumnUpload', 'allowManualDateEntry']
+    const keys = ['fetchExistingReg', 'showLatestDate', 'hideLeftColumnUpload', 'allowManualDateEntry', 'iataIcaoAutoComplete']
         .map(k => `${NAMESPACE}.${k}`);
 
     const result = await browser.storage.local.get(keys);
 
     return {
-        fetchExistingReg:     result[`${NAMESPACE}.fetchExistingReg`]     as boolean | undefined,
-        showLatestDate:       result[`${NAMESPACE}.showLatestDate`]        as boolean | undefined,
-        hideLeftColumnUpload: result[`${NAMESPACE}.hideLeftColumnUpload`]  as boolean | undefined,
-        allowManualDateEntry: result[`${NAMESPACE}.allowManualDateEntry`]  as boolean | undefined,
+        fetchExistingReg:      result[`${NAMESPACE}.fetchExistingReg`]      as boolean | undefined,
+        showLatestDate:        result[`${NAMESPACE}.showLatestDate`]         as boolean | undefined,
+        hideLeftColumnUpload:  result[`${NAMESPACE}.hideLeftColumnUpload`]   as boolean | undefined,
+        allowManualDateEntry:  result[`${NAMESPACE}.allowManualDateEntry`]   as boolean | undefined,
+        iataIcaoAutoComplete:  result[`${NAMESPACE}.iataIcaoAutoComplete`]   as boolean | undefined,
     };
 }
 
@@ -361,7 +362,8 @@ async function getUserPreferences() {
                           '--'   OO   O|O   OO   '--' `);
     await hideLeftColumnUpload();
     await enableManualDateEntry();
-    initAirportLookup();
+    const { iataIcaoAutoComplete } = await getUserPreferences();
+    if (iataIcaoAutoComplete) initAirportLookup();
 })();
 
 //TODOs

@@ -62,7 +62,7 @@ The compiled extension lives in `dist/`. Load it in Chrome via `chrome://extensi
 
 ## Internationalization
 
-Strings live in `_locales/<locale>/messages.json` following the standard Chrome extension i18n format.
+Strings live in `_locales/<locale>/messages.json` following the standard WebExtensions i18n format, supported by Chrome, Firefox, and Safari Web Extensions.
 
 `src/i18n.ts` exposes three helpers:
 

@@ -25,6 +25,8 @@
   "option_latest_date_desc":      { "message": "Verilen tescil numarası için en son çekim tarihini döndürür." },
   "option_manual_date_label":     { "message": "Manuel tarih girişi" },
   "option_manual_date_desc":      { "message": "Tarih seçici yerine fotoğraf tarihini metin olarak (AA/GG/YYYY) girmeyi sağlar." },
+  "option_iata_icao_label":       { "message": "IATA'dan ICAO'ya otomatik tamamlama" },
+  "option_iata_icao_desc":        { "message": "Bir IATA havalimanı kodu girildiğinde otomatik olarak ICAO eşdeğerini önerir." },
   "option_hide_guidelines_label": { "message": "Gönderim yönergelerini gizle" },
   "option_hide_guidelines_desc":  { "message": "Yükleme sayfasının sol tarafındaki gönderim yönergeleri metnini gizler." },
   "option_launch_offline":        { "message": "Çevrimdışı modu başlat" },
@@ -33,6 +35,7 @@
   "about_feature_reg":       { "message": "Otomatik doldurma sırasında tescil ve tarih arama" },
   "about_feature_date":      { "message": "Manuel tarih girişi" },
   "about_feature_guidelines":{ "message": "Gönderim yönergelerini gizle" },
+  "about_feature_iata":      { "message": "Girilen IATA havalimanı kodunu otomatik olarak ICAO eşdeğeriyle değiştirme desteği" },
   "about_feature_offline":   { "message": "Çevrimdışı araçlar: ortalama çizgileri, ufuk ızgarası, eşitleme, histogram önizleme" },
 
   "content_existing_entry": { "message": "Mevcut gönderimleri görüntülemek için tıklayın" },

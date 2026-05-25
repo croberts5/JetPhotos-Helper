@@ -25,6 +25,8 @@
   "option_latest_date_desc":      { "message": "Devuelve la fecha más reciente de foto tomada para la matrícula proporcionada." },
   "option_manual_date_label":     { "message": "Entrada de fecha manual" },
   "option_manual_date_desc":      { "message": "Permite introducir la fecha de la foto como texto (MM/DD/YYYY) en lugar de usar el selector de fecha." },
+  "option_iata_icao_label":       { "message": "Autocompletar IATA a ICAO" },
+  "option_iata_icao_desc":        { "message": "Sugiere automáticamente el código ICAO equivalente cuando se introduce un código de aeropuerto IATA." },
   "option_hide_guidelines_label": { "message": "Ocultar directrices de envío" },
   "option_hide_guidelines_desc":  { "message": "Oculta el texto de directrices de envío del lado izquierdo de la página de subida." },
   "option_launch_offline":        { "message": "Iniciar modo sin conexión" },
@@ -33,6 +35,7 @@
   "about_feature_reg":       { "message": "Búsqueda de matrícula y fecha al autocompletar" },
   "about_feature_date":      { "message": "Entrada de fecha manual" },
   "about_feature_guidelines":{ "message": "Ocultar directrices de envío" },
+  "about_feature_iata":      { "message": "Permite intercambiar automáticamente un código de aeropuerto IATA por su equivalente ICAO" },
   "about_feature_offline":   { "message": "Herramientas sin conexión: líneas de centrado, cuadrícula de horizonte, ecualización, previsualización de histograma" },
 
   "content_existing_entry": { "message": "Haz clic aquí para ver tus envíos existentes" },

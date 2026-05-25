@@ -25,6 +25,8 @@
   "option_latest_date_desc":      { "message": "Returns the most recent photo taken date for the provided registration." },
   "option_manual_date_label":     { "message": "Manual date entry" },
   "option_manual_date_desc":      { "message": "Allows inputting the photo date as a string (MM/DD/YYYY) instead of being forced to use the date picker." },
+  "option_iata_icao_label":       { "message": "IATA to ICAO autocomplete" },
+  "option_iata_icao_desc":        { "message": "Automatically suggests the ICAO equivalent when an IATA airport code is entered." },
   "option_hide_guidelines_label": { "message": "Hide submission guidelines" },
   "option_hide_guidelines_desc":  { "message": "Hides the submission guidelines text found on the left-hand side of the upload page." },
   "option_launch_offline":        { "message": "Launch offline mode" },
@@ -33,6 +35,7 @@
   "about_feature_reg":       { "message": "Registration & date lookup on auto-fill" },
   "about_feature_date":      { "message": "Manual date text entry" },
   "about_feature_guidelines":{ "message": "Hide submission guidelines" },
+  "about_feature_iata":      { "message": "Support for automatically swapping a provided IATA airport code for its ICAO equivalent" },
   "about_feature_offline":   { "message": "Offline tools: centering lines, horizon grid overlay, equalization, histogram preview" },
 
   "content_existing_entry": { "message": "Click here to view your existing submission(s)" },

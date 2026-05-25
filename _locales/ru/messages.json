@@ -25,6 +25,8 @@
   "option_latest_date_desc":      { "message": "Возвращает самую последнюю дату съёмки для указанного регистрационного номера." },
   "option_manual_date_label":     { "message": "Ручной ввод даты" },
   "option_manual_date_desc":      { "message": "Позволяет вводить дату фотографии в виде текста (ММ/ДД/ГГГГ) вместо использования выбора даты." },
+  "option_iata_icao_label":       { "message": "Автодополнение IATA в ICAO" },
+  "option_iata_icao_desc":        { "message": "Автоматически предлагает эквивалент ICAO при вводе кода аэропорта IATA." },
   "option_hide_guidelines_label": { "message": "Скрыть руководство по отправке" },
   "option_hide_guidelines_desc":  { "message": "Скрывает текст руководства по отправке в левой части страницы загрузки." },
   "option_launch_offline":        { "message": "Запустить автономный режим" },
@@ -33,6 +35,7 @@
   "about_feature_reg":       { "message": "Поиск регистрации и даты при автозаполнении" },
   "about_feature_date":      { "message": "Ручной ввод даты" },
   "about_feature_guidelines":{ "message": "Скрыть руководство по отправке" },
+  "about_feature_iata":      { "message": "Поддержка автоматической замены кода аэропорта IATA на эквивалент ICAO" },
   "about_feature_offline":   { "message": "Офлайн-инструменты: линии центрирования, сетка горизонта, выравнивание, предпросмотр гистограммы" },
 
   "content_existing_entry": { "message": "Нажмите здесь, чтобы просмотреть существующие отправки" },

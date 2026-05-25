@@ -25,6 +25,8 @@
   "option_latest_date_desc":      { "message": "Renvoie la date de prise de vue la plus récente pour l'immatriculation fournie." },
   "option_manual_date_label":     { "message": "Saisie manuelle de la date" },
   "option_manual_date_desc":      { "message": "Permet d'entrer la date de la photo sous forme de texte (MM/JJ/AAAA) au lieu d'utiliser le sélecteur de date." },
+  "option_iata_icao_label":       { "message": "Autocomplétion IATA vers ICAO" },
+  "option_iata_icao_desc":        { "message": "Suggère automatiquement l'équivalent ICAO lorsqu'un code d'aéroport IATA est saisi." },
   "option_hide_guidelines_label": { "message": "Masquer les directives de soumission" },
   "option_hide_guidelines_desc":  { "message": "Masque le texte des directives de soumission sur le côté gauche de la page d'envoi." },
   "option_launch_offline":        { "message": "Lancer le mode hors ligne" },
@@ -33,6 +35,7 @@
   "about_feature_reg":       { "message": "Recherche d'immatriculation et de date à la saisie automatique" },
   "about_feature_date":      { "message": "Saisie manuelle de la date" },
   "about_feature_guidelines":{ "message": "Masquer les directives de soumission" },
+  "about_feature_iata":      { "message": "Permet de remplacer automatiquement un code d'aéroport IATA par son équivalent ICAO" },
   "about_feature_offline":   { "message": "Outils hors ligne : lignes de centrage, grille d'horizon, égalisation, aperçu de l'histogramme" },
 
   "content_existing_entry": { "message": "Cliquez ici pour voir vos soumissions existantes" },

@@ -25,6 +25,8 @@
   "option_latest_date_desc":      { "message": "指定された登録番号の最新の撮影日を返します。" },
   "option_manual_date_label":     { "message": "日付を手動入力する" },
   "option_manual_date_desc":      { "message": "日付ピッカーを使わずに写真の日付をテキスト（MM/DD/YYYY）で入力できます。" },
+  "option_iata_icao_label":       { "message": "IATA から ICAO への自動補完" },
+  "option_iata_icao_desc":        { "message": "IATA 空港コードを入力すると、対応する ICAO コードを自動的に提案します。" },
   "option_hide_guidelines_label": { "message": "投稿ガイドラインを非表示にする" },
   "option_hide_guidelines_desc":  { "message": "アップロードページ左側の投稿ガイドラインテキストを非表示にします。" },
   "option_launch_offline":        { "message": "オフラインモードを起動する" },
@@ -33,6 +35,7 @@
   "about_feature_reg":       { "message": "自動入力時の登録番号・日付検索" },
   "about_feature_date":      { "message": "日付の手動テキスト入力" },
   "about_feature_guidelines":{ "message": "投稿ガイドラインを非表示" },
+  "about_feature_iata":      { "message": "IATA 空港コードを ICAO コードに自動的に置き換える機能をサポート" },
   "about_feature_offline":   { "message": "オフラインツール：センターライン、水平グリッド、均等化、ヒストグラムプレビュー" },
 
   "content_existing_entry": { "message": "クリックして既存の投稿を確認する" },

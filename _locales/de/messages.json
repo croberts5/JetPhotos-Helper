@@ -25,6 +25,8 @@
   "option_latest_date_desc":      { "message": "Gibt das neueste Aufnahmedatum für das angegebene Kennzeichen zurück." },
   "option_manual_date_label":     { "message": "Manuelle Datumseingabe" },
   "option_manual_date_desc":      { "message": "Ermöglicht die Eingabe des Fotodatums als Text (TT.MM.JJJJ) statt des Datumsauswählers." },
+  "option_iata_icao_label":       { "message": "IATA-zu-ICAO-Autovervollständigung" },
+  "option_iata_icao_desc":        { "message": "Schlägt automatisch das ICAO-Äquivalent vor, wenn ein IATA-Flughafencode eingegeben wird." },
   "option_hide_guidelines_label": { "message": "Einreichungsrichtlinien ausblenden" },
   "option_hide_guidelines_desc":  { "message": "Blendet den Richtlinientext auf der linken Seite der Upload-Seite aus." },
   "option_launch_offline":        { "message": "Offline-Modus starten" },
@@ -33,6 +35,7 @@
   "about_feature_reg":       { "message": "Kennzeichen- und Datumssuche beim Ausfüllen" },
   "about_feature_date":      { "message": "Manuelle Datumseingabe" },
   "about_feature_guidelines":{ "message": "Einreichungsrichtlinien ausblenden" },
+  "about_feature_iata":      { "message": "Unterstützt den automatischen Austausch eines IATA-Flughafencodes durch sein ICAO-Äquivalent" },
   "about_feature_offline":   { "message": "Offline-Tools: Zentrierlinien, Horizontgitter, Egalisierung, Histogramm-Vorschau" },
 
   "content_existing_entry": { "message": "Klicken Sie hier, um Ihre vorhandenen Einreichungen anzuzeigen" },

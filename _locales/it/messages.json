@@ -25,6 +25,8 @@
   "option_latest_date_desc":      { "message": "Restituisce la data di scatto più recente per la registrazione fornita." },
   "option_manual_date_label":     { "message": "Inserimento manuale della data" },
   "option_manual_date_desc":      { "message": "Consente di inserire la data della foto come testo (GG/MM/AAAA) invece di usare il selettore data." },
+  "option_iata_icao_label":       { "message": "Completamento automatico IATA-ICAO" },
+  "option_iata_icao_desc":        { "message": "Suggerisce automaticamente l'equivalente ICAO quando viene inserito un codice aeroportuale IATA." },
   "option_hide_guidelines_label": { "message": "Nascondi le linee guida per l'invio" },
   "option_hide_guidelines_desc":  { "message": "Nasconde il testo delle linee guida sul lato sinistro della pagina di caricamento." },
   "option_launch_offline":        { "message": "Avvia la modalità offline" },
@@ -33,6 +35,7 @@
   "about_feature_reg":       { "message": "Ricerca registrazione e data al completamento automatico" },
   "about_feature_date":      { "message": "Inserimento manuale della data" },
   "about_feature_guidelines":{ "message": "Nascondi le linee guida per l'invio" },
+  "about_feature_iata":      { "message": "Supporto per la sostituzione automatica di un codice aeroportuale IATA con il suo equivalente ICAO" },
   "about_feature_offline":   { "message": "Strumenti offline: linee di centratura, griglia orizzonte, equalizzazione, anteprima istogramma" },
 
   "content_existing_entry": { "message": "Clicca qui per visualizzare i tuoi invii esistenti" },

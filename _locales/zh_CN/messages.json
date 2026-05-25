@@ -25,6 +25,8 @@
   "option_latest_date_desc":      { "message": "返回所提供注册号码的最新拍摄日期。" },
   "option_manual_date_label":     { "message": "手动输入日期" },
   "option_manual_date_desc":      { "message": "允许以文本形式（MM/DD/YYYY）输入照片日期，而无需使用日期选择器。" },
+  "option_iata_icao_label":       { "message": "IATA 转 ICAO 自动补全" },
+  "option_iata_icao_desc":        { "message": "输入 IATA 机场代码时，自动建议对应的 ICAO 代码。" },
   "option_hide_guidelines_label": { "message": "隐藏提交指南" },
   "option_hide_guidelines_desc":  { "message": "隐藏上传页面左侧的提交指南文本。" },
   "option_launch_offline":        { "message": "启动离线模式" },
@@ -33,6 +35,7 @@
   "about_feature_reg":       { "message": "自动填充时的注册号和日期查询" },
   "about_feature_date":      { "message": "手动文本输入日期" },
   "about_feature_guidelines":{ "message": "隐藏提交指南" },
+  "about_feature_iata":      { "message": "支持自动将 IATA 机场代码替换为对应的 ICAO 代码" },
   "about_feature_offline":   { "message": "离线工具：居中线、水平网格叠加、均衡化、直方图预览" },
 
   "content_existing_entry": { "message": "点击此处查看您的现有提交" },
