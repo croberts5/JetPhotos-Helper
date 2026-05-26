@@ -21,6 +21,12 @@ A standalone image inspector (no upload required) for previewing how JetPhotos w
 - **Histogram** — renders a luminance histogram with gray fill, blue stroke, and a pink average line, scaled to clip dominant spikes the same way JetPhotos does
 - **Compress to 1024px** — resizes the long side to 1024px before processing, matching JetPhotos' upload compression
 
+## Bug fixes
+
+- **Input trimming** — all text fields automatically strip leading and trailing whitespace
+- **Serial number preservation** — a serial number entered before the registration is no longer erased when the registration field is filled and has no auto-fill match
+- **Registration fallback** — when a registration is not found in the JetPhotos auto-fill database, it is automatically copied into the Registration field
+
 ## Project structure
 
 ```

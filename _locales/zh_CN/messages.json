@@ -19,6 +19,9 @@
   "offline_status_jpeg_only":   { "message": "仅支持 JPEG 文件。" },
   "offline_status_load_failed": { "message": "图片加载失败。" },
 
+  "option_section_features": { "message": "功能" },
+  "option_section_tweaks":   { "message": "界面调整" },
+
   "option_fetch_reg_label":       { "message": "自动填充时检查用户照片" },
   "option_fetch_reg_desc":        { "message": "检查用户是否有使用所提供注册号码的已接受照片。" },
   "option_latest_date_label":     { "message": "获取最新照片日期" },
@@ -29,16 +32,25 @@
   "option_iata_icao_desc":        { "message": "输入 IATA 机场代码时，自动建议对应的 ICAO 代码。" },
   "option_hide_guidelines_label": { "message": "隐藏提交指南" },
   "option_hide_guidelines_desc":  { "message": "隐藏上传页面左侧的提交指南文本。" },
+  "option_localize_utc_label":    { "message": "本地化UTC时间戳" },
+  "option_localize_utc_desc":     { "message": "将页面上的UTC时间戳转换为您的本地时区。" },
   "option_launch_offline":        { "message": "启动离线模式" },
 
   "about_bmc_prompt":        { "message": "觉得这个扩展有用？请我喝杯咖啡！☕" },
+  "about_section_features":  { "message": "功能" },
   "about_feature_reg":       { "message": "自动填充时的注册号和日期查询" },
   "about_feature_date":      { "message": "手动文本输入日期" },
   "about_feature_guidelines":{ "message": "隐藏提交指南" },
   "about_feature_iata":      { "message": "支持自动将 IATA 机场代码替换为对应的 ICAO 代码" },
   "about_feature_offline":   { "message": "离线工具：居中线、水平网格叠加、均衡化、直方图预览" },
 
+  "about_section_bugfixes":  { "message": "错误修复" },
+  "about_bugfix_trim":       { "message": "输入框自动去除首尾空格" },
+  "about_bugfix_serial":     { "message": "注册号无自动填充匹配时，序列号得以保留" },
+  "about_bugfix_reg_copy":   { "message": "注册号未在自动填充数据库中找到时，自动填入表单" },
+
   "content_existing_entry": { "message": "点击此处查看您的现有提交" },
+  "content_latest_shoot":   { "message": "最近拍摄：" },
   "content_serial_number":  { "message": "序列号" },
   "content_registration":   { "message": "注册号" }
 }

@@ -19,6 +19,9 @@
   "offline_status_jpeg_only":   { "message": "Seuls les fichiers JPEG sont pris en charge." },
   "offline_status_load_failed": { "message": "Échec du chargement de l'image." },
 
+  "option_section_features": { "message": "Fonctionnalités" },
+  "option_section_tweaks":   { "message": "Ajustements d'interface" },
+
   "option_fetch_reg_label":       { "message": "Vérifier les photos lors du remplissage automatique" },
   "option_fetch_reg_desc":        { "message": "Vérifie si l'utilisateur a des photos acceptées avec l'immatriculation fournie." },
   "option_latest_date_label":     { "message": "Récupérer la date de la dernière photo" },
@@ -29,16 +32,25 @@
   "option_iata_icao_desc":        { "message": "Suggère automatiquement l'équivalent ICAO lorsqu'un code d'aéroport IATA est saisi." },
   "option_hide_guidelines_label": { "message": "Masquer les directives de soumission" },
   "option_hide_guidelines_desc":  { "message": "Masque le texte des directives de soumission sur le côté gauche de la page d'envoi." },
+  "option_localize_utc_label":    { "message": "Localiser l'horodatage UTC" },
+  "option_localize_utc_desc":     { "message": "Convertit les horodatages UTC de la page dans votre fuseau horaire local." },
   "option_launch_offline":        { "message": "Lancer le mode hors ligne" },
 
   "about_bmc_prompt":        { "message": "Cette extension vous est utile ? Offrez-moi un café ! ☕" },
+  "about_section_features":  { "message": "Fonctionnalités" },
   "about_feature_reg":       { "message": "Recherche d'immatriculation et de date à la saisie automatique" },
   "about_feature_date":      { "message": "Saisie manuelle de la date" },
   "about_feature_guidelines":{ "message": "Masquer les directives de soumission" },
   "about_feature_iata":      { "message": "Permet de remplacer automatiquement un code d'aéroport IATA par son équivalent ICAO" },
   "about_feature_offline":   { "message": "Outils hors ligne : lignes de centrage, grille d'horizon, égalisation, aperçu de l'histogramme" },
 
+  "about_section_bugfixes":  { "message": "Corrections" },
+  "about_bugfix_trim":       { "message": "Espaces superflus supprimés automatiquement dans les champs de saisie" },
+  "about_bugfix_serial":     { "message": "Numéro de série conservé si l'immatriculation est absente de la base d'autocomplétion" },
+  "about_bugfix_reg_copy":   { "message": "Immatriculation automatiquement remplie dans le formulaire si absente de la base d'autocomplétion" },
+
   "content_existing_entry": { "message": "Cliquez ici pour voir vos soumissions existantes" },
+  "content_latest_shoot":   { "message": "Dernière prise de vue :" },
   "content_serial_number":  { "message": "Numéro de série" },
   "content_registration":   { "message": "Immatriculation" }
 }

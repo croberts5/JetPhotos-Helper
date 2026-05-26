@@ -1,0 +1,46 @@
+/* JetPhotos Helper — content script styles
+   Injected into the JetPhotos upload page alongside jp.js.
+   All selectors use the .jph- namespace to avoid conflicts
+   with JetPhotos' own stylesheets. */
+
+.jph-panel {
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background: #f0f4ff;
+  border-left: 3px solid #2a6edd;
+  border-radius: 2px;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.jph-panel__link {
+  color: #2a6edd;
+  text-decoration: none;
+}
+
+.jph-panel__link:hover {
+  text-decoration: underline;
+}
+
+.jph-panel__date {
+  color: #444;
+}
+
+/* Registration / serial status strip — sits below the upload button */
+.jph-status {
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.jph-status__item {
+  color: #444;
+  font-size: 13px;
+}
+
+.jph-status__item--warn {
+  color: #b45309;
+}

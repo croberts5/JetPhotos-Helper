@@ -19,6 +19,9 @@
   "offline_status_jpeg_only":   { "message": "Apenas ficheiros JPEG são suportados." },
   "offline_status_load_failed": { "message": "Falha ao carregar a imagem." },
 
+  "option_section_features": { "message": "Funcionalidades" },
+  "option_section_tweaks":   { "message": "Ajustes de interface" },
+
   "option_fetch_reg_label":       { "message": "Verificar fotos do utilizador no preenchimento automático" },
   "option_fetch_reg_desc":        { "message": "Verifica se o utilizador tem fotos aceites com a matrícula fornecida." },
   "option_latest_date_label":     { "message": "Obter data da foto mais recente" },
@@ -29,16 +32,25 @@
   "option_iata_icao_desc":        { "message": "Sugere automaticamente o equivalente ICAO quando é introduzido um código de aeroporto IATA." },
   "option_hide_guidelines_label": { "message": "Ocultar diretrizes de envio" },
   "option_hide_guidelines_desc":  { "message": "Oculta o texto das diretrizes de envio no lado esquerdo da página de carregamento." },
+  "option_localize_utc_label":    { "message": "Converter carimbo de data/hora UTC" },
+  "option_localize_utc_desc":     { "message": "Converte os carimbos de data/hora UTC da página para o seu fuso horário local." },
   "option_launch_offline":        { "message": "Iniciar modo offline" },
 
   "about_bmc_prompt":        { "message": "Acha esta extensão útil? Pague-me um café! ☕" },
+  "about_section_features":  { "message": "Funcionalidades" },
   "about_feature_reg":       { "message": "Pesquisa de matrícula e data no preenchimento automático" },
   "about_feature_date":      { "message": "Inserção manual de data" },
   "about_feature_guidelines":{ "message": "Ocultar diretrizes de envio" },
   "about_feature_iata":      { "message": "Suporte para substituição automática de um código de aeroporto IATA pelo seu equivalente ICAO" },
   "about_feature_offline":   { "message": "Ferramentas offline: linhas de centramento, grelha de horizonte, equalização, pré-visualização de histograma" },
 
+  "about_section_bugfixes":  { "message": "Correções" },
+  "about_bugfix_trim":       { "message": "Campos de entrada automaticamente limpos de espaços iniciais/finais" },
+  "about_bugfix_serial":     { "message": "Número de série preservado quando a matrícula não tem correspondência no preenchimento automático" },
+  "about_bugfix_reg_copy":   { "message": "Matrícula automaticamente preenchida no formulário se não encontrada na base de dados de preenchimento automático" },
+
   "content_existing_entry": { "message": "Clique aqui para ver as suas submissões existentes" },
+  "content_latest_shoot":   { "message": "Último registo:" },
   "content_serial_number":  { "message": "Número de série" },
   "content_registration":   { "message": "Matrícula" }
 }

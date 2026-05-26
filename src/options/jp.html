@@ -16,6 +16,8 @@
       </div>
     </div>
 
+    <h4 data-i18n="option_section_features">Features</h4>
+
     <div class="option">
       <div class="option-header">
         <input type="checkbox" id="fetchExistingReg" name="fetchExistingReg" />
@@ -38,21 +40,23 @@
 
     <div class="option">
       <div class="option-header">
-        <input type="checkbox" id="allowManualDateEntry" name="allowManualDateEntry" />
-        <label for="allowManualDateEntry" data-i18n="option_manual_date_label">Manual date entry</label>
-      </div>
-      <div class="option-description" data-i18n="option_manual_date_desc">
-        Allows inputting the photo date as a string (MM/DD/YYYY) instead of being forced to use the date picker.
-      </div>
-    </div>
-
-    <div class="option">
-      <div class="option-header">
         <input type="checkbox" id="iataIcaoAutoComplete" name="iataIcaoAutoComplete" />
         <label for="iataIcaoAutoComplete" data-i18n="option_iata_icao_label">IATA to ICAO autocomplete</label>
       </div>
       <div class="option-description" data-i18n="option_iata_icao_desc">
         Automatically suggests the ICAO equivalent when an IATA airport code is entered.
+      </div>
+    </div>
+
+    <h4 data-i18n="option_section_tweaks">Interface Tweaks</h4>
+
+    <div class="option">
+      <div class="option-header">
+        <input type="checkbox" id="allowManualDateEntry" name="allowManualDateEntry" />
+        <label for="allowManualDateEntry" data-i18n="option_manual_date_label">Manual date entry</label>
+      </div>
+      <div class="option-description" data-i18n="option_manual_date_desc">
+        Allows inputting the photo date as a string (MM/DD/YYYY) instead of being forced to use the date picker.
       </div>
     </div>
 
@@ -66,9 +70,20 @@
       </div>
     </div>
 
-    <div class="divider"></div>
+    <div class="option">
+      <div class="option-header">
+        <input type="checkbox" id="localizeUtcTimestamp" name="localizeUtcTimestamp" />
+        <label for="localizeUtcTimestamp" data-i18n="option_localize_utc_label">Localize UTC timestamp</label>
+      </div>
+      <div class="option-description" data-i18n="option_localize_utc_desc">
+        Converts UTC timestamps on the page to your local time zone.
+      </div>
+    </div>
 
-    <button id="launchOfflineMode" data-i18n="option_launch_offline">Launch offline mode</button>
+    <div class="offline-btn-wrap">
+      <div class="divider"></div>
+      <button id="launchOfflineMode" data-i18n="option_launch_offline">Launch offline mode</button>
+    </div>
     <script src="config.js"></script>
   </body>
 </html>

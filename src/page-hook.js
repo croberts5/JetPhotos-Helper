@@ -46,6 +46,14 @@ XMLHttpRequest.prototype.send = function (body) {
                 body: this.responseText
             });
         }
+
+        if (this._method === 'GET' && String(this._url).includes('census.php')) {
+            sendToExtension({
+                type: 'CENSUS_RESPONSE',
+                url: this._url,
+                body: this.responseText
+            });
+        }
     });
     return send.call(this, body);
 };

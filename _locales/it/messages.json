@@ -19,6 +19,9 @@
   "offline_status_jpeg_only":   { "message": "Sono supportati solo i file JPEG." },
   "offline_status_load_failed": { "message": "Impossibile caricare l'immagine." },
 
+  "option_section_features": { "message": "Funzionalità" },
+  "option_section_tweaks":   { "message": "Personalizzazioni dell'interfaccia" },
+
   "option_fetch_reg_label":       { "message": "Controlla le foto dell'utente al completamento automatico" },
   "option_fetch_reg_desc":        { "message": "Verifica se l'utente ha foto accettate con la registrazione fornita." },
   "option_latest_date_label":     { "message": "Recupera la data dell'ultima foto" },
@@ -29,16 +32,25 @@
   "option_iata_icao_desc":        { "message": "Suggerisce automaticamente l'equivalente ICAO quando viene inserito un codice aeroportuale IATA." },
   "option_hide_guidelines_label": { "message": "Nascondi le linee guida per l'invio" },
   "option_hide_guidelines_desc":  { "message": "Nasconde il testo delle linee guida sul lato sinistro della pagina di caricamento." },
+  "option_localize_utc_label":    { "message": "Localizza il timestamp UTC" },
+  "option_localize_utc_desc":     { "message": "Converte i timestamp UTC della pagina nel tuo fuso orario locale." },
   "option_launch_offline":        { "message": "Avvia la modalità offline" },
 
   "about_bmc_prompt":        { "message": "Trovi questa estensione utile? Offrimi un caffè! ☕" },
+  "about_section_features":  { "message": "Funzionalità" },
   "about_feature_reg":       { "message": "Ricerca registrazione e data al completamento automatico" },
   "about_feature_date":      { "message": "Inserimento manuale della data" },
   "about_feature_guidelines":{ "message": "Nascondi le linee guida per l'invio" },
   "about_feature_iata":      { "message": "Supporto per la sostituzione automatica di un codice aeroportuale IATA con il suo equivalente ICAO" },
   "about_feature_offline":   { "message": "Strumenti offline: linee di centratura, griglia orizzonte, equalizzazione, anteprima istogramma" },
 
+  "about_section_bugfixes":  { "message": "Correzioni" },
+  "about_bugfix_trim":       { "message": "Campi di input automaticamente ripuliti dagli spazi iniziali/finali" },
+  "about_bugfix_serial":     { "message": "Numero di serie preservato quando la registrazione non ha corrispondenza nel completamento automatico" },
+  "about_bugfix_reg_copy":   { "message": "Registrazione inserita automaticamente nel modulo se non trovata nel database di completamento automatico" },
+
   "content_existing_entry": { "message": "Clicca qui per visualizzare i tuoi invii esistenti" },
+  "content_latest_shoot":   { "message": "Ultimo scatto:" },
   "content_serial_number":  { "message": "Numero di serie" },
   "content_registration":   { "message": "Registrazione" }
 }

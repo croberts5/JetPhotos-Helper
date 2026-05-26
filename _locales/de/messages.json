@@ -19,6 +19,9 @@
   "offline_status_jpeg_only":   { "message": "Nur JPEG-Dateien werden unterstützt." },
   "offline_status_load_failed": { "message": "Bild konnte nicht geladen werden." },
 
+  "option_section_features": { "message": "Funktionen" },
+  "option_section_tweaks":   { "message": "Schnittstellenanpassungen" },
+
   "option_fetch_reg_label":       { "message": "Nutzerfotos beim Ausfüllen prüfen" },
   "option_fetch_reg_desc":        { "message": "Prüft, ob der Nutzer akzeptierte Fotos mit dem angegebenen Kennzeichen hat." },
   "option_latest_date_label":     { "message": "Neuestes Fotodatum abrufen" },
@@ -29,16 +32,25 @@
   "option_iata_icao_desc":        { "message": "Schlägt automatisch das ICAO-Äquivalent vor, wenn ein IATA-Flughafencode eingegeben wird." },
   "option_hide_guidelines_label": { "message": "Einreichungsrichtlinien ausblenden" },
   "option_hide_guidelines_desc":  { "message": "Blendet den Richtlinientext auf der linken Seite der Upload-Seite aus." },
+  "option_localize_utc_label":    { "message": "UTC-Zeitstempel lokalisieren" },
+  "option_localize_utc_desc":     { "message": "Konvertiert UTC-Zeitstempel auf der Seite in Ihre lokale Zeitzone." },
   "option_launch_offline":        { "message": "Offline-Modus starten" },
 
   "about_bmc_prompt":        { "message": "Ist diese Erweiterung nützlich? Spendier mir einen Kaffee! ☕" },
+  "about_section_features":  { "message": "Funktionen" },
   "about_feature_reg":       { "message": "Kennzeichen- und Datumssuche beim Ausfüllen" },
   "about_feature_date":      { "message": "Manuelle Datumseingabe" },
   "about_feature_guidelines":{ "message": "Einreichungsrichtlinien ausblenden" },
   "about_feature_iata":      { "message": "Unterstützt den automatischen Austausch eines IATA-Flughafencodes durch sein ICAO-Äquivalent" },
   "about_feature_offline":   { "message": "Offline-Tools: Zentrierlinien, Horizontgitter, Egalisierung, Histogramm-Vorschau" },
 
+  "about_section_bugfixes":  { "message": "Fehlerbehebungen" },
+  "about_bugfix_trim":       { "message": "Eingabefelder werden automatisch von führenden/nachgestellten Leerzeichen bereinigt" },
+  "about_bugfix_serial":     { "message": "Seriennummer bleibt erhalten, wenn das Kennzeichen keine Autofill-Übereinstimmung hat" },
+  "about_bugfix_reg_copy":   { "message": "Kennzeichen wird automatisch im Formular eingetragen, wenn es nicht in der Autofill-Datenbank gefunden wird" },
+
   "content_existing_entry": { "message": "Klicken Sie hier, um Ihre vorhandenen Einreichungen anzuzeigen" },
+  "content_latest_shoot":   { "message": "Letzte Aufnahme:" },
   "content_serial_number":  { "message": "Seriennummer" },
   "content_registration":   { "message": "Kennzeichen" }
 }

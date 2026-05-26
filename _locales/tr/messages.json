@@ -19,6 +19,9 @@
   "offline_status_jpeg_only":   { "message": "Yalnızca JPEG dosyaları desteklenmektedir." },
   "offline_status_load_failed": { "message": "Görüntü yüklenemedi." },
 
+  "option_section_features": { "message": "Özellikler" },
+  "option_section_tweaks":   { "message": "Arayüz Ayarları" },
+
   "option_fetch_reg_label":       { "message": "Otomatik doldurma sırasında kullanıcı fotoğraflarını kontrol et" },
   "option_fetch_reg_desc":        { "message": "Kullanıcının verilen tescil numarasıyla kabul edilmiş fotoğrafları olup olmadığını kontrol eder." },
   "option_latest_date_label":     { "message": "En son fotoğraf tarihini getir" },
@@ -29,16 +32,25 @@
   "option_iata_icao_desc":        { "message": "Bir IATA havalimanı kodu girildiğinde otomatik olarak ICAO eşdeğerini önerir." },
   "option_hide_guidelines_label": { "message": "Gönderim yönergelerini gizle" },
   "option_hide_guidelines_desc":  { "message": "Yükleme sayfasının sol tarafındaki gönderim yönergeleri metnini gizler." },
+  "option_localize_utc_label":    { "message": "UTC zaman damgasını yerelleştir" },
+  "option_localize_utc_desc":     { "message": "Sayfadaki UTC zaman damgalarını yerel saat diliminize dönüştürür." },
   "option_launch_offline":        { "message": "Çevrimdışı modu başlat" },
 
   "about_bmc_prompt":        { "message": "Bu eklentiyi faydalı buldunuz mu? Bana bir kahve ısmarlayın! ☕" },
+  "about_section_features":  { "message": "Özellikler" },
   "about_feature_reg":       { "message": "Otomatik doldurma sırasında tescil ve tarih arama" },
   "about_feature_date":      { "message": "Manuel tarih girişi" },
   "about_feature_guidelines":{ "message": "Gönderim yönergelerini gizle" },
   "about_feature_iata":      { "message": "Girilen IATA havalimanı kodunu otomatik olarak ICAO eşdeğeriyle değiştirme desteği" },
   "about_feature_offline":   { "message": "Çevrimdışı araçlar: ortalama çizgileri, ufuk ızgarası, eşitleme, histogram önizleme" },
 
+  "about_section_bugfixes":  { "message": "Hata Düzeltmeleri" },
+  "about_bugfix_trim":       { "message": "Giriş alanlarındaki baştaki/sondaki boşluklar otomatik kaldırılır" },
+  "about_bugfix_serial":     { "message": "Kayıt numarası otomatik doldurma ile eşleşmediğinde seri numarası korunur" },
+  "about_bugfix_reg_copy":   { "message": "Otomatik doldurma veritabanında bulunamazsa kayıt numarası otomatik olarak forma girilir" },
+
   "content_existing_entry": { "message": "Mevcut gönderimleri görüntülemek için tıklayın" },
+  "content_latest_shoot":   { "message": "Son çekim:" },
   "content_serial_number":  { "message": "Seri numarası" },
   "content_registration":   { "message": "Tescil" }
 }

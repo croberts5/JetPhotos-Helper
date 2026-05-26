@@ -19,6 +19,9 @@
   "offline_status_jpeg_only":   { "message": "JPEG ファイルのみサポートされています。" },
   "offline_status_load_failed": { "message": "画像の読み込みに失敗しました。" },
 
+  "option_section_features": { "message": "機能" },
+  "option_section_tweaks":   { "message": "インターフェース調整" },
+
   "option_fetch_reg_label":       { "message": "自動入力時にユーザー写真を確認する" },
   "option_fetch_reg_desc":        { "message": "指定された登録番号で承認済みの写真があるか確認します。" },
   "option_latest_date_label":     { "message": "最新の写真日付を取得する" },
@@ -29,16 +32,25 @@
   "option_iata_icao_desc":        { "message": "IATA 空港コードを入力すると、対応する ICAO コードを自動的に提案します。" },
   "option_hide_guidelines_label": { "message": "投稿ガイドラインを非表示にする" },
   "option_hide_guidelines_desc":  { "message": "アップロードページ左側の投稿ガイドラインテキストを非表示にします。" },
+  "option_localize_utc_label":    { "message": "UTCタイムスタンプをローカル時刻に変換" },
+  "option_localize_utc_desc":     { "message": "ページ上のUTCタイムスタンプをローカルタイムゾーンに変換します。" },
   "option_launch_offline":        { "message": "オフラインモードを起動する" },
 
   "about_bmc_prompt":        { "message": "この拡張機能が役に立ちましたか？コーヒーをおごってください！☕" },
+  "about_section_features":  { "message": "機能" },
   "about_feature_reg":       { "message": "自動入力時の登録番号・日付検索" },
   "about_feature_date":      { "message": "日付の手動テキスト入力" },
   "about_feature_guidelines":{ "message": "投稿ガイドラインを非表示" },
   "about_feature_iata":      { "message": "IATA 空港コードを ICAO コードに自動的に置き換える機能をサポート" },
   "about_feature_offline":   { "message": "オフラインツール：センターライン、水平グリッド、均等化、ヒストグラムプレビュー" },
 
+  "about_section_bugfixes":  { "message": "バグ修正" },
+  "about_bugfix_trim":       { "message": "入力フィールドの前後の空白を自動的に除去" },
+  "about_bugfix_serial":     { "message": "オートフィルに一致しない登録番号入力時もシリアル番号を保持" },
+  "about_bugfix_reg_copy":   { "message": "自動入力データベースにない場合、登録番号を自動的にフォームに入力" },
+
   "content_existing_entry": { "message": "クリックして既存の投稿を確認する" },
+  "content_latest_shoot":   { "message": "最新撮影：" },
   "content_serial_number":  { "message": "シリアル番号" },
   "content_registration":   { "message": "登録番号" }
 }

@@ -19,6 +19,9 @@
   "offline_status_jpeg_only":   { "message": "Solo se admiten archivos JPEG." },
   "offline_status_load_failed": { "message": "Error al cargar la imagen." },
 
+  "option_section_features": { "message": "Funciones" },
+  "option_section_tweaks":   { "message": "Ajustes de interfaz" },
+
   "option_fetch_reg_label":       { "message": "Verificar fotos del usuario al autocompletar" },
   "option_fetch_reg_desc":        { "message": "Comprueba si el usuario tiene fotos aceptadas con la matrícula proporcionada." },
   "option_latest_date_label":     { "message": "Obtener fecha de la última foto" },
@@ -29,16 +32,25 @@
   "option_iata_icao_desc":        { "message": "Sugiere automáticamente el código ICAO equivalente cuando se introduce un código de aeropuerto IATA." },
   "option_hide_guidelines_label": { "message": "Ocultar directrices de envío" },
   "option_hide_guidelines_desc":  { "message": "Oculta el texto de directrices de envío del lado izquierdo de la página de subida." },
+  "option_localize_utc_label":    { "message": "Convertir marca de tiempo UTC" },
+  "option_localize_utc_desc":     { "message": "Convierte las marcas de tiempo UTC de la página a tu zona horaria local." },
   "option_launch_offline":        { "message": "Iniciar modo sin conexión" },
 
   "about_bmc_prompt":        { "message": "¿Te resulta útil esta extensión? ¡Invítame a un café! ☕" },
+  "about_section_features":  { "message": "Funciones" },
   "about_feature_reg":       { "message": "Búsqueda de matrícula y fecha al autocompletar" },
   "about_feature_date":      { "message": "Entrada de fecha manual" },
   "about_feature_guidelines":{ "message": "Ocultar directrices de envío" },
   "about_feature_iata":      { "message": "Permite intercambiar automáticamente un código de aeropuerto IATA por su equivalente ICAO" },
   "about_feature_offline":   { "message": "Herramientas sin conexión: líneas de centrado, cuadrícula de horizonte, ecualización, previsualización de histograma" },
 
+  "about_section_bugfixes":  { "message": "Correcciones" },
+  "about_bugfix_trim":       { "message": "Campos de entrada recortados automáticamente de espacios" },
+  "about_bugfix_serial":     { "message": "Número de serie conservado cuando la matrícula no tiene coincidencia de autocompletado" },
+  "about_bugfix_reg_copy":   { "message": "Matrícula autocompletada en el formulario si no está en la base de datos de autocompletado" },
+
   "content_existing_entry": { "message": "Haz clic aquí para ver tus envíos existentes" },
+  "content_latest_shoot":   { "message": "Última toma:" },
   "content_serial_number":  { "message": "Número de serie" },
   "content_registration":   { "message": "Matrícula" }
 }

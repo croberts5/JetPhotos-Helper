@@ -27,10 +27,11 @@ function copyStaticAssets() {
     // HTML + CSS files
     copy('src/offline/offline.html', 'dist/offline/offline.html');
     copy('src/offline/offline.css',  'dist/offline/offline.css');
-    copy('src/options/jp.html',      'dist/options/jp.html');
-    copy('src/options/jp.css',       'dist/options/jp.css');
-    copy('src/options/about.html',   'dist/options/about.html');
-    copy('src/options/about.css',    'dist/options/about.css');
+    copy('src/options/jp.html',         'dist/options/jp.html');
+    copy('src/options/jp.css',          'dist/options/jp.css');
+    copy('src/options/jp-content.css',  'dist/options/jp-content.css');
+    copy('src/options/about.html',      'dist/options/about.html');
+    copy('src/options/about.css',       'dist/options/about.css');
     // Plain JS / other assets
     copy('src/page-hook.js', 'dist/page-hook.js');
     // Locale files

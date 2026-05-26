@@ -19,6 +19,9 @@
   "offline_status_jpeg_only":   { "message": "Only JPEG files are supported." },
   "offline_status_load_failed": { "message": "Failed to load image." },
 
+  "option_section_features": { "message": "Features" },
+  "option_section_tweaks":   { "message": "Interface Tweaks" },
+
   "option_fetch_reg_label":       { "message": "Check user photos on auto-fill" },
   "option_fetch_reg_desc":        { "message": "Checks whether the user has accepted photos with the provided registration." },
   "option_latest_date_label":     { "message": "Fetch latest photo date" },
@@ -29,16 +32,25 @@
   "option_iata_icao_desc":        { "message": "Automatically suggests the ICAO equivalent when an IATA airport code is entered." },
   "option_hide_guidelines_label": { "message": "Hide submission guidelines" },
   "option_hide_guidelines_desc":  { "message": "Hides the submission guidelines text found on the left-hand side of the upload page." },
+  "option_localize_utc_label":    { "message": "Localize UTC timestamp" },
+  "option_localize_utc_desc":     { "message": "Converts UTC timestamps on the page to your local time zone." },
   "option_launch_offline":        { "message": "Launch offline mode" },
 
   "about_bmc_prompt":        { "message": "Find this extension helpful? Send me a coffee! ☕" },
+  "about_section_features":  { "message": "Features" },
   "about_feature_reg":       { "message": "Registration & date lookup on auto-fill" },
   "about_feature_date":      { "message": "Manual date text entry" },
   "about_feature_guidelines":{ "message": "Hide submission guidelines" },
   "about_feature_iata":      { "message": "Support for automatically swapping a provided IATA airport code for its ICAO equivalent" },
   "about_feature_offline":   { "message": "Offline tools: centering lines, horizon grid overlay, equalization, histogram preview" },
 
+  "about_section_bugfixes":  { "message": "Bug Fixes" },
+  "about_bugfix_trim":       { "message": "Input fields automatically trimmed of leading/trailing spaces" },
+  "about_bugfix_serial":     { "message": "Serial number preserved when registration has no auto-fill match" },
+  "about_bugfix_reg_copy":   { "message": "Registration auto-populated in form when not found in auto-fill database" },
+
   "content_existing_entry": { "message": "Click here to view your existing submission(s)" },
+  "content_latest_shoot":   { "message": "Latest shoot:" },
   "content_serial_number":  { "message": "Serial number" },
   "content_registration":   { "message": "Registration" }
 }

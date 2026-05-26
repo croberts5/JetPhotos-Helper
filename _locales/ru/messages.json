@@ -19,6 +19,9 @@
   "offline_status_jpeg_only":   { "message": "Поддерживаются только файлы JPEG." },
   "offline_status_load_failed": { "message": "Не удалось загрузить изображение." },
 
+  "option_section_features": { "message": "Функции" },
+  "option_section_tweaks":   { "message": "Настройки интерфейса" },
+
   "option_fetch_reg_label":       { "message": "Проверять фото пользователя при автозаполнении" },
   "option_fetch_reg_desc":        { "message": "Проверяет, есть ли у пользователя принятые фото с указанным регистрационным номером." },
   "option_latest_date_label":     { "message": "Получить дату последней фотографии" },
@@ -29,16 +32,25 @@
   "option_iata_icao_desc":        { "message": "Автоматически предлагает эквивалент ICAO при вводе кода аэропорта IATA." },
   "option_hide_guidelines_label": { "message": "Скрыть руководство по отправке" },
   "option_hide_guidelines_desc":  { "message": "Скрывает текст руководства по отправке в левой части страницы загрузки." },
+  "option_localize_utc_label":    { "message": "Локализовать метку времени UTC" },
+  "option_localize_utc_desc":     { "message": "Преобразует метки времени UTC на странице в ваш локальный часовой пояс." },
   "option_launch_offline":        { "message": "Запустить автономный режим" },
 
   "about_bmc_prompt":        { "message": "Расширение оказалось полезным? Угостите меня кофе! ☕" },
+  "about_section_features":  { "message": "Функции" },
   "about_feature_reg":       { "message": "Поиск регистрации и даты при автозаполнении" },
   "about_feature_date":      { "message": "Ручной ввод даты" },
   "about_feature_guidelines":{ "message": "Скрыть руководство по отправке" },
   "about_feature_iata":      { "message": "Поддержка автоматической замены кода аэропорта IATA на эквивалент ICAO" },
   "about_feature_offline":   { "message": "Офлайн-инструменты: линии центрирования, сетка горизонта, выравнивание, предпросмотр гистограммы" },
 
+  "about_section_bugfixes":  { "message": "Исправления" },
+  "about_bugfix_trim":       { "message": "Лишние пробелы в полях ввода удаляются автоматически" },
+  "about_bugfix_serial":     { "message": "Серийный номер сохраняется, если регистрационный номер не найден в автозаполнении" },
+  "about_bugfix_reg_copy":   { "message": "Регистрационный номер автоматически вводится в форму, если не найден в базе автозаполнения" },
+
   "content_existing_entry": { "message": "Нажмите здесь, чтобы просмотреть существующие отправки" },
+  "content_latest_shoot":   { "message": "Последняя съёмка:" },
   "content_serial_number":  { "message": "Серийный номер" },
   "content_registration":   { "message": "Регистрационный номер" }
 }

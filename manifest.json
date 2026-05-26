@@ -29,7 +29,8 @@
             "matches": [
                 "https://*.jetphotos.com/addphotos*"
             ],
-            "js": ["options/jp.js"]
+            "js": ["options/jp.js"],
+            "css": ["options/jp-content.css"]
         }
     ],
     "web_accessible_resources": [
