@@ -37,20 +37,20 @@ function buildDisplay(): string {
     const ctx = canvas.getContext('2d')!;
     ctx.drawImage(originalCanvas, 0, 0);
 
-    ctx.strokeStyle = '#ffff00';
+    ctx.strokeStyle = '#c1c238';
     ctx.lineWidth = 2;
 
     if (centeringActive) {
         for (const xPct of [0.25, 0.5, 0.75]) {
             const x  = Math.round(canvas.width * xPct);
-            const y0 = xPct === 0.5 ? Math.round(canvas.height * 0.25) : 0;
-            const y1 = xPct === 0.5 ? Math.round(canvas.height * 0.75) : canvas.height;
+            const y0 = xPct === 0.5 ? Math.round(canvas.height * 0.28) : 0;
+            const y1 = xPct === 0.5 ? Math.round(canvas.height * 0.72) : canvas.height;
             ctx.beginPath();
             ctx.moveTo(x, y0);
             ctx.lineTo(x, y1);
             ctx.stroke();
         }
-        for (const yPct of [0.25, 0.5, 0.75]) {
+        for (const yPct of [0.28, 0.5, 0.72]) {
             const y  = Math.round(canvas.height * yPct);
             const x0 = yPct === 0.5 ? Math.round(canvas.width * 0.25) : 0;
             const x1 = yPct === 0.5 ? Math.round(canvas.width * 0.75) : canvas.width;
