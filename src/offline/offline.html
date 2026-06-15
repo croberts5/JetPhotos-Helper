@@ -25,6 +25,7 @@
   <div id="preview-area">
     <div class="preview-wrap">
       <img id="display-img" alt="Preview" />
+      <canvas id="histogram-canvas" width="512" height="180"></canvas>
       <button id="resetBtn" aria-label="Remove current image" title="Remove current image">✕</button>
     </div>
     <div class="actions">
@@ -34,7 +35,6 @@
       <button id="histogramBtn"  data-i18n="offline_btn_histogram">Histogram</button>
       <span id="status"></span>
     </div>
-    <canvas id="histogram-canvas" width="512" height="180"></canvas>
   </div>
 
   <script src="offline.js"></script>

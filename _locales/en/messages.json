@@ -36,7 +36,7 @@
   "option_localize_utc_desc":     { "message": "Converts UTC timestamps on the page to your local time zone." },
   "option_launch_offline":        { "message": "Launch offline mode" },
 
-  "about_bmc_prompt":        { "message": "Find this extension helpful? Send me a coffee! ☕" },
+  "about_bmc_prompt":        { "message": "Find this extension helpful?" },
   "about_section_features":  { "message": "Features" },
   "about_feature_reg":       { "message": "Registration & date lookup on auto-fill" },
   "about_feature_date":      { "message": "Manual date text entry" },

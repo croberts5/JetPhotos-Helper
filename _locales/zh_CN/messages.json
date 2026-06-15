@@ -36,7 +36,7 @@
   "option_localize_utc_desc":     { "message": "将页面上的UTC时间戳转换为您的本地时区。" },
   "option_launch_offline":        { "message": "启动离线模式" },
 
-  "about_bmc_prompt":        { "message": "觉得这个扩展有用？请我喝杯咖啡！☕" },
+  "about_bmc_prompt":        { "message": "觉得这个扩展有用？" },
   "about_section_features":  { "message": "功能" },
   "about_feature_reg":       { "message": "自动填充时的注册号和日期查询" },
   "about_feature_date":      { "message": "手动文本输入日期" },

@@ -36,7 +36,7 @@
   "option_localize_utc_desc":     { "message": "Converte os carimbos de data/hora UTC da página para o seu fuso horário local." },
   "option_launch_offline":        { "message": "Iniciar modo offline" },
 
-  "about_bmc_prompt":        { "message": "Acha esta extensão útil? Pague-me um café! ☕" },
+  "about_bmc_prompt":        { "message": "Acha esta extensão útil?" },
   "about_section_features":  { "message": "Funcionalidades" },
   "about_feature_reg":       { "message": "Pesquisa de matrícula e data no preenchimento automático" },
   "about_feature_date":      { "message": "Inserção manual de data" },

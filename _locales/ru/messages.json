@@ -36,7 +36,7 @@
   "option_localize_utc_desc":     { "message": "Преобразует метки времени UTC на странице в ваш локальный часовой пояс." },
   "option_launch_offline":        { "message": "Запустить автономный режим" },
 
-  "about_bmc_prompt":        { "message": "Расширение оказалось полезным? Угостите меня кофе! ☕" },
+  "about_bmc_prompt":        { "message": "Расширение оказалось полезным?" },
   "about_section_features":  { "message": "Функции" },
   "about_feature_reg":       { "message": "Поиск регистрации и даты при автозаполнении" },
   "about_feature_date":      { "message": "Ручной ввод даты" },

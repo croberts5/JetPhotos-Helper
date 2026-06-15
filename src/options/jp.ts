@@ -31,7 +31,7 @@ function debounce<T extends (...args: any[]) => void>(
 const registrationInput = document.querySelector<HTMLInputElement>(REG_INPUT_ID);
 const serialInput = document.querySelector<HTMLInputElement>(SERIAL_INPUT_ID);
 
-const submissionButtonWrapper = document.getElementsByClassName(UPLOAD_BUTTON_CLASS)[0].parentNode;
+const submissionButtonWrapper = document.getElementsByClassName(UPLOAD_BUTTON_CLASS)[0]?.parentNode;
 
 const warningDiv = document.createElement('div');
 warningDiv.className = 'jph-panel jph-status';

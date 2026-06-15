@@ -36,7 +36,7 @@
   "option_localize_utc_desc":     { "message": "Sayfadaki UTC zaman damgalarını yerel saat diliminize dönüştürür." },
   "option_launch_offline":        { "message": "Çevrimdışı modu başlat" },
 
-  "about_bmc_prompt":        { "message": "Bu eklentiyi faydalı buldunuz mu? Bana bir kahve ısmarlayın! ☕" },
+  "about_bmc_prompt":        { "message": "Bu eklentiyi faydalı buldunuz mu?" },
   "about_section_features":  { "message": "Özellikler" },
   "about_feature_reg":       { "message": "Otomatik doldurma sırasında tescil ve tarih arama" },
   "about_feature_date":      { "message": "Manuel tarih girişi" },

@@ -36,7 +36,7 @@
   "option_localize_utc_desc":     { "message": "Konvertiert UTC-Zeitstempel auf der Seite in Ihre lokale Zeitzone." },
   "option_launch_offline":        { "message": "Offline-Modus starten" },
 
-  "about_bmc_prompt":        { "message": "Ist diese Erweiterung nützlich? Spendier mir einen Kaffee! ☕" },
+  "about_bmc_prompt":        { "message": "Ist diese Erweiterung nützlich?" },
   "about_section_features":  { "message": "Funktionen" },
   "about_feature_reg":       { "message": "Kennzeichen- und Datumssuche beim Ausfüllen" },
   "about_feature_date":      { "message": "Manuelle Datumseingabe" },

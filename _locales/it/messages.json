@@ -36,7 +36,7 @@
   "option_localize_utc_desc":     { "message": "Converte i timestamp UTC della pagina nel tuo fuso orario locale." },
   "option_launch_offline":        { "message": "Avvia la modalità offline" },
 
-  "about_bmc_prompt":        { "message": "Trovi questa estensione utile? Offrimi un caffè! ☕" },
+  "about_bmc_prompt":        { "message": "Trovi questa estensione utile?" },
   "about_section_features":  { "message": "Funzionalità" },
   "about_feature_reg":       { "message": "Ricerca registrazione e data al completamento automatico" },
   "about_feature_date":      { "message": "Inserimento manuale della data" },

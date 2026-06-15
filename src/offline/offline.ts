@@ -37,11 +37,11 @@ function buildDisplay(): string {
     const ctx = canvas.getContext('2d')!;
     ctx.drawImage(originalCanvas, 0, 0);
 
-    ctx.strokeStyle = '#c1c238';
+    ctx.strokeStyle = '#ffff00';
     ctx.lineWidth = 2;
 
     if (centeringActive) {
-        for (const xPct of [0.25, 0.5, 0.75]) {
+        for (const xPct of [0.23, 0.5, 0.77]) {
             const x  = Math.round(canvas.width * xPct);
             const y0 = xPct === 0.5 ? Math.round(canvas.height * 0.28) : 0;
             const y1 = xPct === 0.5 ? Math.round(canvas.height * 0.72) : canvas.height;
@@ -52,8 +52,8 @@ function buildDisplay(): string {
         }
         for (const yPct of [0.28, 0.5, 0.72]) {
             const y  = Math.round(canvas.height * yPct);
-            const x0 = yPct === 0.5 ? Math.round(canvas.width * 0.25) : 0;
-            const x1 = yPct === 0.5 ? Math.round(canvas.width * 0.75) : canvas.width;
+            const x0 = yPct === 0.5 ? Math.round(canvas.width * 0.23) : 0;
+            const x1 = yPct === 0.5 ? Math.round(canvas.width * 0.77) : canvas.width;
             ctx.beginPath();
             ctx.moveTo(x0, y);
             ctx.lineTo(x1, y);
@@ -103,6 +103,7 @@ function renderHistogram(): void {
     const H = histogramCanvas.height;
     const ctx = histogramCanvas.getContext('2d')!;
 
+    // White background
     ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, W, H);
 
@@ -230,37 +231,61 @@ dropzone.addEventListener('drop', (e) => {
     if (file) processFile(file);
 });
 
+function deactivateAll(): void {
+    centeringActive = false;
+    equalizeActive  = false;
+    horizonActive   = false;
+    histogramActive = false;
+    centeringBtn.classList.remove('active');
+    equalizeBtn.classList.remove('active');
+    horizonBtn.classList.remove('active');
+    histogramBtn.classList.remove('active');
+    histogramCanvas.style.display = 'none';
+}
+
 centeringBtn.addEventListener('click', () => {
     if (!originalCanvas) return;
-    centeringActive = !centeringActive;
-    centeringBtn.classList.toggle('active', centeringActive);
+    const wasActive = centeringActive;
+    deactivateAll();
+    if (!wasActive) {
+        centeringActive = true;
+        centeringBtn.classList.add('active');
+    }
     updateDisplay();
 });
 
 equalizeBtn.addEventListener('click', () => {
     if (!equalizedDataUrl) return;
-    equalizeActive = !equalizeActive;
-    equalizeBtn.classList.toggle('active', equalizeActive);
+    const wasActive = equalizeActive;
+    deactivateAll();
+    if (!wasActive) {
+        equalizeActive = true;
+        equalizeBtn.classList.add('active');
+    }
     updateDisplay();
-    if (histogramActive) renderHistogram();
 });
 
 horizonBtn.addEventListener('click', () => {
     if (!originalCanvas) return;
-    horizonActive = !horizonActive;
-    horizonBtn.classList.toggle('active', horizonActive);
+    const wasActive = horizonActive;
+    deactivateAll();
+    if (!wasActive) {
+        horizonActive = true;
+        horizonBtn.classList.add('active');
+    }
     updateDisplay();
 });
 
 histogramBtn.addEventListener('click', () => {
     if (!originalCanvas) return;
-    histogramActive = !histogramActive;
-    histogramBtn.classList.toggle('active', histogramActive);
-    if (histogramActive) {
+    const wasActive = histogramActive;
+    deactivateAll();
+    updateDisplay();
+    if (!wasActive) {
+        histogramActive = true;
+        histogramBtn.classList.add('active');
         renderHistogram();
         histogramCanvas.style.display = 'block';
-    } else {
-        histogramCanvas.style.display = 'none';
     }
 });
 

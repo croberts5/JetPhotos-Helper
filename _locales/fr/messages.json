@@ -36,7 +36,7 @@
   "option_localize_utc_desc":     { "message": "Convertit les horodatages UTC de la page dans votre fuseau horaire local." },
   "option_launch_offline":        { "message": "Lancer le mode hors ligne" },
 
-  "about_bmc_prompt":        { "message": "Cette extension vous est utile ? Offrez-moi un café ! ☕" },
+  "about_bmc_prompt":        { "message": "Cette extension vous est utile ?" },
   "about_section_features":  { "message": "Fonctionnalités" },
   "about_feature_reg":       { "message": "Recherche d'immatriculation et de date à la saisie automatique" },
   "about_feature_date":      { "message": "Saisie manuelle de la date" },

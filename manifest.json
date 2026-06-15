@@ -8,8 +8,6 @@
         "gecko": { "id": "jetphotos-helper@extension" }
     },
     "permissions": [
-        "activeTab",
-        "scripting",
         "storage",
         "tabs"
     ],
@@ -20,14 +18,14 @@
     "content_scripts": [
         {
             "matches": [
-                "https://*.jetphotos.com/addphotos*"
+                "https://www.jetphotos.com/addphotos*"
             ],
             "js": ["content.js"],
             "run_at": "document_start"
         },
         {
             "matches": [
-                "https://*.jetphotos.com/addphotos*"
+                "https://www.jetphotos.com/addphotos*"
             ],
             "js": ["options/jp.js"],
             "css": ["options/jp-content.css"]
@@ -36,7 +34,7 @@
     "web_accessible_resources": [
         {
             "resources": ["page-hook.js", "airports.json"],
-            "matches": ["<all_urls>"]
+            "matches": ["https://www.jetphotos.com/*"]
         }
     ]
 }

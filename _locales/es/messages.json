@@ -36,7 +36,7 @@
   "option_localize_utc_desc":     { "message": "Convierte las marcas de tiempo UTC de la página a tu zona horaria local." },
   "option_launch_offline":        { "message": "Iniciar modo sin conexión" },
 
-  "about_bmc_prompt":        { "message": "¿Te resulta útil esta extensión? ¡Invítame a un café! ☕" },
+  "about_bmc_prompt":        { "message": "¿Te resulta útil esta extensión?" },
   "about_section_features":  { "message": "Funciones" },
   "about_feature_reg":       { "message": "Búsqueda de matrícula y fecha al autocompletar" },
   "about_feature_date":      { "message": "Entrada de fecha manual" },

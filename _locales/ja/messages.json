@@ -36,7 +36,7 @@
   "option_localize_utc_desc":     { "message": "ページ上のUTCタイムスタンプをローカルタイムゾーンに変換します。" },
   "option_launch_offline":        { "message": "オフラインモードを起動する" },
 
-  "about_bmc_prompt":        { "message": "この拡張機能が役に立ちましたか？コーヒーをおごってください！☕" },
+  "about_bmc_prompt":        { "message": "この拡張機能が役に立ちましたか？" },
   "about_section_features":  { "message": "機能" },
   "about_feature_reg":       { "message": "自動入力時の登録番号・日付検索" },
   "about_feature_date":      { "message": "日付の手動テキスト入力" },

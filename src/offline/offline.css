@@ -199,9 +199,14 @@ button {
 
 #histogram-canvas {
   display: none;
-  margin: 16px auto 0;
-  border: 1px solid #444;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #aaa;
   border-radius: 4px;
+  pointer-events: none;
+  opacity: 0.92;
 }
 
 #status {
