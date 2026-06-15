@@ -213,6 +213,9 @@ compressCheckbox.addEventListener('change', () => {
 });
 
 dropzone.addEventListener('click', () => fileInput.click());
+dropzone.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInput.click(); }
+});
 
 fileInput.addEventListener('change', () => {
     const file = fileInput.files?.[0];

@@ -35,6 +35,8 @@ const submissionButtonWrapper = document.getElementsByClassName(UPLOAD_BUTTON_CL
 
 const warningDiv = document.createElement('div');
 warningDiv.className = 'jph-panel jph-status';
+warningDiv.setAttribute('role', 'status');
+warningDiv.setAttribute('aria-live', 'polite');
 
 const registrationDev = document.createElement('div');
 registrationDev.className = 'jph-status__item';
@@ -61,6 +63,8 @@ function upsertInfoPanel(
     const panel = document.createElement('div');
     panel.id = INFO_PANEL_ID;
     panel.className = 'jph-panel';
+    panel.setAttribute('role', 'status');
+    panel.setAttribute('aria-live', 'polite');
 
     if (existingEntryURL) {
         const link = document.createElement('a');

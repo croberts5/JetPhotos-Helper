@@ -17,7 +17,7 @@
     </label>
   </div>
 
-  <div id="dropzone">
+  <div id="dropzone" role="button" tabindex="0" aria-label="Drop an image here, or click to select">
     <span data-i18n="offline_dropzone">Drop an image here, or click to select</span>
     <input type="file" id="fileInput" accept="image/jpeg,.jpg,.jpeg" style="display:none" />
   </div>
@@ -25,7 +25,7 @@
   <div id="preview-area">
     <div class="preview-wrap">
       <img id="display-img" alt="Preview" />
-      <canvas id="histogram-canvas" width="512" height="180"></canvas>
+      <canvas id="histogram-canvas" width="512" height="180" role="img" aria-label="Luminance histogram"></canvas>
       <button id="resetBtn" aria-label="Remove current image" title="Remove current image">✕</button>
     </div>
     <div class="actions">

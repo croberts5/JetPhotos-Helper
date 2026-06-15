@@ -24,6 +24,9 @@ export function initDomI18n(): void {
     });
     document.querySelectorAll<HTMLElement>('[data-i18n-tooltip]').forEach(el => {
         const msg = t(el.dataset.i18nTooltip!);
-        if (msg) el.dataset.tooltip = msg;
+        if (msg) {
+            el.dataset.tooltip = msg;
+            el.setAttribute('aria-label', msg);
+        }
     });
 }
