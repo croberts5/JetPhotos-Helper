@@ -16,7 +16,7 @@ A Chrome/Firefox extension that improves the photo upload experience on [JetPhot
 A standalone image inspector (no upload required) for previewing how JetPhotos will process your photo:
 
 - **Equalize** — applies the same histogram equalization + gamma correction pipeline JetPhotos uses
-- **Center** — overlays quarter-grid centering lines (25/50/75%) matching JetPhotos' framing guides
+- **Center** — overlays centering lines at 23/50/77% (vertical) and 28/50/72% (horizontal) matching JetPhotos' framing guides
 - **Horizon** — overlays a 32px grid for checking horizon alignment
 - **Histogram** — renders a luminance histogram with gray fill, blue stroke, and a pink average line, scaled to clip dominant spikes the same way JetPhotos does
 - **Compress to 1024px** — resizes the long side to 1024px before processing, matching JetPhotos' upload compression

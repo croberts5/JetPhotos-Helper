@@ -198,6 +198,16 @@ button {
   color: #fff;
 }
 
+#magnifier-canvas {
+  display: none;
+  position: fixed;
+  border: 2px solid #ffff00;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.6);
+}
+
 #histogram-canvas {
   display: none;
   position: absolute;

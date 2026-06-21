@@ -3,7 +3,6 @@ import { t } from '../i18n';
 
 const REG_INPUT_ID = '#uploadFormReg';
 const SERIAL_INPUT_ID = '#uploadFormSerial';
-const AUTO_FILL_BUTTON_ID = 'autofill_submit';
 const UPLOAD_BUTTON_CLASS = 'btn--upload-submit';
 const AUTO_FILL_REGISTRATION_NAME = 'autoFillAircraft';
 const INFO_PANEL_ID = 'jp-helper-info-panel';
@@ -38,8 +37,8 @@ warningDiv.className = 'jph-panel jph-status';
 warningDiv.setAttribute('role', 'status');
 warningDiv.setAttribute('aria-live', 'polite');
 
-const registrationDev = document.createElement('div');
-registrationDev.className = 'jph-status__item';
+const registrationDiv = document.createElement('div');
+registrationDiv.className = 'jph-status__item';
 
 const serialDiv = document.createElement('div');
 serialDiv.className = 'jph-status__item';
@@ -126,47 +125,43 @@ const fetchAircraft = async (registration: string, userId: string): Promise<stri
     }
 };
 
-const fetchLatestDate = async (registration: string) => {
-    if (!registration) {
-        return;
+const fetchLatestDate = async (registration: string): Promise<string | null> => {
+    if (!registration) return null;
+
+    const url = `https://www.jetphotos.com/showphotos.php?aircraft=all&airline=all&country-location=all&photographer-group=all&category=all&keywords-type=all&keywords-contain=1&keywords=${encodeURIComponent(registration)}&photo-year=all&genre=all&search-type=Advanced&sort-order=2`;
+
+    let htmlText: string;
+    try {
+        const response = await fetch(url);
+        if (!response.ok) return null;
+        htmlText = await response.text();
+    } catch {
+        return null;
     }
 
-    // TODO _ POP existing dom if exists
-    const URL = `https://www.jetphotos.com/showphotos.php?aircraft=all&airline=all&country-location=all&photographer-group=all&category=all&keywords-type=all&keywords-contain=1&keywords=${encodeURIComponent(registration)}&photo-year=all&genre=all&search-type=Advanced&sort-order=2`;
-    const response = await fetch(URL);
-    const htmlText = await response.text();
+    try {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlText, 'text/html');
 
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(htmlText, "text/html");
+        const items = doc.querySelectorAll('.desktop-only .result__infoList li');
 
+        for (const li of items as any) {
+            const link = li.querySelector('a');
+            if (!link) continue;
 
-    const items = doc.querySelectorAll(
-        '.desktop-only .result__infoList li'
-    );
+            // Prefer link text
+            let match = link.textContent.match(/\d{4}-\d{2}-\d{2}/);
+            if (match) return match[0];
 
-    for (const li of items as any) {
-        const link = li.querySelector('a');
-        if (!link) continue;
-
-        // Prefer link text
-        let match = link.textContent.match(/\d{4}-\d{2}-\d{2}/);
-        if (match) {
-            console.log("most recent photo taken date is:", match[0]);
-            return match[0];
-            // match[0]
+            // Fallback: extract from href
+            match = link.getAttribute('href')?.match(/\d{4}-\d{2}-\d{2}/);
+            if (match) return match[0];
         }
-
-        // Fallback: extract from href
-        match = link.getAttribute('href')?.match(/\d{4}-\d{2}-\d{2}/);
-        if (match) {
-            console.log("most recent photo taken date is:", match[0]);
-            return match[0];
-            // match[0]
-        }
+    } catch {
+        return null;
     }
 
     return null;
-    // https://www.jetphotos.com/showphotos.php?keywords-type=reg&keywords=n784ha&search-type=Advanced&keywords-contain=0&sort-order=2
 }
 
 // If auto fill returns empty, prepop the registration with user-provided string
@@ -181,8 +176,8 @@ const updateWarnings = () => {
     const regOk = !!registrationInput?.value.length;
     const serOk = !!serialInput?.value.length;
 
-    registrationDev.textContent = `${t('content_registration')}: ${regOk ? '\u{2705}' : '\u{2757}'}`;
-    registrationDev.classList.toggle('jph-status__item--warn', !regOk);
+    registrationDiv.textContent = `${t('content_registration')}: ${regOk ? '\u{2705}' : '\u{2757}'}`;
+    registrationDiv.classList.toggle('jph-status__item--warn', !regOk);
 
     serialDiv.textContent = `${t('content_serial_number')}: ${serOk ? '\u{2705}' : '\u{2757}'}`;
     serialDiv.classList.toggle('jph-status__item--warn', !serOk);
@@ -194,10 +189,6 @@ const trimAndReplace = (userInput: string, targetInputEl: HTMLInputElement) => {
 }
 
 const debouncedTrimReplace = debounce(trimAndReplace, 500);
-
-const checkSerial = debounce(() => {
-    isDefinedSerial = !!serialInput?.value.length
-}, 750);
 
 registrationInput?.addEventListener('input', (e: Event) => {
     const input = e.target as HTMLInputElement;
@@ -211,17 +202,14 @@ const debouncedCaptureSerial = debounce((value: string) => {
     capturedSerial = value;
 }, 500);
 
-let isDefinedSerial = false;
 serialInput?.addEventListener('input', (e: Event) => {
     const input = e.target as HTMLInputElement;
     const val = input.value.trim();
     debouncedTrimReplace(input.value, serialInput);
-    isDefinedSerial = !!serialInput.value.length;
-    checkSerial();
     debouncedCaptureSerial(val);
 });
 
-warningDiv.appendChild(registrationDev);
+warningDiv.appendChild(registrationDiv);
 warningDiv.appendChild(serialDiv);
 updateWarnings();
 
@@ -246,7 +234,6 @@ window.addEventListener('message', async (event) => {
             setTimeout(() => {
                 if (!serialInput.value) {
                     serialInput.value = capturedSerial;
-                    isDefinedSerial = true;
                     updateWarnings();
                 }
             }, 0);
@@ -254,13 +241,16 @@ window.addEventListener('message', async (event) => {
         return;
     }
 
-    const response = JSON.parse(data.body);
-    //  console.log("response",response);
-    console.log('jp.js received:', response);
-    //If defined fillAircraft is an object, else its an empty array
+    let response: any;
+    try {
+        response = JSON.parse(data.body);
+    } catch {
+        return;
+    }
+
+    // fillAircraft is an object when found, an empty array when not
     if (!!response?.fillAircraft?.fillreg) {
-        console.info("Aircraft entry exists, checking if user has submissions...");
-                const registration = (document.getElementsByName(AUTO_FILL_REGISTRATION_NAME)[0] as HTMLInputElement)?.value.trim();
+        const registration = (document.getElementsByName(AUTO_FILL_REGISTRATION_NAME)[0] as HTMLInputElement)?.value.trim();
         const userId = (document.getElementById('userId') as HTMLInputElement)?.value;
 
         const { fetchExistingReg, showLatestDate } = await getUserPreferences();
@@ -270,16 +260,10 @@ window.addEventListener('message', async (event) => {
 
         upsertInfoPanel(existingEntryURL, latestDate);
 
-    }
-    else {
-        console.log("aircraft entry does not exist. ");
+    } else {
         copyRegistration();
-        // input, name = autoFillAircraft
-        // manualPrepopReg()
     }
     updateWarnings();
-    //if the response is totally empty - net new reg, auto-pop the reg down below
-    // if exists, rerun updateWarnings so warnings are up to date
 });
 
 // --- Airport lookup ---
@@ -370,13 +354,10 @@ async function enableManualDateEntry() {
 
 async function hideLeftColumnUpload() {
     const { hideLeftColumnUpload } = await getUserPreferences();
-
     if (!hideLeftColumnUpload) return;
 
-    const leftCol = document.querySelector('div.wrapper__flexCol.wrapper__flexCol--pad-r-small') as HTMLDivElement;
-    leftCol.style.setProperty('display', 'none');
-
-
+    const leftCol = document.querySelector<HTMLDivElement>('div.wrapper__flexCol.wrapper__flexCol--pad-r-small');
+    leftCol?.style.setProperty('display', 'none');
 }
 
 async function getUserPreferences() {
@@ -421,30 +402,9 @@ function localizeUtcTimestamps(): void {
 }
 
 (async () => {
-    console.log(
-        `                 JetPhotos Helper is Enabled
-                                       |
-                                       |
-                                       |
-                                     .-'-.
-                                    ' ___ '
-                          ---------'  .-.  '---------
-          _________________________'  '-'  '_________________________
-           ''''''-|---|--/    \==][^',_m_,'^][==/    \--|---|-''''''
-                         \    /  ||/   H   \||  \    /
-                          '--'   OO   O|O   OO   '--' `);
     await hideLeftColumnUpload();
     await enableManualDateEntry();
     const { iataIcaoAutoComplete, localizeUtcTimestamp } = await getUserPreferences();
     if (iataIcaoAutoComplete) initAirportLookup();
     if (localizeUtcTimestamp) localizeUtcTimestamps();
 })();
-
-//TODOs
-// better upload page layout option
-// i18n and general code cleanup
-// your profile page hide options
-// potential for upload date estimator?
-
-//check registration and serial async impl -- make sure they're linked
-//safe mode? disable upload button unless all JPH criteria are met?

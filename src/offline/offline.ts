@@ -14,11 +14,13 @@ const histogramCanvas  = document.getElementById('histogram-canvas') as HTMLCanv
 const resetBtn         = document.getElementById('resetBtn') as HTMLButtonElement;
 const compressCheckbox = document.getElementById('compressCheckbox') as HTMLInputElement;
 const status           = document.getElementById('status') as HTMLSpanElement;
+const magnifierCanvas  = document.getElementById('magnifier-canvas') as HTMLCanvasElement;
 
 let originalDataUrl  = '';
 let equalizedDataUrl = '';
 let originalCanvas:  HTMLCanvasElement | null = null;
 let equalizedCanvas: HTMLCanvasElement | null = null;
+let displayCanvas:   HTMLCanvasElement | null = null;
 let lastFile:        File | null = null;
 let centeringActive  = false;
 let equalizeActive   = false;
@@ -28,8 +30,8 @@ let histogramActive  = false;
 // --- Display ---
 
 function buildDisplay(): string {
-    if (equalizeActive) return equalizedDataUrl;
-    if (!originalCanvas || (!centeringActive && !horizonActive)) return originalDataUrl;
+    if (equalizeActive) { displayCanvas = equalizedCanvas; return equalizedDataUrl; }
+    if (!originalCanvas || (!centeringActive && !horizonActive)) { displayCanvas = originalCanvas; return originalDataUrl; }
 
     const canvas = document.createElement('canvas');
     canvas.width  = originalCanvas.width;
@@ -76,6 +78,7 @@ function buildDisplay(): string {
         }
     }
 
+    displayCanvas = canvas;
     return canvas.toDataURL('image/jpeg', 0.92);
 }
 
@@ -197,6 +200,69 @@ async function processFile(file: File): Promise<void> {
     }
 }
 
+// --- Magnifier ---
+
+const MAGNIFIER_SIZE = 200;
+const MAGNIFIER_ZOOM = 3;
+
+magnifierCanvas.width  = MAGNIFIER_SIZE;
+magnifierCanvas.height = MAGNIFIER_SIZE;
+
+function updateMagnifier(e: MouseEvent): void {
+    if (!horizonActive || !displayCanvas) return;
+
+    const rect   = displayImg.getBoundingClientRect();
+    const relX   = e.clientX - rect.left;
+    const relY   = e.clientY - rect.top;
+
+    if (relX < 0 || relY < 0 || relX > rect.width || relY > rect.height) {
+        magnifierCanvas.style.display = 'none';
+        return;
+    }
+
+    // Map display coords → source canvas coords
+    const scaleX = displayCanvas.width  / rect.width;
+    const scaleY = displayCanvas.height / rect.height;
+    const srcX   = relX * scaleX;
+    const srcY   = relY * scaleY;
+
+    // Source rect size (in original pixels) that maps to the magnifier at 3×
+    const srcW = MAGNIFIER_SIZE / MAGNIFIER_ZOOM;
+    const srcH = MAGNIFIER_SIZE / MAGNIFIER_ZOOM;
+
+    const mCtx = magnifierCanvas.getContext('2d')!;
+    mCtx.clearRect(0, 0, MAGNIFIER_SIZE, MAGNIFIER_SIZE);
+
+    // Clip to circle
+    mCtx.save();
+    mCtx.beginPath();
+    mCtx.arc(MAGNIFIER_SIZE / 2, MAGNIFIER_SIZE / 2, MAGNIFIER_SIZE / 2, 0, Math.PI * 2);
+    mCtx.clip();
+
+    mCtx.drawImage(
+        displayCanvas!,
+        srcX - srcW / 2, srcY - srcH / 2, srcW, srcH,
+        0, 0, MAGNIFIER_SIZE, MAGNIFIER_SIZE
+    );
+    mCtx.restore();
+
+    // Position lens near cursor (offset so it doesn't cover the cursor)
+    const offset = 20;
+    let lensLeft = e.clientX + offset;
+    let lensTop  = e.clientY + offset;
+    if (lensLeft + MAGNIFIER_SIZE > window.innerWidth)  lensLeft = e.clientX - offset - MAGNIFIER_SIZE;
+    if (lensTop  + MAGNIFIER_SIZE > window.innerHeight) lensTop  = e.clientY - offset - MAGNIFIER_SIZE;
+
+    magnifierCanvas.style.left    = `${lensLeft}px`;
+    magnifierCanvas.style.top     = `${lensTop}px`;
+    magnifierCanvas.style.display = 'block';
+}
+
+displayImg.addEventListener('mousemove', updateMagnifier);
+displayImg.addEventListener('mouseleave', () => {
+    magnifierCanvas.style.display = 'none';
+});
+
 // --- Init ---
 
 (async () => {
@@ -298,6 +364,7 @@ resetBtn.addEventListener('click', () => {
     equalizedDataUrl = '';
     originalCanvas   = null;
     equalizedCanvas  = null;
+    displayCanvas    = null;
     lastFile         = null;
     centeringActive  = false;
     equalizeActive   = false;
