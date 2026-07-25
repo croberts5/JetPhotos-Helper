@@ -51,7 +51,7 @@
   "about_section_bugfixes":  { "message": "Bug Fixes" },
   "about_bugfix_trim":       { "message": "Input fields automatically trimmed of leading/trailing spaces" },
   "about_bugfix_serial":     { "message": "Serial number preserved when registration has no auto-fill match" },
-  "about_bugfix_reg_copy":   { "message": "Registration auto-populated in form when not found in auto-fill database" },
+  "about_bugfix_reg_copy":   { "message": "Registration auto-populated in form when not found during auto-fill" },
 
   "content_existing_entry": { "message": "Click here to view your existing submission(s)" },
   "content_latest_shoot":   { "message": "Latest shoot:" },

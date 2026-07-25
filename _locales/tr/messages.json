@@ -51,7 +51,7 @@
   "about_section_bugfixes":  { "message": "Hata Düzeltmeleri" },
   "about_bugfix_trim":       { "message": "Giriş alanlarındaki baştaki/sondaki boşluklar otomatik kaldırılır" },
   "about_bugfix_serial":     { "message": "Kayıt numarası otomatik doldurma ile eşleşmediğinde seri numarası korunur" },
-  "about_bugfix_reg_copy":   { "message": "Otomatik doldurma veritabanında bulunamazsa kayıt numarası otomatik olarak forma girilir" },
+  "about_bugfix_reg_copy":   { "message": "Otomatik doldurma sırasında bulunamazsa kayıt numarası otomatik olarak forma girilir" },
 
   "content_existing_entry": { "message": "Mevcut gönderimleri görüntülemek için tıklayın" },
   "content_latest_shoot":   { "message": "Son çekim:" },

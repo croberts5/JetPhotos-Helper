@@ -322,27 +322,50 @@ function updateMagnifier(e: MouseEvent): void {
 
 // --- Centering mirror lines ---
 
-displayImg.addEventListener('click', (e) => {
-    if (!centeringActive || !originalCanvas) return;
+let mirrorDragButton: number | null = null;  // 0 = left (horizontal pair), 2 = right (vertical pair)
+let mirrorRafPending = false;
 
+function scheduleMirrorUpdate(): void {
+    if (mirrorRafPending) return;
+    mirrorRafPending = true;
+    requestAnimationFrame(() => {
+        mirrorRafPending = false;
+        updateDisplay();
+    });
+}
+
+function setMirrorFromEvent(e: MouseEvent, button: number): void {
+    if (!originalCanvas) return;
     const rect = displayImg.getBoundingClientRect();
-    const relY = e.clientY - rect.top;
-    if (relY < 0 || relY > rect.height) return;
+    if (button === 0) {
+        const relY = Math.min(Math.max(e.clientY - rect.top, 0), rect.height);
+        mirrorY = relY * (originalCanvas.height / rect.height);
+    } else {
+        const relX = Math.min(Math.max(e.clientX - rect.left, 0), rect.width);
+        mirrorX = relX * (originalCanvas.width / rect.width);
+    }
+    scheduleMirrorUpdate();
+}
 
-    mirrorY = relY * (originalCanvas.height / rect.height);
-    updateDisplay();
+displayImg.addEventListener('mousedown', (e) => {
+    if (!centeringActive || !originalCanvas) return;
+    if (e.button !== 0 && e.button !== 2) return;
+    e.preventDefault();  // also suppresses native image dragging
+    mirrorDragButton = e.button;
+    setMirrorFromEvent(e, e.button);
+});
+
+window.addEventListener('mousemove', (e) => {
+    if (mirrorDragButton === null) return;
+    setMirrorFromEvent(e, mirrorDragButton);
+});
+
+window.addEventListener('mouseup', (e) => {
+    if (mirrorDragButton === e.button) mirrorDragButton = null;
 });
 
 displayImg.addEventListener('contextmenu', (e) => {
-    if (!centeringActive || !originalCanvas) return;
-    e.preventDefault();
-
-    const rect = displayImg.getBoundingClientRect();
-    const relX = e.clientX - rect.left;
-    if (relX < 0 || relX > rect.width) return;
-
-    mirrorX = relX * (originalCanvas.width / rect.width);
-    updateDisplay();
+    if (centeringActive) e.preventDefault();
 });
 
 displayImg.addEventListener('mousemove', updateMagnifier);

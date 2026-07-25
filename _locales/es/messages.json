@@ -51,7 +51,7 @@
   "about_section_bugfixes":  { "message": "Correcciones" },
   "about_bugfix_trim":       { "message": "Campos de entrada recortados automáticamente de espacios" },
   "about_bugfix_serial":     { "message": "Número de serie conservado cuando la matrícula no tiene coincidencia de autocompletado" },
-  "about_bugfix_reg_copy":   { "message": "Matrícula autocompletada en el formulario si no está en la base de datos de autocompletado" },
+  "about_bugfix_reg_copy":   { "message": "Matrícula autocompletada en el formulario cuando no se encuentra durante el autocompletado" },
 
   "content_existing_entry": { "message": "Haz clic aquí para ver tus envíos existentes" },
   "content_latest_shoot":   { "message": "Última toma:" },

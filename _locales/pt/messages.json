@@ -51,7 +51,7 @@
   "about_section_bugfixes":  { "message": "Correções" },
   "about_bugfix_trim":       { "message": "Campos de entrada automaticamente limpos de espaços iniciais/finais" },
   "about_bugfix_serial":     { "message": "Número de série preservado quando a matrícula não tem correspondência no preenchimento automático" },
-  "about_bugfix_reg_copy":   { "message": "Matrícula automaticamente preenchida no formulário se não encontrada na base de dados de preenchimento automático" },
+  "about_bugfix_reg_copy":   { "message": "Matrícula automaticamente preenchida no formulário quando não encontrada durante o preenchimento automático" },
 
   "content_existing_entry": { "message": "Clique aqui para ver as suas submissões existentes" },
   "content_latest_shoot":   { "message": "Último registo:" },

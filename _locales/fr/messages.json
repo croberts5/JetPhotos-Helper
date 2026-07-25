@@ -51,7 +51,7 @@
   "about_section_bugfixes":  { "message": "Corrections" },
   "about_bugfix_trim":       { "message": "Espaces superflus supprimés automatiquement dans les champs de saisie" },
   "about_bugfix_serial":     { "message": "Numéro de série conservé si l'immatriculation est absente de la base d'autocomplétion" },
-  "about_bugfix_reg_copy":   { "message": "Immatriculation automatiquement remplie dans le formulaire si absente de la base d'autocomplétion" },
+  "about_bugfix_reg_copy":   { "message": "Immatriculation automatiquement remplie dans le formulaire lorsqu'elle n'est pas trouvée lors de l'autocomplétion" },
 
   "content_existing_entry": { "message": "Cliquez ici pour voir vos soumissions existantes" },
   "content_latest_shoot":   { "message": "Dernière prise de vue :" },

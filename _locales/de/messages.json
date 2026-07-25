@@ -51,7 +51,7 @@
   "about_section_bugfixes":  { "message": "Fehlerbehebungen" },
   "about_bugfix_trim":       { "message": "Eingabefelder werden automatisch von führenden/nachgestellten Leerzeichen bereinigt" },
   "about_bugfix_serial":     { "message": "Seriennummer bleibt erhalten, wenn das Kennzeichen keine Autofill-Übereinstimmung hat" },
-  "about_bugfix_reg_copy":   { "message": "Kennzeichen wird automatisch im Formular eingetragen, wenn es nicht in der Autofill-Datenbank gefunden wird" },
+  "about_bugfix_reg_copy":   { "message": "Kennzeichen wird automatisch im Formular eingetragen, wenn es beim automatischen Ausfüllen nicht gefunden wird" },
 
   "content_existing_entry": { "message": "Klicken Sie hier, um Ihre vorhandenen Einreichungen anzuzeigen" },
   "content_latest_shoot":   { "message": "Letzte Aufnahme:" },

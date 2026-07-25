@@ -51,7 +51,7 @@
   "about_section_bugfixes":  { "message": "错误修复" },
   "about_bugfix_trim":       { "message": "输入框自动去除首尾空格" },
   "about_bugfix_serial":     { "message": "注册号无自动填充匹配时，序列号得以保留" },
-  "about_bugfix_reg_copy":   { "message": "注册号未在自动填充数据库中找到时，自动填入表单" },
+  "about_bugfix_reg_copy":   { "message": "自动填充时未找到注册号，将自动填入表单" },
 
   "content_existing_entry": { "message": "点击此处查看您的现有提交" },
   "content_latest_shoot":   { "message": "最近拍摄：" },

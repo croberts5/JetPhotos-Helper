@@ -51,7 +51,7 @@
   "about_section_bugfixes":  { "message": "バグ修正" },
   "about_bugfix_trim":       { "message": "入力フィールドの前後の空白を自動的に除去" },
   "about_bugfix_serial":     { "message": "オートフィルに一致しない登録番号入力時もシリアル番号を保持" },
-  "about_bugfix_reg_copy":   { "message": "自動入力データベースにない場合、登録番号を自動的にフォームに入力" },
+  "about_bugfix_reg_copy":   { "message": "自動入力で見つからない場合、登録番号を自動的にフォームに入力" },
 
   "content_existing_entry": { "message": "クリックして既存の投稿を確認する" },
   "content_latest_shoot":   { "message": "最新撮影：" },
