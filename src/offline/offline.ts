@@ -26,6 +26,8 @@ let centeringActive  = false;
 let equalizeActive   = false;
 let horizonActive    = false;
 let histogramActive  = false;
+let mirrorY: number | null = null;  // left-click Y in source-canvas pixels, for centering mirror lines
+let mirrorX: number | null = null;  // right-click X in source-canvas pixels, for centering mirror lines
 
 // --- Display ---
 
@@ -61,6 +63,28 @@ function buildDisplay(): string {
             ctx.lineTo(x1, y);
             ctx.stroke();
         }
+
+        // Clicked mirror lines: click position plus its reflection across the image center
+        if (mirrorY !== null || mirrorX !== null) {
+            ctx.strokeStyle = '#ff0000';
+            if (mirrorY !== null) {
+                for (const y of [mirrorY, canvas.height - mirrorY]) {
+                    ctx.beginPath();
+                    ctx.moveTo(0, y);
+                    ctx.lineTo(canvas.width, y);
+                    ctx.stroke();
+                }
+            }
+            if (mirrorX !== null) {
+                for (const x of [mirrorX, canvas.width - mirrorX]) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, 0);
+                    ctx.lineTo(x, canvas.height);
+                    ctx.stroke();
+                }
+            }
+            ctx.strokeStyle = '#ffff00';
+        }
     }
 
     if (horizonActive) {
@@ -84,6 +108,8 @@ function buildDisplay(): string {
 
 function updateDisplay(): void {
     displayImg.src = buildDisplay();
+    displayImg.classList.toggle('crosshair', centeringActive);
+    displayImg.classList.toggle('zoom-in', horizonActive);
 }
 
 // --- Histogram ---
@@ -110,39 +136,73 @@ function renderHistogram(): void {
     ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, W, H);
 
-    // Scale to 99th-percentile bin height so dominant spikes clip at the top
-    const sortedCounts = Array.from(hist).sort((a, b) => a - b);
-    const scaleMax = Math.max(sortedCounts[Math.floor(256 * 0.99)], 1);
-    const avgY     = H - (N / 256 / scaleMax) * H;
+    // Y-axis ceiling = 4.55x the mean bin count; dominant peaks clip flat at the top
+    const meanCount = N / 256;
+    const scaleMax  = meanCount * 4.55;
+    const binY = (i: number) => H - Math.min(hist[i] / scaleMax, 1) * H;
 
     // Gray filled area
     ctx.beginPath();
     ctx.moveTo(0, H);
     for (let i = 0; i < 256; i++) {
-        ctx.lineTo((i / 255) * W, H - (hist[i] / scaleMax) * H);
+        ctx.lineTo((i / 255) * W, binY(i));
     }
     ctx.lineTo(W, H);
     ctx.closePath();
-    ctx.fillStyle = '#8a8a8a';
+    ctx.fillStyle = '#a0a0a0';
     ctx.fill();
 
     // Blue outline
     ctx.beginPath();
-    ctx.moveTo(0, H - (hist[0] / scaleMax) * H);
+    ctx.moveTo(0, binY(0));
     for (let i = 1; i < 256; i++) {
-        ctx.lineTo((i / 255) * W, H - (hist[i] / scaleMax) * H);
+        ctx.lineTo((i / 255) * W, binY(i));
     }
-    ctx.strokeStyle = '#6baed6';
+    ctx.strokeStyle = '#61a9f3';
     ctx.lineWidth   = 2;
     ctx.stroke();
 
-    // Pink average line
+    // Pink average line, drawn on top
+    const avgY = H - (meanCount / scaleMax) * H;
     ctx.beginPath();
     ctx.moveTo(0, avgY);
     ctx.lineTo(W, avgY);
-    ctx.strokeStyle = '#ff80a8';
-    ctx.lineWidth   = 1;
+    ctx.strokeStyle = '#f495c4';
+    ctx.lineWidth   = 2;
     ctx.stroke();
+
+    // Contrast stats: 0.5%-percentile black/white points and clipping percentages
+    const tail = N * 0.005;
+    let blackPoint = 0;
+    for (let i = 0, run = 0; i < 256; i++) { run += hist[i]; if (run >= tail) { blackPoint = i; break; } }
+    let whitePoint = 255;
+    for (let i = 255, run = 0; i >= 0; i--) { run += hist[i]; if (run >= tail) { whitePoint = i; break; } }
+    const clipShadow    = (hist[0] + hist[1] + hist[2]) / N * 100;
+    const clipHighlight = (hist[253] + hist[254] + hist[255]) / N * 100;
+
+    // Dashed markers at the black and white points
+    ctx.strokeStyle = '#555555';
+    ctx.lineWidth   = 1;
+    ctx.setLineDash([4, 3]);
+    for (const p of [blackPoint, whitePoint]) {
+        const x = Math.round((p / 255) * W) + 0.5;
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, H);
+        ctx.stroke();
+    }
+    ctx.setLineDash([]);
+
+    // Text readout, top-left
+    const line1 = `${t('offline_hist_black')} ${blackPoint} · ${t('offline_hist_white')} ${whitePoint} · ${t('offline_hist_range')} ${whitePoint - blackPoint}`;
+    const line2 = `${t('offline_hist_clip')} ${clipShadow.toFixed(1)}% / ${clipHighlight.toFixed(1)}%`;
+    ctx.font = '12px system-ui, sans-serif';
+    const chipW = Math.max(ctx.measureText(line1).width, ctx.measureText(line2).width) + 12;
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+    ctx.fillRect(4, 4, chipW, 36);
+    ctx.fillStyle = '#333333';
+    ctx.fillText(line1, 10, 18);
+    ctx.fillText(line2, 10, 33);
 }
 
 // --- State helpers ---
@@ -189,6 +249,8 @@ async function processFile(file: File): Promise<void> {
         equalizeActive  = false;
         horizonActive   = false;
         histogramActive = false;
+        mirrorY         = null;
+        mirrorX         = null;
         resetButtonLabels();
 
         updateDisplay();
@@ -258,6 +320,31 @@ function updateMagnifier(e: MouseEvent): void {
     magnifierCanvas.style.display = 'block';
 }
 
+// --- Centering mirror lines ---
+
+displayImg.addEventListener('click', (e) => {
+    if (!centeringActive || !originalCanvas) return;
+
+    const rect = displayImg.getBoundingClientRect();
+    const relY = e.clientY - rect.top;
+    if (relY < 0 || relY > rect.height) return;
+
+    mirrorY = relY * (originalCanvas.height / rect.height);
+    updateDisplay();
+});
+
+displayImg.addEventListener('contextmenu', (e) => {
+    if (!centeringActive || !originalCanvas) return;
+    e.preventDefault();
+
+    const rect = displayImg.getBoundingClientRect();
+    const relX = e.clientX - rect.left;
+    if (relX < 0 || relX > rect.width) return;
+
+    mirrorX = relX * (originalCanvas.width / rect.width);
+    updateDisplay();
+});
+
 displayImg.addEventListener('mousemove', updateMagnifier);
 displayImg.addEventListener('mouseleave', () => {
     magnifierCanvas.style.display = 'none';
@@ -305,6 +392,8 @@ function deactivateAll(): void {
     equalizeActive  = false;
     horizonActive   = false;
     histogramActive = false;
+    mirrorY         = null;
+    mirrorX         = null;
     centeringBtn.classList.remove('active');
     equalizeBtn.classList.remove('active');
     horizonBtn.classList.remove('active');
@@ -370,6 +459,8 @@ resetBtn.addEventListener('click', () => {
     equalizeActive   = false;
     horizonActive    = false;
     histogramActive  = false;
+    mirrorY          = null;
+    mirrorX          = null;
     resetButtonLabels();
     displayImg.src = '';
     previewArea.style.display = 'none';

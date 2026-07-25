@@ -120,6 +120,10 @@ h1 { font-size: 22px; margin: 0 0 4px; }
   display: block;
 }
 
+.preview-wrap img.crosshair {
+  cursor: crosshair;
+}
+
 .actions {
   margin-top: 16px;
   display: flex;
@@ -214,10 +218,8 @@ button {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  border: 1px solid #aaa;
-  border-radius: 4px;
+  border: 1px solid #dadada;
   pointer-events: none;
-  opacity: 0.92;
 }
 
 #status {
