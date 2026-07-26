@@ -6,4 +6,9 @@ import { loadLocale, initDomI18n } from '../i18n';
     const locale = stored['jpHelper.locale'] as string | undefined;
     if (locale) await loadLocale(locale);
     initDomI18n();
+
+    const versionEl = document.getElementById('version');
+    if (versionEl) {
+        versionEl.textContent = `Version ${browser.runtime.getManifest().version}`;
+    }
 })();

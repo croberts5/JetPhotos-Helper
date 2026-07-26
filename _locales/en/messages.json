@@ -53,6 +53,8 @@
   "about_section_bugfixes":  { "message": "Bug Fixes" },
   "about_bugfix_trim":       { "message": "Input fields automatically trimmed of leading/trailing spaces" },
   "about_bugfix_serial":     { "message": "Serial number preserved when registration has no auto-fill match" },
+  "about_credit_polyfill":   { "message": "Includes" },
+  "about_credit_airports":   { "message": "Airport data from" },
   "about_bugfix_reg_copy":   { "message": "Registration auto-populated in form when not found during auto-fill" },
 
   "content_existing_entry": { "message": "Click here to view your existing submission(s)" },

@@ -106,6 +106,21 @@ h1 {
   text-decoration: underline;
 }
 
+.credits {
+  font-size: 13px;
+  color: #666;
+  margin: 16px 0 0;
+  line-height: 1.5;
+}
+
+.credits p {
+  margin: 0 0 6px;
+}
+
+.credits a {
+  color: #888;
+}
+
 .bmc-prompt {
   font-size: 13px;
   color: #888;

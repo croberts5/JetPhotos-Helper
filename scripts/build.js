@@ -21,9 +21,11 @@ function copyDir(src, dest) {
 
 function copyStaticAssets() {
     // Root assets
-    for (const f of ['manifest.json', 'favicon.png', 'airports.json', 'browser-polyfill.js']) {
+    for (const f of ['manifest.json', 'favicon.png', 'airports.json', 'THIRD_PARTY_NOTICES.md']) {
         copy(f, `dist/${f}`);
     }
+    // Extension icons
+    copyDir('icons', 'dist/icons');
     // HTML + CSS files
     copy('src/offline/offline.html', 'dist/offline/offline.html');
     copy('src/offline/offline.css',  'dist/offline/offline.css');

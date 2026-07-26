@@ -53,6 +53,8 @@
   "about_section_bugfixes":  { "message": "Correções" },
   "about_bugfix_trim":       { "message": "Campos de entrada automaticamente limpos de espaços iniciais/finais" },
   "about_bugfix_serial":     { "message": "Número de série preservado quando a matrícula não tem correspondência no preenchimento automático" },
+  "about_credit_polyfill":   { "message": "Inclui" },
+  "about_credit_airports":   { "message": "Dados de aeroportos de" },
   "about_bugfix_reg_copy":   { "message": "Matrícula automaticamente preenchida no formulário quando não encontrada durante o preenchimento automático" },
 
   "content_existing_entry": { "message": "Clique aqui para ver as suas submissões existentes" },

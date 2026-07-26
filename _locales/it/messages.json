@@ -53,6 +53,8 @@
   "about_section_bugfixes":  { "message": "Correzioni" },
   "about_bugfix_trim":       { "message": "Campi di input automaticamente ripuliti dagli spazi iniziali/finali" },
   "about_bugfix_serial":     { "message": "Numero di serie preservato quando la registrazione non ha corrispondenza nel completamento automatico" },
+  "about_credit_polyfill":   { "message": "Include" },
+  "about_credit_airports":   { "message": "Dati aeroportuali da" },
   "about_bugfix_reg_copy":   { "message": "Registrazione inserita automaticamente nel modulo quando non viene trovata durante il completamento automatico" },
 
   "content_existing_entry": { "message": "Clicca qui per visualizzare i tuoi invii esistenti" },

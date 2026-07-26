@@ -12,7 +12,6 @@ window.addEventListener('message', (event) => {
     ) return;
 
     const payload = (event.data as { payload: unknown }).payload;
-    console.log('Received from page-hook:', payload);
 
     window.postMessage({ source: 'EXTENSION', payload: { data: payload } }, '*');
 });

@@ -53,6 +53,8 @@
   "about_section_bugfixes":  { "message": "Исправления" },
   "about_bugfix_trim":       { "message": "Лишние пробелы в полях ввода удаляются автоматически" },
   "about_bugfix_serial":     { "message": "Серийный номер сохраняется, если регистрационный номер не найден в автозаполнении" },
+  "about_credit_polyfill":   { "message": "Включает" },
+  "about_credit_airports":   { "message": "Данные об аэропортах из" },
   "about_bugfix_reg_copy":   { "message": "Регистрационный номер автоматически вводится в форму, если не найден при автозаполнении" },
 
   "content_existing_entry": { "message": "Нажмите здесь, чтобы просмотреть существующие отправки" },
