@@ -1,16 +1,11 @@
-// Per-channel (independent R, G, B) histogram equalization,
-// followed by a gamma correction to match JetPhotos' server-side output.
-// Tune GAMMA to dial in the match: higher = darker midtones + more crushed shadows.
-const GAMMA = 1.05;
+// Per-channel (independent R, G, B) histogram equalization, matching
+// JetPhotos' server-side output. JetPhotos derives its histogram stats from
+// the full-resolution image, so when equalizing a downsized copy, pass the
+// full-res ImageData as statsSource.
 
-const gammaLut = new Uint8ClampedArray(256);
-for (let i = 0; i < 256; i++) {
-    gammaLut[i] = Math.round(Math.pow(i / 255, GAMMA) * 255);
-}
-
-export function equalizeImageData(imageData: ImageData): ImageData {
-    const src = imageData.data;
-    const N = imageData.width * imageData.height;
+export function equalizeImageData(imageData: ImageData, statsSource: ImageData = imageData): ImageData {
+    const src = statsSource.data;
+    const N = statsSource.width * statsSource.height;
 
     const hist: [Uint32Array, Uint32Array, Uint32Array] = [
         new Uint32Array(256),
@@ -41,17 +36,17 @@ export function equalizeImageData(imageData: ImageData): ImageData {
                 cdfMin = cdf;
                 foundMin = true;
             }
-            lut[c][v] = gammaLut[Math.round((cdf - cdfMin) / (N - cdfMin) * 255)];
+            lut[c][v] = Math.round((cdf - cdfMin) / (N - cdfMin) * 255);
         }
     }
 
-    const out = new ImageData(new Uint8ClampedArray(src), imageData.width, imageData.height);
+    const out = new ImageData(new Uint8ClampedArray(imageData.data), imageData.width, imageData.height);
     const dst = out.data;
 
     for (let i = 0; i < dst.length; i += 4) {
-        dst[i]     = lut[0][src[i]];
-        dst[i + 1] = lut[1][src[i + 1]];
-        dst[i + 2] = lut[2][src[i + 2]];
+        dst[i]     = lut[0][dst[i]];
+        dst[i + 1] = lut[1][dst[i + 1]];
+        dst[i + 2] = lut[2][dst[i + 2]];
     }
 
     return out;

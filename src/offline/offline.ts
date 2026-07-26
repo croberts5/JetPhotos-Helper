@@ -231,7 +231,11 @@ async function processFile(file: File): Promise<void> {
 
     try {
         lastFile = file;
-        const { canvas: raw } = await loadFileToCanvas(file);
+        const { canvas: raw, ctx: rawCtx } = await loadFileToCanvas(file);
+        // JetPhotos derives equalization stats from the full-res image even
+        // though the equalized output is downsized, so grab them before resizing.
+        const fullResData = rawCtx.getImageData(0, 0, raw.width, raw.height);
+
         const canvas = compressCheckbox.checked ? resizeToLongSide(raw, 1024) : raw;
         originalCanvas  = canvas;
         originalDataUrl = canvas.toDataURL('image/jpeg', 0.92);
@@ -242,7 +246,7 @@ async function processFile(file: File): Promise<void> {
         const eqCtx = equalizedCanvas.getContext('2d')!;
         eqCtx.drawImage(canvas, 0, 0);
         const imageData = eqCtx.getImageData(0, 0, equalizedCanvas.width, equalizedCanvas.height);
-        eqCtx.putImageData(equalizeImageData(imageData), 0, 0);
+        eqCtx.putImageData(equalizeImageData(imageData, fullResData), 0, 0);
         equalizedDataUrl = equalizedCanvas.toDataURL('image/jpeg', 0.92);
 
         centeringActive = false;
