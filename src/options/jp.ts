@@ -404,8 +404,7 @@ function localizeUtcTimestamps(): void {
     await hideLeftColumnUpload();
     await enableManualDateEntry();
     const { iataIcaoAutoComplete, localizeUtcTimestamp, showRegSerialStatus } = await getUserPreferences();
-    // Default-on: only an explicit false (user unchecked the option) hides it.
-    if (showRegSerialStatus !== false) submissionButtonWrapper?.appendChild(warningDiv);
+    if (showRegSerialStatus) submissionButtonWrapper?.appendChild(warningDiv);
     if (iataIcaoAutoComplete) initAirportLookup();
     if (localizeUtcTimestamp) localizeUtcTimestamps();
 })();

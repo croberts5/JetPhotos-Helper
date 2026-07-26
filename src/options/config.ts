@@ -103,7 +103,7 @@ document.getElementById('aboutBtn')?.addEventListener('click', () => {
 
     checkboxes.forEach(cb => {
         // defaultChecked mirrors the HTML `checked` attribute, letting a
-        // checkbox opt into default-on (e.g. showRegSerialStatus).
+        // checkbox opt into default-on.
         cb.checked = (stored[`${NAMESPACE}.${cb.id}`] as boolean) ?? cb.defaultChecked;
     });
 })();

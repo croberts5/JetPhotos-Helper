@@ -20,6 +20,8 @@ function copyDir(src, dest) {
 }
 
 function copyStaticAssets() {
+    // Start from a clean slate so stale files never ship.
+    fs.rmSync('dist', { recursive: true, force: true });
     // Root assets
     for (const f of ['manifest.json', 'favicon.png', 'airports.json', 'THIRD_PARTY_NOTICES.md']) {
         copy(f, `dist/${f}`);
