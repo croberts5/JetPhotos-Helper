@@ -213,8 +213,6 @@ warningDiv.appendChild(registrationDiv);
 warningDiv.appendChild(serialDiv);
 updateWarnings();
 
-submissionButtonWrapper?.appendChild(warningDiv);
-
 window.addEventListener('message', async (event) => {
     // Security checks
     if (event.source !== window) return;
@@ -362,7 +360,7 @@ async function hideLeftColumnUpload() {
 
 async function getUserPreferences() {
     const NAMESPACE = 'jpHelper';
-    const keys = ['fetchExistingReg', 'showLatestDate', 'hideLeftColumnUpload', 'allowManualDateEntry', 'iataIcaoAutoComplete', 'localizeUtcTimestamp']
+    const keys = ['fetchExistingReg', 'showLatestDate', 'hideLeftColumnUpload', 'allowManualDateEntry', 'iataIcaoAutoComplete', 'localizeUtcTimestamp', 'showRegSerialStatus']
         .map(k => `${NAMESPACE}.${k}`);
 
     const result = await browser.storage.local.get(keys);
@@ -374,6 +372,7 @@ async function getUserPreferences() {
         allowManualDateEntry:  result[`${NAMESPACE}.allowManualDateEntry`]   as boolean | undefined,
         iataIcaoAutoComplete:  result[`${NAMESPACE}.iataIcaoAutoComplete`]   as boolean | undefined,
         localizeUtcTimestamp:  result[`${NAMESPACE}.localizeUtcTimestamp`]   as boolean | undefined,
+        showRegSerialStatus:   result[`${NAMESPACE}.showRegSerialStatus`]    as boolean | undefined,
     };
 }
 
@@ -404,7 +403,9 @@ function localizeUtcTimestamps(): void {
 (async () => {
     await hideLeftColumnUpload();
     await enableManualDateEntry();
-    const { iataIcaoAutoComplete, localizeUtcTimestamp } = await getUserPreferences();
+    const { iataIcaoAutoComplete, localizeUtcTimestamp, showRegSerialStatus } = await getUserPreferences();
+    // Default-on: only an explicit false (user unchecked the option) hides it.
+    if (showRegSerialStatus !== false) submissionButtonWrapper?.appendChild(warningDiv);
     if (iataIcaoAutoComplete) initAirportLookup();
     if (localizeUtcTimestamp) localizeUtcTimestamps();
 })();

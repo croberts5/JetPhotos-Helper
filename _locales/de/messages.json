@@ -38,6 +38,8 @@
   "option_hide_guidelines_desc":  { "message": "Blendet den Richtlinientext auf der linken Seite der Upload-Seite aus." },
   "option_localize_utc_label":    { "message": "UTC-Zeitstempel lokalisieren" },
   "option_localize_utc_desc":     { "message": "Konvertiert UTC-Zeitstempel auf der Seite in Ihre lokale Zeitzone." },
+  "option_show_status_label":     { "message": "Kennzeichen- & Seriennummern-Prüfung anzeigen" },
+  "option_show_status_desc":      { "message": "Zeigt den Prüfbereich für Kennzeichen und Seriennummer unter dem Upload-Button an." },
   "option_launch_offline":        { "message": "Offline-Modus starten" },
 
   "about_bmc_prompt":        { "message": "Ist diese Erweiterung nützlich?" },

@@ -38,6 +38,8 @@
   "option_hide_guidelines_desc":  { "message": "アップロードページ左側の投稿ガイドラインテキストを非表示にします。" },
   "option_localize_utc_label":    { "message": "UTCタイムスタンプをローカル時刻に変換" },
   "option_localize_utc_desc":     { "message": "ページ上のUTCタイムスタンプをローカルタイムゾーンに変換します。" },
+  "option_show_status_label":     { "message": "登録番号・シリアル番号チェックを表示" },
+  "option_show_status_desc":      { "message": "アップロードボタンの下に登録番号とシリアル番号のチェック欄を表示します。" },
   "option_launch_offline":        { "message": "オフラインモードを起動する" },
 
   "about_bmc_prompt":        { "message": "この拡張機能が役に立ちましたか？" },

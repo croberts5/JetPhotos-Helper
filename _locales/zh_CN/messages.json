@@ -38,6 +38,8 @@
   "option_hide_guidelines_desc":  { "message": "隐藏上传页面左侧的提交指南文本。" },
   "option_localize_utc_label":    { "message": "本地化UTC时间戳" },
   "option_localize_utc_desc":     { "message": "将页面上的UTC时间戳转换为您的本地时区。" },
+  "option_show_status_label":     { "message": "显示注册号和序列号检查" },
+  "option_show_status_desc":      { "message": "在上传按钮下方显示注册号和序列号检查区域。" },
   "option_launch_offline":        { "message": "启动离线模式" },
 
   "about_bmc_prompt":        { "message": "觉得这个扩展有用？" },

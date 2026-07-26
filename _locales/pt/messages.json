@@ -38,6 +38,8 @@
   "option_hide_guidelines_desc":  { "message": "Oculta o texto das diretrizes de envio no lado esquerdo da página de carregamento." },
   "option_localize_utc_label":    { "message": "Converter carimbo de data/hora UTC" },
   "option_localize_utc_desc":     { "message": "Converte os carimbos de data/hora UTC da página para o seu fuso horário local." },
+  "option_show_status_label":     { "message": "Mostrar verificação de matrícula e número de série" },
+  "option_show_status_desc":      { "message": "Mostra a seção de verificação de matrícula e número de série abaixo do botão de envio." },
   "option_launch_offline":        { "message": "Iniciar modo offline" },
 
   "about_bmc_prompt":        { "message": "Acha esta extensão útil?" },

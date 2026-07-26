@@ -38,6 +38,8 @@
   "option_hide_guidelines_desc":  { "message": "Yükleme sayfasının sol tarafındaki gönderim yönergeleri metnini gizler." },
   "option_localize_utc_label":    { "message": "UTC zaman damgasını yerelleştir" },
   "option_localize_utc_desc":     { "message": "Sayfadaki UTC zaman damgalarını yerel saat diliminize dönüştürür." },
+  "option_show_status_label":     { "message": "Tescil ve seri numarası kontrolünü göster" },
+  "option_show_status_desc":      { "message": "Yükleme düğmesinin altında tescil ve seri numarası kontrol bölümünü gösterir." },
   "option_launch_offline":        { "message": "Çevrimdışı modu başlat" },
 
   "about_bmc_prompt":        { "message": "Bu eklentiyi faydalı buldunuz mu?" },

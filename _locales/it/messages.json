@@ -38,6 +38,8 @@
   "option_hide_guidelines_desc":  { "message": "Nasconde il testo delle linee guida sul lato sinistro della pagina di caricamento." },
   "option_localize_utc_label":    { "message": "Localizza il timestamp UTC" },
   "option_localize_utc_desc":     { "message": "Converte i timestamp UTC della pagina nel tuo fuso orario locale." },
+  "option_show_status_label":     { "message": "Mostra verifica di registrazione e numero di serie" },
+  "option_show_status_desc":      { "message": "Mostra la sezione di verifica di registrazione e numero di serie sotto il pulsante di caricamento." },
   "option_launch_offline":        { "message": "Avvia la modalità offline" },
 
   "about_bmc_prompt":        { "message": "Trovi questa estensione utile?" },

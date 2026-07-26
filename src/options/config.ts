@@ -102,6 +102,8 @@ document.getElementById('aboutBtn')?.addEventListener('click', () => {
     setActiveLang(activeLang);
 
     checkboxes.forEach(cb => {
-        cb.checked = (stored[`${NAMESPACE}.${cb.id}`] as boolean) ?? false;
+        // defaultChecked mirrors the HTML `checked` attribute, letting a
+        // checkbox opt into default-on (e.g. showRegSerialStatus).
+        cb.checked = (stored[`${NAMESPACE}.${cb.id}`] as boolean) ?? cb.defaultChecked;
     });
 })();

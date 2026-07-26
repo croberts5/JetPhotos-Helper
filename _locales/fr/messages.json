@@ -38,6 +38,8 @@
   "option_hide_guidelines_desc":  { "message": "Masque le texte des directives de soumission sur le côté gauche de la page d'envoi." },
   "option_localize_utc_label":    { "message": "Localiser l'horodatage UTC" },
   "option_localize_utc_desc":     { "message": "Convertit les horodatages UTC de la page dans votre fuseau horaire local." },
+  "option_show_status_label":     { "message": "Afficher la vérification de l'immatriculation et du numéro de série" },
+  "option_show_status_desc":      { "message": "Affiche la section de vérification de l'immatriculation et du numéro de série sous le bouton d'envoi." },
   "option_launch_offline":        { "message": "Lancer le mode hors ligne" },
 
   "about_bmc_prompt":        { "message": "Cette extension vous est utile ?" },

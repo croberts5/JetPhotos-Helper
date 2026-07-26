@@ -38,6 +38,8 @@
   "option_hide_guidelines_desc":  { "message": "Скрывает текст руководства по отправке в левой части страницы загрузки." },
   "option_localize_utc_label":    { "message": "Локализовать метку времени UTC" },
   "option_localize_utc_desc":     { "message": "Преобразует метки времени UTC на странице в ваш локальный часовой пояс." },
+  "option_show_status_label":     { "message": "Показывать проверку регистрации и серийного номера" },
+  "option_show_status_desc":      { "message": "Показывает блок проверки регистрации и серийного номера под кнопкой загрузки." },
   "option_launch_offline":        { "message": "Запустить автономный режим" },
 
   "about_bmc_prompt":        { "message": "Расширение оказалось полезным?" },

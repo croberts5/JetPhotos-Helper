@@ -38,6 +38,8 @@
   "option_hide_guidelines_desc":  { "message": "Oculta el texto de directrices de envío del lado izquierdo de la página de subida." },
   "option_localize_utc_label":    { "message": "Convertir marca de tiempo UTC" },
   "option_localize_utc_desc":     { "message": "Convierte las marcas de tiempo UTC de la página a tu zona horaria local." },
+  "option_show_status_label":     { "message": "Mostrar verificación de matrícula y número de serie" },
+  "option_show_status_desc":      { "message": "Muestra la sección de verificación de matrícula y número de serie debajo del botón de subida." },
   "option_launch_offline":        { "message": "Iniciar modo sin conexión" },
 
   "about_bmc_prompt":        { "message": "¿Te resulta útil esta extensión?" },

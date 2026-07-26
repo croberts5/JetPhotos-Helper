@@ -38,6 +38,8 @@
   "option_hide_guidelines_desc":  { "message": "Hides the submission guidelines text found on the left-hand side of the upload page." },
   "option_localize_utc_label":    { "message": "Localize UTC timestamp" },
   "option_localize_utc_desc":     { "message": "Converts UTC timestamps on the page to your local time zone." },
+  "option_show_status_label":     { "message": "Show registration & serial check" },
+  "option_show_status_desc":      { "message": "Shows the registration and serial number check section below the upload button." },
   "option_launch_offline":        { "message": "Launch offline mode" },
 
   "about_bmc_prompt":        { "message": "Find this extension helpful?" },
