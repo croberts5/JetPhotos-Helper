@@ -11,6 +11,7 @@ const LOCALES = [
     { code: 'de',    label: 'DE', name: 'Deutsch'   },
     { code: 'it',    label: 'IT', name: 'Italiano'  },
     { code: 'pt',    label: 'PT', name: 'Português' },
+    { code: 'pl',    label: 'PL', name: 'Polski'    },
     { code: 'zh_CN', label: '中', name: '中文'      },
     { code: 'ja',    label: 'JP', name: '日本語'    },
     { code: 'tr',    label: 'TR', name: 'Türkçe'   },

@@ -46,7 +46,7 @@ A standalone image inspector (no upload required) for previewing how JetPhotos w
 │   ├── page-hook.js        # Web-accessible page hook (intercepts XHR responses)
 │   ├── i18n.ts             # t(), loadLocale(), initDomI18n()
 │   └── globals.d.ts        # TypeScript ambient declarations
-├── _locales/               # i18n strings (en, es, fr, de, it, pt, zh_CN, ja, tr, ru)
+├── _locales/               # i18n strings (en, es, fr, de, it, pt, pl, zh_CN, ja, tr, ru)
 ├── dist/                   # Build output — load this directory as the extension
 ├── scripts/
 │   └── build.js            # esbuild bundler + static asset copier
@@ -90,7 +90,7 @@ Strings live in `_locales/<locale>/messages.json` following the standard WebExte
 
 Users can override the browser's default language from the popup's language picker. The selection is stored in `browser.storage.local` under the key `jpHelper.locale` and is applied by every extension page on load.
 
-Supported locales: English, Spanish, French, German, Italian, Portuguese, Mandarin (Simplified), Japanese, Turkish, Russian.
+Supported locales: English, Spanish, French, German, Italian, Portuguese, Polish, Mandarin (Simplified), Japanese, Turkish, Russian.
 
 ## Tests
 
