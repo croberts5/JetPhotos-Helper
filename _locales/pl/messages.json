@@ -18,6 +18,8 @@
   "offline_btn_reset":     { "message": "Wczytaj inny obraz" },
   "offline_compress_label":   { "message": "Kompresuj do 1024 px" },
   "offline_compress_tooltip": { "message": "Narzędzia przesyłania JetPhotos renderują skompresowaną wersję przesłanego obrazu. Użyj tej opcji, aby zobaczyć najwierniejsze odwzorowanie działania narzędzi online." },
+  "offline_fullsize_label":   { "message": "Wyświetl w pełnym rozmiarze" },
+  "offline_fullsize_tooltip": { "message": "Wyświetla obraz w 100% natywnej rozdzielczości. Jeśli jest większy niż okno, stronę będzie można przewijać." },
 
   "offline_status_processing":  { "message": "Przetwarzanie…" },
   "offline_status_jpeg_only":   { "message": "Obsługiwane są tylko pliki JPEG." },
@@ -56,6 +58,12 @@
   "about_credit_polyfill":   { "message": "Zawiera" },
   "about_credit_airports":   { "message": "Dane lotnisk z" },
   "about_bugfix_reg_copy":   { "message": "Rejestracja automatycznie wpisywana do formularza, gdy nie znaleziono jej podczas autouzupełniania" },
+
+  "about_section_changelog":       { "message": "Lista zmian" },
+  "about_changelog_v11":           { "message": "Wersja 1.1" },
+  "about_changelog_11_polish":     { "message": "Obsługa języka polskiego" },
+  "about_changelog_v12":           { "message": "Wersja 1.2" },
+  "about_changelog_12_renditions": { "message": "Obsługa renderowania w trybie offline w pełnym rozmiarze, z kompresją do 1024 px (dłuższy bok) lub dopasowaniem do okna" },
 
   "content_existing_entry": { "message": "Kliknij tutaj, aby zobaczyć swoje istniejące zgłoszenia" },
   "content_latest_shoot":   { "message": "Najnowsze zdjęcie:" },

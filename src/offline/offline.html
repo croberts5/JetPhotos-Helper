@@ -15,6 +15,11 @@
       <span data-i18n="offline_compress_label">Compress to 1024px</span>
       <span class="tooltip-icon" data-i18n-tooltip="offline_compress_tooltip">?</span>
     </label>
+    <label class="option-toggle">
+      <input type="checkbox" id="fullSizeCheckbox" />
+      <span data-i18n="offline_fullsize_label">Render at full size</span>
+      <span class="tooltip-icon" data-i18n-tooltip="offline_fullsize_tooltip">?</span>
+    </label>
   </div>
 
   <div id="dropzone" role="button" tabindex="0" aria-label="Drop an image here, or click to select">
@@ -24,10 +29,12 @@
 
   <div id="preview-area">
     <div class="preview-wrap">
-      <img id="display-img" alt="Preview" />
-      <canvas id="histogram-canvas" width="460" height="220" role="img" aria-label="Luminance histogram"></canvas>
-      <canvas id="magnifier-canvas" width="200" height="200" aria-hidden="true"></canvas>
-      <button id="resetBtn" aria-label="Remove current image" title="Remove current image">✕</button>
+      <div class="img-box">
+        <img id="display-img" alt="Preview" />
+        <canvas id="histogram-canvas" width="460" height="220" role="img" aria-label="Luminance histogram"></canvas>
+        <canvas id="magnifier-canvas" width="200" height="200" aria-hidden="true"></canvas>
+        <button id="resetBtn" aria-label="Remove current image" title="Remove current image">✕</button>
+      </div>
     </div>
     <div class="actions">
       <button id="centeringBtn"  data-i18n="offline_btn_centering">Center</button>

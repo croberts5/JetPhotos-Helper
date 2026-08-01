@@ -3,6 +3,7 @@ import { equalizeImageData, loadFileToCanvas, resizeToLongSide } from './equaliz
 import { t, loadLocale, initDomI18n } from '../i18n';
 
 const dropzone         = document.getElementById('dropzone') as HTMLDivElement;
+const previewWrap      = document.querySelector('.preview-wrap') as HTMLDivElement;
 const fileInput        = document.getElementById('fileInput') as HTMLInputElement;
 const previewArea      = document.getElementById('preview-area') as HTMLDivElement;
 const displayImg       = document.getElementById('display-img') as HTMLImageElement;
@@ -13,8 +14,13 @@ const histogramBtn     = document.getElementById('histogramBtn') as HTMLButtonEl
 const histogramCanvas  = document.getElementById('histogram-canvas') as HTMLCanvasElement;
 const resetBtn         = document.getElementById('resetBtn') as HTMLButtonElement;
 const compressCheckbox = document.getElementById('compressCheckbox') as HTMLInputElement;
+const fullSizeCheckbox = document.getElementById('fullSizeCheckbox') as HTMLInputElement;
 const status           = document.getElementById('status') as HTMLSpanElement;
 const magnifierCanvas  = document.getElementById('magnifier-canvas') as HTMLCanvasElement;
+
+// Same storage convention as the options page: jpHelper.<checkboxId>
+const COMPRESS_KEY = 'jpHelper.compressCheckbox';
+const FULLSIZE_KEY = 'jpHelper.fullSizeCheckbox';
 
 let originalDataUrl  = '';
 let equalizedDataUrl = '';
@@ -111,6 +117,41 @@ function updateDisplay(): void {
     displayImg.classList.toggle('crosshair', centeringActive);
     displayImg.classList.toggle('zoom-in', horizonActive);
 }
+
+// Size the displayed image. Default: native size (100%), downscaled only if
+// it exceeds the preview area, never upscaled. With "render at full size"
+// checked: always native size, letting the page scroll instead.
+// Explicit width/height keep the element box equal to the image content,
+// which the magnifier and mirror-line coordinate mapping rely on
+// (object-fit: contain would letterbox inside the box and break it).
+function fitImage(): void {
+    if (!displayImg.naturalWidth || !displayImg.naturalHeight) return;
+    if (fullSizeCheckbox.checked) {
+        displayImg.style.width  = '';
+        displayImg.style.height = '';
+        document.body.classList.add('full-size');
+        return;
+    }
+    document.body.classList.remove('full-size');
+    // Collapse the image before measuring so stale overflow (e.g. right after
+    // leaving full-size mode) can't add scrollbars that shrink the available
+    // space. Everything happens in one layout pass, so nothing flickers.
+    displayImg.style.width  = '0px';
+    displayImg.style.height = '0px';
+    const availW = previewWrap.clientWidth;
+    const availH = previewWrap.clientHeight;
+    if (availW && availH) {
+        const scale = Math.min(1, availW / displayImg.naturalWidth, availH / displayImg.naturalHeight);
+        displayImg.style.width  = `${displayImg.naturalWidth * scale}px`;
+        displayImg.style.height = `${displayImg.naturalHeight * scale}px`;
+    } else {
+        displayImg.style.width  = '';
+        displayImg.style.height = '';
+    }
+}
+
+displayImg.addEventListener('load', fitImage);
+window.addEventListener('resize', fitImage);
 
 // --- Histogram ---
 
@@ -258,7 +299,7 @@ async function processFile(file: File): Promise<void> {
         resetButtonLabels();
 
         updateDisplay();
-        previewArea.style.display = 'block';
+        previewArea.style.display = 'flex';
         dropzone.style.display    = 'none';
         status.textContent        = '';
     } catch {
@@ -380,16 +421,47 @@ displayImg.addEventListener('mouseleave', () => {
 // --- Init ---
 
 (async () => {
-    const stored = await browser.storage.local.get('jpHelper.locale');
+    const stored = await browser.storage.local.get(['jpHelper.locale', COMPRESS_KEY, FULLSIZE_KEY]);
     const locale = stored['jpHelper.locale'] as string | undefined;
     if (locale) await loadLocale(locale);
     initDomI18n();
+
+    compressCheckbox.checked = (stored[COMPRESS_KEY] as boolean) ?? compressCheckbox.defaultChecked;
+    fullSizeCheckbox.checked = (stored[FULLSIZE_KEY] as boolean) ?? fullSizeCheckbox.defaultChecked;
+    // The options are mutually exclusive; if storage somehow holds both, compress wins.
+    if (compressCheckbox.checked && fullSizeCheckbox.checked) fullSizeCheckbox.checked = false;
 })();
 
 // --- Listeners ---
 
+// Both states are saved together because toggling one can uncheck the other.
+function saveToggles(): void {
+    void browser.storage.local.set({
+        [COMPRESS_KEY]: compressCheckbox.checked,
+        [FULLSIZE_KEY]: fullSizeCheckbox.checked,
+    });
+}
+
+// The two options are mutually exclusive: checking one unchecks the other.
 compressCheckbox.addEventListener('change', () => {
+    if (compressCheckbox.checked && fullSizeCheckbox.checked) {
+        fullSizeCheckbox.checked = false;
+    }
+    saveToggles();
     if (lastFile) processFile(lastFile);
+});
+
+fullSizeCheckbox.addEventListener('change', () => {
+    const needReprocess = fullSizeCheckbox.checked && compressCheckbox.checked;
+    if (needReprocess) compressCheckbox.checked = false;
+    saveToggles();
+    if (needReprocess && lastFile) {
+        // Unchecking compress changes the rendition, so reprocess; fitImage
+        // runs from the image load event afterwards.
+        processFile(lastFile);
+        return;
+    }
+    fitImage();
 });
 
 dropzone.addEventListener('click', () => fileInput.click());
@@ -490,6 +562,9 @@ resetBtn.addEventListener('click', () => {
     mirrorX          = null;
     resetButtonLabels();
     displayImg.src = '';
+    displayImg.style.width  = '';
+    displayImg.style.height = '';
+    document.body.classList.remove('full-size');
     previewArea.style.display = 'none';
     dropzone.style.display    = '';
     status.textContent = '';

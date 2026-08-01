@@ -18,6 +18,8 @@
   "offline_btn_reset":     { "message": "Загрузить другое изображение" },
   "offline_compress_label":   { "message": "Сжать до 1024px" },
   "offline_compress_tooltip": { "message": "Инструменты загрузки JetPhotos создают сжатую версию загруженного изображения. Используйте этот параметр для наиболее точного отображения результата онлайн-инструментов." },
+  "offline_fullsize_label":   { "message": "Показать в полном размере" },
+  "offline_fullsize_tooltip": { "message": "Отображает изображение в 100% исходного разрешения. Если оно больше окна, страница будет прокручиваться." },
 
   "offline_status_processing":  { "message": "Обработка…" },
   "offline_status_jpeg_only":   { "message": "Поддерживаются только файлы JPEG." },
@@ -56,6 +58,12 @@
   "about_credit_polyfill":   { "message": "Включает" },
   "about_credit_airports":   { "message": "Данные об аэропортах из" },
   "about_bugfix_reg_copy":   { "message": "Регистрационный номер автоматически вводится в форму, если не найден при автозаполнении" },
+
+  "about_section_changelog":       { "message": "История изменений" },
+  "about_changelog_v11":           { "message": "Версия 1.1" },
+  "about_changelog_11_polish":     { "message": "Поддержка польского языка" },
+  "about_changelog_v12":           { "message": "Версия 1.2" },
+  "about_changelog_12_renditions": { "message": "Поддержка отображения в автономном режиме в полном размере, со сжатием до 1024px (длинная сторона) или с масштабированием под окно" },
 
   "content_existing_entry": { "message": "Нажмите здесь, чтобы просмотреть существующие отправки" },
   "content_latest_shoot":   { "message": "Последняя съёмка:" },

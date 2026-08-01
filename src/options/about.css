@@ -91,6 +91,19 @@ h1 {
   color: #555;
 }
 
+.changelog-version {
+  width: 100%;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: #999;
+  margin: 12px 0 8px;
+}
+
+.changelog-version:first-of-type {
+  margin-top: 0;
+}
+
 .links {
   display: flex;
   gap: 16px;

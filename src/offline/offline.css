@@ -106,17 +106,36 @@ h1 { font-size: 22px; margin: 0 0 4px; }
 #preview-area {
   display: none;
   margin-top: 28px;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
 }
 
 .preview-wrap {
+  flex: 1;
+  min-height: 0;
   display: flex;
-  justify-content: center;
+}
+
+.img-box {
   position: relative;
+  /* Auto margins center the image but collapse to 0 when it overflows,
+     so a full-size image stays reachable by scrolling from the top-left. */
+  margin: auto;
+}
+
+/* "Render at full size": stop constraining the layout to the viewport and
+   let the page scroll instead. */
+body.full-size {
+  height: auto;
+  min-height: 100%;
+}
+body.full-size #preview-area,
+body.full-size .preview-wrap {
+  flex: none;
 }
 
 .preview-wrap img {
-  width: auto;
-  max-width: 90vw;
   display: block;
 }
 
@@ -130,6 +149,7 @@ h1 { font-size: 22px; margin: 0 0 4px; }
   gap: 10px;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 button {
@@ -142,9 +162,9 @@ button {
 }
 
 #resetBtn {
-  position: relative;
+  position: absolute;
   top: -16px;
-  right: 16px;
+  right: -16px;
   width: 32px;
   height: 32px;
   border-radius: 50%;
