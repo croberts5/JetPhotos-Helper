@@ -1,11 +1,22 @@
+html {
+  scrollbar-width: thin;
+  box-sizing: border-box;
+}
+/* Firefox styling fixes */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
   width: 320px;
+  max-width: 100%;
   margin: 0;
   padding: 12px;
   background-color: #282828;
   color: #ffffff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  box-sizing: border-box;
   overflow-y: auto;
 }
 
