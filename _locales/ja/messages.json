@@ -64,6 +64,8 @@
   "about_changelog_11_polish":     { "message": "ポーランド語のサポート" },
   "about_changelog_v12":           { "message": "バージョン 1.2" },
   "about_changelog_12_renditions": { "message": "オフラインモードの表示を原寸、1024px（長辺）圧縮、またはウィンドウに合わせた縮小に対応" },
+  "about_changelog_v121":          { "message": "バージョン 1.2.1" },
+  "about_changelog_121_fixes":     { "message": "軽微なバグ修正" },
 
   "content_existing_entry": { "message": "クリックして既存の投稿を確認する" },
   "content_latest_shoot":   { "message": "最新撮影：" },

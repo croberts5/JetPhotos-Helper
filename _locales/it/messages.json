@@ -64,6 +64,8 @@
   "about_changelog_11_polish":     { "message": "Supporto per la lingua polacca" },
   "about_changelog_v12":           { "message": "Versione 1.2" },
   "about_changelog_12_renditions": { "message": "Supporto per le anteprime della modalità offline a dimensione reale, compresse a 1024px (lato lungo) o adattate alla finestra" },
+  "about_changelog_v121":          { "message": "Versione 1.2.1" },
+  "about_changelog_121_fixes":     { "message": "Correzioni di bug minori" },
 
   "content_existing_entry": { "message": "Clicca qui per visualizzare i tuoi invii esistenti" },
   "content_latest_shoot":   { "message": "Ultimo scatto:" },

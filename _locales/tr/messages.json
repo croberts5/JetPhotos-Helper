@@ -64,6 +64,8 @@
   "about_changelog_11_polish":     { "message": "Lehçe dil desteği" },
   "about_changelog_v12":           { "message": "Sürüm 1.2" },
   "about_changelog_12_renditions": { "message": "Çevrimdışı mod görüntülerinin tam boyutta, 1024px'e (uzun kenar) sıkıştırılmış veya pencereye sığdırılmış olarak desteklenmesi" },
+  "about_changelog_v121":          { "message": "Sürüm 1.2.1" },
+  "about_changelog_121_fixes":     { "message": "Küçük hata düzeltmeleri" },
 
   "content_existing_entry": { "message": "Mevcut gönderimleri görüntülemek için tıklayın" },
   "content_latest_shoot":   { "message": "Son çekim:" },

@@ -64,6 +64,8 @@
   "about_changelog_11_polish":     { "message": "Obsługa języka polskiego" },
   "about_changelog_v12":           { "message": "Wersja 1.2" },
   "about_changelog_12_renditions": { "message": "Obsługa renderowania w trybie offline w pełnym rozmiarze, z kompresją do 1024 px (dłuższy bok) lub dopasowaniem do okna" },
+  "about_changelog_v121":          { "message": "Wersja 1.2.1" },
+  "about_changelog_121_fixes":     { "message": "Drobne poprawki błędów" },
 
   "content_existing_entry": { "message": "Kliknij tutaj, aby zobaczyć swoje istniejące zgłoszenia" },
   "content_latest_shoot":   { "message": "Najnowsze zdjęcie:" },

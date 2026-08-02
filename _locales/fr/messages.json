@@ -64,6 +64,8 @@
   "about_changelog_11_polish":     { "message": "Prise en charge de la langue polonaise" },
   "about_changelog_v12":           { "message": "Version 1.2" },
   "about_changelog_12_renditions": { "message": "Prise en charge des rendus du mode hors ligne en taille réelle, compressés à 1024px (côté long) ou ajustés à la fenêtre" },
+  "about_changelog_v121":          { "message": "Version 1.2.1" },
+  "about_changelog_121_fixes":     { "message": "Corrections mineures de bugs" },
 
   "content_existing_entry": { "message": "Cliquez ici pour voir vos soumissions existantes" },
   "content_latest_shoot":   { "message": "Dernière prise de vue :" },

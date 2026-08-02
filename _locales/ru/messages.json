@@ -64,6 +64,8 @@
   "about_changelog_11_polish":     { "message": "Поддержка польского языка" },
   "about_changelog_v12":           { "message": "Версия 1.2" },
   "about_changelog_12_renditions": { "message": "Поддержка отображения в автономном режиме в полном размере, со сжатием до 1024px (длинная сторона) или с масштабированием под окно" },
+  "about_changelog_v121":          { "message": "Версия 1.2.1" },
+  "about_changelog_121_fixes":     { "message": "Незначительные исправления ошибок" },
 
   "content_existing_entry": { "message": "Нажмите здесь, чтобы просмотреть существующие отправки" },
   "content_latest_shoot":   { "message": "Последняя съёмка:" },

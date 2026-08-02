@@ -64,6 +64,8 @@
   "about_changelog_11_polish":     { "message": "Unterstützung für die polnische Sprache" },
   "about_changelog_v12":           { "message": "Version 1.2" },
   "about_changelog_12_renditions": { "message": "Unterstützung für Offline-Modus-Darstellungen in voller Größe, komprimiert auf 1024px (lange Seite) oder an das Fenster angepasst" },
+  "about_changelog_v121":          { "message": "Version 1.2.1" },
+  "about_changelog_121_fixes":     { "message": "Kleinere Fehlerbehebungen" },
 
   "content_existing_entry": { "message": "Klicken Sie hier, um Ihre vorhandenen Einreichungen anzuzeigen" },
   "content_latest_shoot":   { "message": "Letzte Aufnahme:" },

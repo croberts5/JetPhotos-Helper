@@ -64,6 +64,8 @@
   "about_changelog_11_polish":     { "message": "Support for the Polish language" },
   "about_changelog_v12":           { "message": "Version 1.2" },
   "about_changelog_12_renditions": { "message": "Support for offline mode renditions at full size, compressed to 1024px (long side) or scaled to fit window" },
+  "about_changelog_v121":          { "message": "Version 1.2.1" },
+  "about_changelog_121_fixes":     { "message": "Minor bug fixes" },
 
   "content_existing_entry": { "message": "Click here to view your existing submission(s)" },
   "content_latest_shoot":   { "message": "Latest shoot:" },

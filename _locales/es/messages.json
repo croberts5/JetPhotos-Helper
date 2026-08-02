@@ -64,6 +64,8 @@
   "about_changelog_11_polish":     { "message": "Compatibilidad con el idioma polaco" },
   "about_changelog_v12":           { "message": "Versión 1.2" },
   "about_changelog_12_renditions": { "message": "Soporte para renderizados del modo sin conexión a tamaño completo, comprimidos a 1024px (lado largo) o ajustados a la ventana" },
+  "about_changelog_v121":          { "message": "Versión 1.2.1" },
+  "about_changelog_121_fixes":     { "message": "Correcciones menores de errores" },
 
   "content_existing_entry": { "message": "Haz clic aquí para ver tus envíos existentes" },
   "content_latest_shoot":   { "message": "Última toma:" },

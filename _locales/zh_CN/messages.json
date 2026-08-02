@@ -64,6 +64,8 @@
   "about_changelog_11_polish":     { "message": "支持波兰语" },
   "about_changelog_v12":           { "message": "版本 1.2" },
   "about_changelog_12_renditions": { "message": "支持离线模式以原始尺寸、压缩至1024像素（长边）或缩放适应窗口显示图片" },
+  "about_changelog_v121":          { "message": "版本 1.2.1" },
+  "about_changelog_121_fixes":     { "message": "细微错误修复" },
 
   "content_existing_entry": { "message": "点击此处查看您的现有提交" },
   "content_latest_shoot":   { "message": "最近拍摄：" },
