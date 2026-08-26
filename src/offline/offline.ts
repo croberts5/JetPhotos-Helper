@@ -18,6 +18,10 @@ const fullSizeCheckbox = document.getElementById('fullSizeCheckbox') as HTMLInpu
 const status           = document.getElementById('status') as HTMLSpanElement;
 const magnifierCanvas  = document.getElementById('magnifier-canvas') as HTMLCanvasElement;
 
+// Visibility state lives in offline.css; these toggle it.
+const HIDDEN_CLASS  = 'is-hidden';
+const VISIBLE_CLASS = 'is-visible';
+
 // Same storage convention as the options page: jpHelper.<checkboxId>
 const COMPRESS_KEY = 'jpHelper.compressCheckbox';
 const FULLSIZE_KEY = 'jpHelper.fullSizeCheckbox';
@@ -257,7 +261,7 @@ function resetButtonLabels(): void {
     horizonBtn.textContent = t('offline_btn_horizon');
     histogramBtn.classList.remove('active');
     histogramBtn.textContent = t('offline_btn_histogram');
-    histogramCanvas.style.display = 'none';
+    histogramCanvas.classList.remove(VISIBLE_CLASS);
 }
 
 // --- File processing ---
@@ -299,8 +303,8 @@ async function processFile(file: File): Promise<void> {
         resetButtonLabels();
 
         updateDisplay();
-        previewArea.style.display = 'flex';
-        dropzone.style.display    = 'none';
+        previewArea.classList.add(VISIBLE_CLASS);
+        dropzone.classList.add(HIDDEN_CLASS);
         status.textContent        = '';
     } catch {
         status.textContent = t('offline_status_load_failed');
@@ -323,7 +327,7 @@ function updateMagnifier(e: MouseEvent): void {
     const relY   = e.clientY - rect.top;
 
     if (relX < 0 || relY < 0 || relX > rect.width || relY > rect.height) {
-        magnifierCanvas.style.display = 'none';
+        magnifierCanvas.classList.remove(VISIBLE_CLASS);
         return;
     }
 
@@ -362,7 +366,7 @@ function updateMagnifier(e: MouseEvent): void {
 
     magnifierCanvas.style.left    = `${lensLeft}px`;
     magnifierCanvas.style.top     = `${lensTop}px`;
-    magnifierCanvas.style.display = 'block';
+    magnifierCanvas.classList.add(VISIBLE_CLASS);
 }
 
 // --- Centering mirror lines ---
@@ -415,7 +419,7 @@ displayImg.addEventListener('contextmenu', (e) => {
 
 displayImg.addEventListener('mousemove', updateMagnifier);
 displayImg.addEventListener('mouseleave', () => {
-    magnifierCanvas.style.display = 'none';
+    magnifierCanvas.classList.remove(VISIBLE_CLASS);
 });
 
 // --- Init ---
@@ -497,7 +501,7 @@ function deactivateAll(): void {
     equalizeBtn.classList.remove('active');
     horizonBtn.classList.remove('active');
     histogramBtn.classList.remove('active');
-    histogramCanvas.style.display = 'none';
+    histogramCanvas.classList.remove(VISIBLE_CLASS);
 }
 
 centeringBtn.addEventListener('click', () => {
@@ -542,7 +546,7 @@ histogramBtn.addEventListener('click', () => {
         histogramActive = true;
         histogramBtn.classList.add('active');
         renderHistogram();
-        histogramCanvas.style.display = 'block';
+        histogramCanvas.classList.add(VISIBLE_CLASS);
     }
 });
 
@@ -565,7 +569,7 @@ resetBtn.addEventListener('click', () => {
     displayImg.style.width  = '';
     displayImg.style.height = '';
     document.body.classList.remove('full-size');
-    previewArea.style.display = 'none';
-    dropzone.style.display    = '';
+    previewArea.classList.remove(VISIBLE_CLASS);
+    dropzone.classList.remove(HIDDEN_CLASS);
     status.textContent = '';
 });

@@ -9,6 +9,7 @@ A Chrome/Firefox extension that improves the photo upload experience on [JetPhot
 - **Latest photo date** — fetches the most recent shoot date for a given registration
 - **Manual date entry** — type the photo date as text (MM/DD/YYYY) instead of using the date picker
 - **IATA → ICAO autocomplete** — automatically swaps a 3-letter IATA airport code for its 4-letter ICAO equivalent in the location field
+- **Airport from photo GPS** — reads the GPS coordinates embedded in the selected photo and fills the location field with the nearest airport's ICAO code
 - **Hide submission guidelines** — collapses the left-column guidelines panel for a cleaner upload view
 
 
@@ -38,6 +39,7 @@ A standalone image inspector (no upload required) for previewing how JetPhotos w
 │   │   └── offline.css
 │   ├── options/
 │   │   ├── config.ts       # Popup script — settings, language picker, storage
+│   │   ├── exif.ts         # Minimal EXIF GPS reader (JPEG APP1 → TIFF IFD → GPS sub-IFD)
 │   │   ├── jp.ts           # Content script — upload page enhancements
 │   │   ├── about.ts        # About page script
 │   │   ├── jp.html / jp.css

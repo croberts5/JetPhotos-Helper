@@ -246,3 +246,11 @@ button {
   font-size: 12px;
   color: #888;
 }
+
+/* Visibility state, toggled from offline.ts instead of writing inline styles.
+   #dropzone needs the id in the selector to outrank its own display: flex. */
+.is-hidden { display: none; }
+#dropzone.is-hidden { display: none; }
+#preview-area.is-visible { display: flex; }
+#magnifier-canvas.is-visible { display: block; }
+#histogram-canvas.is-visible { display: block; }

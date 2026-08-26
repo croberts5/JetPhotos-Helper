@@ -44,3 +44,22 @@
 .jph-status__item--warn {
   color: #b45309;
 }
+
+/* Airport lookup hint — sits directly under the location field */
+.jph-airport-hint {
+  font-size: 12px;
+  border-radius: 4px;
+  border: 1px solid;
+  padding: 4px;
+  color: #888;
+  margin-top: 2px;
+  min-height: 16px;
+}
+
+/* Visibility state, toggled from jp.js instead of writing inline styles.
+   !important is load-bearing here: this class is also applied to JetPhotos'
+   own elements, whose stylesheet sets display via equally specific class
+   selectors that would otherwise win on source order. */
+.jph-hidden {
+  display: none !important;
+}

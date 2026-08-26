@@ -36,6 +36,8 @@
   "option_manual_date_desc":      { "message": "Permet d'entrer la date de la photo sous forme de texte (MM/JJ/AAAA) au lieu d'utiliser le sélecteur de date." },
   "option_iata_icao_label":       { "message": "Autocomplétion IATA vers ICAO" },
   "option_iata_icao_desc":        { "message": "Suggère automatiquement l'équivalent ICAO lorsqu'un code d'aéroport IATA est saisi." },
+  "option_gps_icao_label":        { "message": "Aéroport depuis le GPS de la photo" },
+  "option_gps_icao_desc":         { "message": "Lit les données EXIF GPS de la photo importée et détermine le code OACI de l'aéroport le plus proche." },
   "option_hide_guidelines_label": { "message": "Masquer les directives de soumission" },
   "option_hide_guidelines_desc":  { "message": "Masque le texte des directives de soumission sur le côté gauche de la page d'envoi." },
   "option_localize_utc_label":    { "message": "Localiser l'horodatage UTC" },
@@ -50,6 +52,7 @@
   "about_feature_date":      { "message": "Saisie manuelle de la date" },
   "about_feature_guidelines":{ "message": "Masquer les directives de soumission" },
   "about_feature_iata":      { "message": "Permet de remplacer automatiquement un code d'aéroport IATA par son équivalent ICAO" },
+  "about_feature_gps":       { "message": "Aéroport le plus proche selon les coordonnées GPS de la photo" },
   "about_feature_offline":   { "message": "Outils hors ligne : lignes de centrage, grille d'horizon, égalisation, aperçu de l'histogramme" },
 
   "about_section_bugfixes":  { "message": "Corrections" },
@@ -66,9 +69,12 @@
   "about_changelog_12_renditions": { "message": "Prise en charge des rendus du mode hors ligne en taille réelle, compressés à 1024px (côté long) ou ajustés à la fenêtre" },
   "about_changelog_v121":          { "message": "Version 1.2.1" },
   "about_changelog_121_fixes":     { "message": "Corrections mineures de bugs" },
+  "about_changelog_v130":          { "message": "Version 1.3.0" },
+  "about_changelog_130_gps":       { "message": "Prise en charge de la déduction du code d'aéroport à partir des données EXIF GPS, si elles sont présentes dans l'image importée." },
 
   "content_existing_entry": { "message": "Cliquez ici pour voir vos soumissions existantes" },
   "content_latest_shoot":   { "message": "Dernière prise de vue :" },
+  "content_gps_nearest":    { "message": "Aéroport le plus proche selon le GPS de la photo :" },
   "content_serial_number":  { "message": "Numéro de série" },
   "content_registration":   { "message": "Immatriculation" }
 }

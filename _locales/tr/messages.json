@@ -36,6 +36,8 @@
   "option_manual_date_desc":      { "message": "Tarih seçici yerine fotoğraf tarihini metin olarak (AA/GG/YYYY) girmeyi sağlar." },
   "option_iata_icao_label":       { "message": "IATA'dan ICAO'ya otomatik tamamlama" },
   "option_iata_icao_desc":        { "message": "Bir IATA havalimanı kodu girildiğinde otomatik olarak ICAO eşdeğerini önerir." },
+  "option_gps_icao_label":        { "message": "Fotoğraf GPS'inden havalimanı" },
+  "option_gps_icao_desc":         { "message": "Yüklenen fotoğrafın GPS EXIF verilerini okur ve en yakın havalimanının ICAO kodunu eşleştirir." },
   "option_hide_guidelines_label": { "message": "Gönderim yönergelerini gizle" },
   "option_hide_guidelines_desc":  { "message": "Yükleme sayfasının sol tarafındaki gönderim yönergeleri metnini gizler." },
   "option_localize_utc_label":    { "message": "UTC zaman damgasını yerelleştir" },
@@ -50,6 +52,7 @@
   "about_feature_date":      { "message": "Manuel tarih girişi" },
   "about_feature_guidelines":{ "message": "Gönderim yönergelerini gizle" },
   "about_feature_iata":      { "message": "Girilen IATA havalimanı kodunu otomatik olarak ICAO eşdeğeriyle değiştirme desteği" },
+  "about_feature_gps":       { "message": "Fotoğrafın GPS koordinatlarına göre en yakın havalimanı" },
   "about_feature_offline":   { "message": "Çevrimdışı araçlar: ortalama çizgileri, ufuk ızgarası, eşitleme, histogram önizleme" },
 
   "about_section_bugfixes":  { "message": "Hata Düzeltmeleri" },
@@ -66,9 +69,12 @@
   "about_changelog_12_renditions": { "message": "Çevrimdışı mod görüntülerinin tam boyutta, 1024px'e (uzun kenar) sıkıştırılmış veya pencereye sığdırılmış olarak desteklenmesi" },
   "about_changelog_v121":          { "message": "Sürüm 1.2.1" },
   "about_changelog_121_fixes":     { "message": "Küçük hata düzeltmeleri" },
+  "about_changelog_v130":          { "message": "Sürüm 1.3.0" },
+  "about_changelog_130_gps":       { "message": "Yüklenen görselde mevcutsa GPS EXIF verilerinden havalimanı kodunu belirleme desteği." },
 
   "content_existing_entry": { "message": "Mevcut gönderimleri görüntülemek için tıklayın" },
   "content_latest_shoot":   { "message": "Son çekim:" },
+  "content_gps_nearest":    { "message": "Fotoğraf GPS'ine göre en yakın havalimanı:" },
   "content_serial_number":  { "message": "Seri numarası" },
   "content_registration":   { "message": "Tescil" }
 }

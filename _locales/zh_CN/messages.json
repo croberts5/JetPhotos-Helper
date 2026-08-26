@@ -36,6 +36,8 @@
   "option_manual_date_desc":      { "message": "允许以文本形式（MM/DD/YYYY）输入照片日期，而无需使用日期选择器。" },
   "option_iata_icao_label":       { "message": "IATA 转 ICAO 自动补全" },
   "option_iata_icao_desc":        { "message": "输入 IATA 机场代码时，自动建议对应的 ICAO 代码。" },
+  "option_gps_icao_label":        { "message": "根据照片 GPS 识别机场" },
+  "option_gps_icao_desc":         { "message": "读取所上传照片的 GPS EXIF 数据，并匹配最近机场的 ICAO 代码。" },
   "option_hide_guidelines_label": { "message": "隐藏提交指南" },
   "option_hide_guidelines_desc":  { "message": "隐藏上传页面左侧的提交指南文本。" },
   "option_localize_utc_label":    { "message": "本地化UTC时间戳" },
@@ -50,6 +52,7 @@
   "about_feature_date":      { "message": "手动文本输入日期" },
   "about_feature_guidelines":{ "message": "隐藏提交指南" },
   "about_feature_iata":      { "message": "支持自动将 IATA 机场代码替换为对应的 ICAO 代码" },
+  "about_feature_gps":       { "message": "根据照片 GPS 坐标识别最近的机场" },
   "about_feature_offline":   { "message": "离线工具：居中线、水平网格叠加、均衡化、直方图预览" },
 
   "about_section_bugfixes":  { "message": "错误修复" },
@@ -66,9 +69,12 @@
   "about_changelog_12_renditions": { "message": "支持离线模式以原始尺寸、压缩至1024像素（长边）或缩放适应窗口显示图片" },
   "about_changelog_v121":          { "message": "版本 1.2.1" },
   "about_changelog_121_fixes":     { "message": "细微错误修复" },
+  "about_changelog_v130":          { "message": "版本 1.3.0" },
+  "about_changelog_130_gps":       { "message": "支持在上传的图片包含 GPS EXIF 数据时，据此推断机场代码。" },
 
   "content_existing_entry": { "message": "点击此处查看您的现有提交" },
   "content_latest_shoot":   { "message": "最近拍摄：" },
+  "content_gps_nearest":    { "message": "照片 GPS 最近的机场：" },
   "content_serial_number":  { "message": "序列号" },
   "content_registration":   { "message": "注册号" }
 }

@@ -36,6 +36,8 @@
   "option_manual_date_desc":      { "message": "日付ピッカーを使わずに写真の日付をテキスト（MM/DD/YYYY）で入力できます。" },
   "option_iata_icao_label":       { "message": "IATA から ICAO への自動補完" },
   "option_iata_icao_desc":        { "message": "IATA 空港コードを入力すると、対応する ICAO コードを自動的に提案します。" },
+  "option_gps_icao_label":        { "message": "写真のGPSから空港を取得" },
+  "option_gps_icao_desc":         { "message": "アップロードした写真のGPS EXIFデータを読み取り、最寄り空港のICAOコードを照合します。" },
   "option_hide_guidelines_label": { "message": "投稿ガイドラインを非表示にする" },
   "option_hide_guidelines_desc":  { "message": "アップロードページ左側の投稿ガイドラインテキストを非表示にします。" },
   "option_localize_utc_label":    { "message": "UTCタイムスタンプをローカル時刻に変換" },
@@ -50,6 +52,7 @@
   "about_feature_date":      { "message": "日付の手動テキスト入力" },
   "about_feature_guidelines":{ "message": "投稿ガイドラインを非表示" },
   "about_feature_iata":      { "message": "IATA 空港コードを ICAO コードに自動的に置き換える機能をサポート" },
+  "about_feature_gps":       { "message": "写真のGPS座標による最寄り空港の取得" },
   "about_feature_offline":   { "message": "オフラインツール：センターライン、水平グリッド、均等化、ヒストグラムプレビュー" },
 
   "about_section_bugfixes":  { "message": "バグ修正" },
@@ -66,9 +69,12 @@
   "about_changelog_12_renditions": { "message": "オフラインモードの表示を原寸、1024px（長辺）圧縮、またはウィンドウに合わせた縮小に対応" },
   "about_changelog_v121":          { "message": "バージョン 1.2.1" },
   "about_changelog_121_fixes":     { "message": "軽微なバグ修正" },
+  "about_changelog_v130":          { "message": "バージョン 1.3.0" },
+  "about_changelog_130_gps":       { "message": "アップロードした画像にGPS EXIFデータがある場合、そこから空港コードを導き出す機能に対応。" },
 
   "content_existing_entry": { "message": "クリックして既存の投稿を確認する" },
   "content_latest_shoot":   { "message": "最新撮影：" },
+  "content_gps_nearest":    { "message": "写真のGPSによる最寄り空港:" },
   "content_serial_number":  { "message": "シリアル番号" },
   "content_registration":   { "message": "登録番号" }
 }

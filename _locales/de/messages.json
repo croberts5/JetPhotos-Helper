@@ -36,6 +36,8 @@
   "option_manual_date_desc":      { "message": "Ermöglicht die Eingabe des Fotodatums als Text (TT.MM.JJJJ) statt des Datumsauswählers." },
   "option_iata_icao_label":       { "message": "IATA-zu-ICAO-Autovervollständigung" },
   "option_iata_icao_desc":        { "message": "Schlägt automatisch das ICAO-Äquivalent vor, wenn ein IATA-Flughafencode eingegeben wird." },
+  "option_gps_icao_label":        { "message": "Flughafen aus Foto-GPS" },
+  "option_gps_icao_desc":         { "message": "Liest die GPS-EXIF-Daten des hochgeladenen Fotos und ermittelt den ICAO-Code des nächstgelegenen Flughafens." },
   "option_hide_guidelines_label": { "message": "Einreichungsrichtlinien ausblenden" },
   "option_hide_guidelines_desc":  { "message": "Blendet den Richtlinientext auf der linken Seite der Upload-Seite aus." },
   "option_localize_utc_label":    { "message": "UTC-Zeitstempel lokalisieren" },
@@ -50,6 +52,7 @@
   "about_feature_date":      { "message": "Manuelle Datumseingabe" },
   "about_feature_guidelines":{ "message": "Einreichungsrichtlinien ausblenden" },
   "about_feature_iata":      { "message": "Unterstützt den automatischen Austausch eines IATA-Flughafencodes durch sein ICAO-Äquivalent" },
+  "about_feature_gps":       { "message": "Nächstgelegener Flughafen aus den GPS-Koordinaten des Fotos" },
   "about_feature_offline":   { "message": "Offline-Tools: Zentrierlinien, Horizontgitter, Egalisierung, Histogramm-Vorschau" },
 
   "about_section_bugfixes":  { "message": "Fehlerbehebungen" },
@@ -66,9 +69,12 @@
   "about_changelog_12_renditions": { "message": "Unterstützung für Offline-Modus-Darstellungen in voller Größe, komprimiert auf 1024px (lange Seite) oder an das Fenster angepasst" },
   "about_changelog_v121":          { "message": "Version 1.2.1" },
   "about_changelog_121_fixes":     { "message": "Kleinere Fehlerbehebungen" },
+  "about_changelog_v130":          { "message": "Version 1.3.0" },
+  "about_changelog_130_gps":       { "message": "Unterstützung für die Ermittlung des Flughafencodes aus GPS-EXIF-Daten, sofern im hochgeladenen Bild vorhanden." },
 
   "content_existing_entry": { "message": "Klicken Sie hier, um Ihre vorhandenen Einreichungen anzuzeigen" },
   "content_latest_shoot":   { "message": "Letzte Aufnahme:" },
+  "content_gps_nearest":    { "message": "Nächster Flughafen laut Foto-GPS:" },
   "content_serial_number":  { "message": "Seriennummer" },
   "content_registration":   { "message": "Kennzeichen" }
 }

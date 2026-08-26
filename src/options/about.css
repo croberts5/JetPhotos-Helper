@@ -6,19 +6,51 @@ body {
   background: #1a1a1a;
   color: #f0f0f0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: center;
 }
 
 .about-wrap {
   width: 100%;
   max-width: 420px;
+  height: 100%;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+/* Header and footer hold their size; only .about-scroll gives ground. */
+.about-wrap > *:not(.about-scroll) {
+  flex-shrink: 0;
+}
+
+/* Features, bug fixes and changelog. min-height: 0 is load-bearing — without
+   it this flex child is sized by its content and never scrolls. */
+.about-scroll {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  /* Keeps text off the scrollbar without shifting the layout when it appears. */
+  padding-right: 8px;
+}
+
+/* Always at the bottom of the viewport. Replaces the divider that used to sit
+   above the links. */
+.about-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid #2e2e2e;
+  margin-top: 20px;
+  padding-top: 20px;
 }
 
 .icon {
@@ -137,7 +169,7 @@ h1 {
 .bmc-prompt {
   font-size: 13px;
   color: #888;
-  margin: 24px 0 12px;
+  margin: 16px 0 10px;
   line-height: 1.5;
   text-align: center;
 }

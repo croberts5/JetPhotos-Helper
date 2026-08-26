@@ -36,6 +36,8 @@
   "option_manual_date_desc":      { "message": "Permite introducir la fecha de la foto como texto (MM/DD/YYYY) en lugar de usar el selector de fecha." },
   "option_iata_icao_label":       { "message": "Autocompletar IATA a ICAO" },
   "option_iata_icao_desc":        { "message": "Sugiere automáticamente el código ICAO equivalente cuando se introduce un código de aeropuerto IATA." },
+  "option_gps_icao_label":        { "message": "Aeropuerto desde el GPS de la foto" },
+  "option_gps_icao_desc":         { "message": "Lee los datos EXIF de GPS de la foto subida y busca el código ICAO del aeropuerto más cercano." },
   "option_hide_guidelines_label": { "message": "Ocultar directrices de envío" },
   "option_hide_guidelines_desc":  { "message": "Oculta el texto de directrices de envío del lado izquierdo de la página de subida." },
   "option_localize_utc_label":    { "message": "Convertir marca de tiempo UTC" },
@@ -50,6 +52,7 @@
   "about_feature_date":      { "message": "Entrada de fecha manual" },
   "about_feature_guidelines":{ "message": "Ocultar directrices de envío" },
   "about_feature_iata":      { "message": "Permite intercambiar automáticamente un código de aeropuerto IATA por su equivalente ICAO" },
+  "about_feature_gps":       { "message": "Aeropuerto más cercano según las coordenadas GPS de la foto" },
   "about_feature_offline":   { "message": "Herramientas sin conexión: líneas de centrado, cuadrícula de horizonte, ecualización, previsualización de histograma" },
 
   "about_section_bugfixes":  { "message": "Correcciones" },
@@ -66,9 +69,12 @@
   "about_changelog_12_renditions": { "message": "Soporte para renderizados del modo sin conexión a tamaño completo, comprimidos a 1024px (lado largo) o ajustados a la ventana" },
   "about_changelog_v121":          { "message": "Versión 1.2.1" },
   "about_changelog_121_fixes":     { "message": "Correcciones menores de errores" },
+  "about_changelog_v130":          { "message": "Versión 1.3.0" },
+  "about_changelog_130_gps":       { "message": "Compatibilidad para deducir el código de aeropuerto a partir de los datos EXIF de GPS, si están presentes en la imagen subida." },
 
   "content_existing_entry": { "message": "Haz clic aquí para ver tus envíos existentes" },
   "content_latest_shoot":   { "message": "Última toma:" },
+  "content_gps_nearest":    { "message": "Aeropuerto más cercano según el GPS de la foto:" },
   "content_serial_number":  { "message": "Número de serie" },
   "content_registration":   { "message": "Matrícula" }
 }

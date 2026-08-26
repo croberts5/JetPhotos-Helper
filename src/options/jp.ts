@@ -1,5 +1,6 @@
 import browser from 'webextension-polyfill';
 import { t } from '../i18n';
+import { readGpsFromFile } from './exif';
 
 const REG_INPUT_ID = '#uploadFormReg';
 const SERIAL_INPUT_ID = '#uploadFormSerial';
@@ -8,6 +9,12 @@ const AUTO_FILL_REGISTRATION_NAME = 'autoFillAircraft';
 const INFO_PANEL_ID = 'jp-helper-info-panel';
 const LOCATION_INPUT_NAME = 'autoFillLocation';
 const AIRPORT_HINT_ID = 'jp-airport-hint';
+const AUTOFILL_SUBMIT_ID = 'autofill_submit';
+const HIDDEN_CLASS = 'jph-hidden';
+
+// Beyond this the nearest airport is almost certainly not where the photo was
+// taken, so the hint is still shown but the location field is left alone.
+const GPS_MAX_DISTANCE_KM = 25;
 
 
 function debounce<T extends (...args: any[]) => void>(
@@ -266,7 +273,7 @@ window.addEventListener('message', async (event) => {
 
 // --- Airport lookup ---
 
-type AirportEntry = [iata: string, name: string, city: string];
+type AirportEntry = [iata: string, name: string, city: string, lat?: number, lon?: number];
 
 let airportsByIcao: Record<string, AirportEntry> | null = null;
 let airportsByIata: Record<string, string> | null = null;
@@ -282,12 +289,16 @@ async function loadAirports(): Promise<void> {
     }
 }
 
+function focusAutofillSubmit(): void {
+    document.getElementById(AUTOFILL_SUBMIT_ID)?.focus();
+}
+
 function getOrCreateAirportHint(locationInput: HTMLInputElement): HTMLDivElement {
     const existing = document.getElementById(AIRPORT_HINT_ID) as HTMLDivElement | null;
     if (existing) return existing;
     const hint = document.createElement('div');
     hint.id = AIRPORT_HINT_ID;
-    hint.style.cssText = 'font-size:12px;color:#888;margin-top:2px;min-height:16px;';
+    hint.className = 'jph-airport-hint';
     locationInput.insertAdjacentElement('afterend', hint);
     return hint;
 }
@@ -297,13 +308,16 @@ function initAirportLookup(): void {
     if (!locationInput) return;
 
     locationInput.addEventListener('focus', () => loadAirports(), { once: true });
-    locationInput.addEventListener('blur', () => {
+    locationInput.addEventListener('blur', (e) => {
+        // Keep the hint up when we hand focus to Auto-Fill ourselves — the
+        // resolved airport is still what the user is about to submit.
+        if (e.relatedTarget === document.getElementById(AUTOFILL_SUBMIT_ID)) return;
         const hint = document.getElementById(AIRPORT_HINT_ID);
-        if (hint) hint.style.display = 'none';
+        hint?.classList.add(HIDDEN_CLASS);
     });
     locationInput.addEventListener('focus', () => {
         const hint = document.getElementById(AIRPORT_HINT_ID);
-        if (hint) hint.style.display = '';
+        hint?.classList.remove(HIDDEN_CLASS);
     });
 
     const debouncedHandleInput = debounce(async (raw: string) => {
@@ -316,7 +330,8 @@ function initAirportLookup(): void {
                 const [, name, city] = airportsByIcao![icao];
                 const hint = getOrCreateAirportHint(locationInput);
                 hint.textContent = `${raw} → ${icao} — ${city ? city + ', ' : ''}${name}`;
-                hint.style.display = '';
+                hint.classList.remove(HIDDEN_CLASS);
+                focusAutofillSubmit();
                 return;
             }
         }
@@ -327,19 +342,108 @@ function initAirportLookup(): void {
                 const [iata, name, city] = entry;
                 const hint = getOrCreateAirportHint(locationInput);
                 hint.textContent = `${city ? city + ', ' : ''}${name}${iata ? ` (${iata})` : ''}`;
-                hint.style.display = '';
+                hint.classList.remove(HIDDEN_CLASS);
+                focusAutofillSubmit();
                 return;
             }
         }
 
         const hint = document.getElementById(AIRPORT_HINT_ID);
-        if (hint) hint.style.display = 'none';
+        hint?.classList.add(HIDDEN_CLASS);
     }, 500);
 
     locationInput.addEventListener('input', (e) => {
         const raw = (e.target as HTMLInputElement).value.trim().toUpperCase();
         debouncedHandleInput(raw);
     });
+}
+
+// --- Nearest airport from photo GPS ---
+
+function haversineKm(aLat: number, aLon: number, bLat: number, bLon: number): number {
+    const EARTH_RADIUS_KM = 6371;
+    const toRad = (deg: number) => (deg * Math.PI) / 180;
+
+    const dLat = toRad(bLat - aLat);
+    const dLon = toRad(bLon - aLon);
+    const h =
+        Math.sin(dLat / 2) ** 2 +
+        Math.cos(toRad(aLat)) * Math.cos(toRad(bLat)) * Math.sin(dLon / 2) ** 2;
+
+    return 2 * EARTH_RADIUS_KM * Math.asin(Math.sqrt(h));
+}
+
+// Linear scan over the ~9k airports in airports.json. Entries predating the
+// coordinate columns are three-element and get skipped rather than guessed at.
+function findNearestAirport(lat: number, lon: number): { icao: string; entry: AirportEntry; km: number } | null {
+    if (!airportsByIcao) return null;
+
+    let best: { icao: string; entry: AirportEntry; km: number } | null = null;
+
+    for (const [icao, entry] of Object.entries(airportsByIcao)) {
+        const [, , , airportLat, airportLon] = entry;
+        if (typeof airportLat !== 'number' || typeof airportLon !== 'number') continue;
+
+        const km = haversineKm(lat, lon, airportLat, airportLon);
+        if (!best || km < best.km) best = { icao, entry, km };
+    }
+
+    return best;
+}
+
+// Both units, since spotters quote whichever their region uses. Short hops get
+// a decimal place; past 10 units the fraction is noise.
+const MILES_PER_KM = 0.621371;
+
+function formatDistance(km: number): string {
+    const round = (n: number) => (n < 10 ? n.toFixed(1) : Math.round(n).toString());
+    return `${round(km)} km / ${round(km * MILES_PER_KM)} mi`;
+}
+
+async function handlePhotoFile(file: File): Promise<void> {
+    const locationInput = document.querySelector<HTMLInputElement>(`[name="${LOCATION_INPUT_NAME}"]`);
+    if (!locationInput) return;
+
+    const coords = await readGpsFromFile(file);
+    if (!coords) return;
+
+    await loadAirports();
+    const nearest = findNearestAirport(coords.lat, coords.lon);
+    if (!nearest) return;
+
+    // Never clobber a location the user typed themselves — GPS fills the gap
+    // only, though the hint appears either way so a mismatch stays visible.
+    if (!locationInput.value.trim() && nearest.km <= GPS_MAX_DISTANCE_KM) {
+        locationInput.value = nearest.icao;
+    }
+
+    const [, name, city] = nearest.entry;
+    const distance = formatDistance(nearest.km);
+
+    const hint = getOrCreateAirportHint(locationInput);
+    hint.textContent = `${t('content_gps_nearest')} ${nearest.icao} — ${city ? city + ', ' : ''}${name} (${distance})`;
+    hint.classList.remove(HIDDEN_CLASS);
+}
+
+function initGpsLookup(): void {
+    // JetPhotos owns the upload widget's markup and has reshuffled it before,
+    // so listen on the document rather than binding to a specific selector.
+    document.addEventListener('change', (e) => {
+        const input = e.target as HTMLInputElement | null;
+        if (!input || input.tagName !== 'INPUT' || input.type !== 'file') return;
+
+        const file = Array.from(input.files ?? []).find(f => f.type === 'image/jpeg');
+        // Failures here (unreadable file, airports.json fetch) are silent by
+        // design — the feature is an assist, not a gate on uploading.
+        if (file) handlePhotoFile(file).catch(() => {});
+    }, true);
+
+    // Some uploaders take dropped files straight off the event without ever
+    // populating a file input, so cover that path too.
+    document.addEventListener('drop', (e) => {
+        const file = Array.from((e as DragEvent).dataTransfer?.files ?? []).find(f => f.type === 'image/jpeg');
+        if (file) handlePhotoFile(file).catch(() => {});
+    }, true);
 }
 
 async function enableManualDateEntry() {
@@ -355,12 +459,12 @@ async function hideLeftColumnUpload() {
     if (!hideLeftColumnUpload) return;
 
     const leftCol = document.querySelector<HTMLDivElement>('div.wrapper__flexCol.wrapper__flexCol--pad-r-small');
-    leftCol?.style.setProperty('display', 'none');
+    leftCol?.classList.add(HIDDEN_CLASS);
 }
 
 async function getUserPreferences() {
     const NAMESPACE = 'jpHelper';
-    const keys = ['fetchExistingReg', 'showLatestDate', 'hideLeftColumnUpload', 'allowManualDateEntry', 'iataIcaoAutoComplete', 'localizeUtcTimestamp', 'showRegSerialStatus']
+    const keys = ['fetchExistingReg', 'showLatestDate', 'hideLeftColumnUpload', 'allowManualDateEntry', 'iataIcaoAutoComplete', 'gpsToIcao', 'localizeUtcTimestamp', 'showRegSerialStatus']
         .map(k => `${NAMESPACE}.${k}`);
 
     const result = await browser.storage.local.get(keys);
@@ -371,6 +475,7 @@ async function getUserPreferences() {
         hideLeftColumnUpload:  result[`${NAMESPACE}.hideLeftColumnUpload`]   as boolean | undefined,
         allowManualDateEntry:  result[`${NAMESPACE}.allowManualDateEntry`]   as boolean | undefined,
         iataIcaoAutoComplete:  result[`${NAMESPACE}.iataIcaoAutoComplete`]   as boolean | undefined,
+        gpsToIcao:             result[`${NAMESPACE}.gpsToIcao`]              as boolean | undefined,
         localizeUtcTimestamp:  result[`${NAMESPACE}.localizeUtcTimestamp`]   as boolean | undefined,
         showRegSerialStatus:   result[`${NAMESPACE}.showRegSerialStatus`]    as boolean | undefined,
     };
@@ -403,8 +508,9 @@ function localizeUtcTimestamps(): void {
 (async () => {
     await hideLeftColumnUpload();
     await enableManualDateEntry();
-    const { iataIcaoAutoComplete, localizeUtcTimestamp, showRegSerialStatus } = await getUserPreferences();
+    const { iataIcaoAutoComplete, gpsToIcao, localizeUtcTimestamp, showRegSerialStatus } = await getUserPreferences();
     if (showRegSerialStatus) submissionButtonWrapper?.appendChild(warningDiv);
     if (iataIcaoAutoComplete) initAirportLookup();
+    if (gpsToIcao) initGpsLookup();
     if (localizeUtcTimestamp) localizeUtcTimestamps();
 })();

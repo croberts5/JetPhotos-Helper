@@ -36,6 +36,8 @@
   "option_manual_date_desc":      { "message": "Consente di inserire la data della foto come testo (GG/MM/AAAA) invece di usare il selettore data." },
   "option_iata_icao_label":       { "message": "Completamento automatico IATA-ICAO" },
   "option_iata_icao_desc":        { "message": "Suggerisce automaticamente l'equivalente ICAO quando viene inserito un codice aeroportuale IATA." },
+  "option_gps_icao_label":        { "message": "Aeroporto dal GPS della foto" },
+  "option_gps_icao_desc":         { "message": "Legge i dati EXIF GPS della foto caricata e individua il codice ICAO dell'aeroporto più vicino." },
   "option_hide_guidelines_label": { "message": "Nascondi le linee guida per l'invio" },
   "option_hide_guidelines_desc":  { "message": "Nasconde il testo delle linee guida sul lato sinistro della pagina di caricamento." },
   "option_localize_utc_label":    { "message": "Localizza il timestamp UTC" },
@@ -50,6 +52,7 @@
   "about_feature_date":      { "message": "Inserimento manuale della data" },
   "about_feature_guidelines":{ "message": "Nascondi le linee guida per l'invio" },
   "about_feature_iata":      { "message": "Supporto per la sostituzione automatica di un codice aeroportuale IATA con il suo equivalente ICAO" },
+  "about_feature_gps":       { "message": "Aeroporto più vicino dalle coordinate GPS della foto" },
   "about_feature_offline":   { "message": "Strumenti offline: linee di centratura, griglia orizzonte, equalizzazione, anteprima istogramma" },
 
   "about_section_bugfixes":  { "message": "Correzioni" },
@@ -66,9 +69,12 @@
   "about_changelog_12_renditions": { "message": "Supporto per le anteprime della modalità offline a dimensione reale, compresse a 1024px (lato lungo) o adattate alla finestra" },
   "about_changelog_v121":          { "message": "Versione 1.2.1" },
   "about_changelog_121_fixes":     { "message": "Correzioni di bug minori" },
+  "about_changelog_v130":          { "message": "Versione 1.3.0" },
+  "about_changelog_130_gps":       { "message": "Supporto per ricavare il codice aeroportuale dai dati EXIF GPS, se presenti nell'immagine caricata." },
 
   "content_existing_entry": { "message": "Clicca qui per visualizzare i tuoi invii esistenti" },
   "content_latest_shoot":   { "message": "Ultimo scatto:" },
+  "content_gps_nearest":    { "message": "Aeroporto più vicino dal GPS della foto:" },
   "content_serial_number":  { "message": "Numero di serie" },
   "content_registration":   { "message": "Registrazione" }
 }

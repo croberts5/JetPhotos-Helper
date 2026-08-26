@@ -36,6 +36,8 @@
   "option_manual_date_desc":      { "message": "Позволяет вводить дату фотографии в виде текста (ММ/ДД/ГГГГ) вместо использования выбора даты." },
   "option_iata_icao_label":       { "message": "Автодополнение IATA в ICAO" },
   "option_iata_icao_desc":        { "message": "Автоматически предлагает эквивалент ICAO при вводе кода аэропорта IATA." },
+  "option_gps_icao_label":        { "message": "Аэропорт по GPS фотографии" },
+  "option_gps_icao_desc":         { "message": "Считывает данные GPS EXIF из загруженной фотографии и подбирает код ИКАО ближайшего аэропорта." },
   "option_hide_guidelines_label": { "message": "Скрыть руководство по отправке" },
   "option_hide_guidelines_desc":  { "message": "Скрывает текст руководства по отправке в левой части страницы загрузки." },
   "option_localize_utc_label":    { "message": "Локализовать метку времени UTC" },
@@ -50,6 +52,7 @@
   "about_feature_date":      { "message": "Ручной ввод даты" },
   "about_feature_guidelines":{ "message": "Скрыть руководство по отправке" },
   "about_feature_iata":      { "message": "Поддержка автоматической замены кода аэропорта IATA на эквивалент ICAO" },
+  "about_feature_gps":       { "message": "Ближайший аэропорт по координатам GPS из фотографии" },
   "about_feature_offline":   { "message": "Офлайн-инструменты: линии центрирования, сетка горизонта, выравнивание, предпросмотр гистограммы" },
 
   "about_section_bugfixes":  { "message": "Исправления" },
@@ -66,9 +69,12 @@
   "about_changelog_12_renditions": { "message": "Поддержка отображения в автономном режиме в полном размере, со сжатием до 1024px (длинная сторона) или с масштабированием под окно" },
   "about_changelog_v121":          { "message": "Версия 1.2.1" },
   "about_changelog_121_fixes":     { "message": "Незначительные исправления ошибок" },
+  "about_changelog_v130":          { "message": "Версия 1.3.0" },
+  "about_changelog_130_gps":       { "message": "Поддержка определения кода аэропорта по данным GPS EXIF, если они есть в загруженном изображении." },
 
   "content_existing_entry": { "message": "Нажмите здесь, чтобы просмотреть существующие отправки" },
   "content_latest_shoot":   { "message": "Последняя съёмка:" },
+  "content_gps_nearest":    { "message": "Ближайший аэропорт по GPS фотографии:" },
   "content_serial_number":  { "message": "Серийный номер" },
   "content_registration":   { "message": "Регистрационный номер" }
 }

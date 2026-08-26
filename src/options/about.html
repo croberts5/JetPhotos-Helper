@@ -17,62 +17,71 @@
     <div class="divider"></div>
     <p class="version" id="version"></p>
 
-    <p class="section-label" data-i18n="about_section_features">Features</p>
-    <ul class="features">
-      <li data-i18n="about_feature_reg">Registration &amp; date lookup on auto-fill</li>
-      <li data-i18n="about_feature_date">Manual date text entry</li>
-      <li data-i18n="about_feature_guidelines">Hide submission guidelines</li>
-      <li data-i18n="about_feature_iata">Support for automatically swapping a provided IATA airport code for its ICAO
-        equivalent</li>
-      <li data-i18n="about_feature_offline">Offline tools: centering lines, horizon grid overlay, equalization,
-        histogram preview</li>
-    </ul>
+    <!-- Scrolls independently; the header above and footer below stay put. -->
+    <div class="about-scroll">
+      <p class="section-label" data-i18n="about_section_features">Features</p>
+      <ul class="features">
+        <li data-i18n="about_feature_reg">Registration &amp; date lookup on auto-fill</li>
+        <li data-i18n="about_feature_date">Manual date text entry</li>
+        <li data-i18n="about_feature_guidelines">Hide submission guidelines</li>
+        <li data-i18n="about_feature_iata">Support for automatically swapping a provided IATA airport code for its ICAO
+          equivalent</li>
+        <li data-i18n="about_feature_gps">Nearest airport from photo GPS coordinates</li>
+        <li data-i18n="about_feature_offline">Offline tools: centering lines, horizon grid overlay, equalization,
+          histogram preview</li>
+      </ul>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <p class="section-label" data-i18n="about_section_bugfixes">Bug Fixes</p>
-    <ul class="features">
-      <li data-i18n="about_bugfix_trim">Input fields automatically trimmed of leading/trailing spaces</li>
-      <li data-i18n="about_bugfix_serial">Serial number preserved when registration has no auto-fill match</li>
-      <li data-i18n="about_bugfix_reg_copy">Registration auto-populated in form when not found in auto-fill database</li>
-    </ul>
+      <p class="section-label" data-i18n="about_section_bugfixes">Bug Fixes</p>
+      <ul class="features">
+        <li data-i18n="about_bugfix_trim">Input fields automatically trimmed of leading/trailing spaces</li>
+        <li data-i18n="about_bugfix_serial">Serial number preserved when registration has no auto-fill match</li>
+        <li data-i18n="about_bugfix_reg_copy">Registration auto-populated in form when not found in auto-fill database</li>
+      </ul>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <p class="section-label" data-i18n="about_section_changelog">Changelog</p>
-    <p class="changelog-version" data-i18n="about_changelog_v11">Version 1.1</p>
-    <ul class="features">
-      <li data-i18n="about_changelog_11_polish">Support for the Polish language</li>
-    </ul>
-    <p class="changelog-version" data-i18n="about_changelog_v12">Version 1.2</p>
-    <ul class="features">
-      <li data-i18n="about_changelog_12_renditions">Support for offline mode renditions at full size, compressed to
-        1024px (long side) or scaled to fit window</li>
-    </ul>
-    <p class="changelog-version" data-i18n="about_changelog_v121">Version 1.2.1</p>
-    <ul class="features">
-      <li data-i18n="about_changelog_121_fixes">Minor bug fixes</li>
-    </ul>
-
-    <div class="divider"></div>
-
-    <div class="links">
-      <a href="https://github.com/croberts5/JetPhotos-Helper" target="_blank" aria-label="GitHub (opens in new tab)">GitHub</a>
-      <a href="https://www.jetphotos.com/photographer/562526" target="_blank" aria-label="JetPhotos (opens in new tab)">JetPhotos</a>
+      <p class="section-label" data-i18n="about_section_changelog">Changelog</p>
+      <p class="changelog-version" data-i18n="about_changelog_v11">Version 1.1</p>
+      <ul class="features">
+        <li data-i18n="about_changelog_11_polish">Support for the Polish language</li>
+      </ul>
+      <p class="changelog-version" data-i18n="about_changelog_v12">Version 1.2</p>
+      <ul class="features">
+        <li data-i18n="about_changelog_12_renditions">Support for offline mode renditions at full size, compressed to
+          1024px (long side) or scaled to fit window</li>
+      </ul>
+      <p class="changelog-version" data-i18n="about_changelog_v121">Version 1.2.1</p>
+      <ul class="features">
+        <li data-i18n="about_changelog_121_fixes">Minor bug fixes</li>
+      </ul>
+      <p class="changelog-version" data-i18n="about_changelog_v130">Version 1.3.0</p>
+      <ul class="features">
+        <li data-i18n="about_changelog_130_gps">Support for deriving the airport code from GPS EXIF data, if present in the uploaded image.</li>
+      </ul>
     </div>
 
-    <div class="credits">
-      <p><span data-i18n="about_credit_polyfill">Includes</span>
-        <a href="https://github.com/mozilla/webextension-polyfill" target="_blank">webextension-polyfill</a>
-        (Mozilla, <a href="https://mozilla.org/MPL/2.0/" target="_blank">MPL-2.0</a>)</p>
-      <p><span data-i18n="about_credit_airports">Airport data from</span>
-        <a href="https://ourairports.com/data/" target="_blank">OurAirports</a></p>
-    </div>
+    <!-- Pinned to the bottom of the viewport. -->
+    <footer class="about-footer">
+      <div class="links">
+        <a href="https://github.com/croberts5/JetPhotos-Helper" target="_blank" aria-label="GitHub (opens in new tab)">GitHub</a>
+        <a href="https://www.jetphotos.com/photographer/562526" target="_blank" aria-label="JetPhotos (opens in new tab)">JetPhotos</a>
+      </div>
 
-    <p class="bmc-prompt" data-i18n="about_bmc_prompt">Find this extension helpful?</p>
-    <a href="https://www.buymeacoffee.com/connorr" target="_blank" class="bmc" aria-label="Buy Me A Coffee (opens in new tab)">
-      <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="" />
-    </a>
+      <div class="credits">
+        <p><span data-i18n="about_credit_polyfill">Includes</span>
+          <a href="https://github.com/mozilla/webextension-polyfill" target="_blank">webextension-polyfill</a>
+          (Mozilla, <a href="https://mozilla.org/MPL/2.0/" target="_blank">MPL-2.0</a>)</p>
+        <p><span data-i18n="about_credit_airports">Airport data from</span>
+          <a href="https://ourairports.com/data/" target="_blank">OurAirports</a></p>
+      </div>
+
+      <p class="bmc-prompt" data-i18n="about_bmc_prompt">Find this extension helpful?</p>
+      <a href="https://www.buymeacoffee.com/connorr" target="_blank" class="bmc" aria-label="Buy Me A Coffee (opens in new tab)">
+        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="" />
+      </a>
+    </footer>
   </div>
   <script src="about.js"></script>
 </body>

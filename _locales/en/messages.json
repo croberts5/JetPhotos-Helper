@@ -36,6 +36,8 @@
   "option_manual_date_desc":      { "message": "Allows inputting the photo date as a string (MM/DD/YYYY) instead of being forced to use the date picker." },
   "option_iata_icao_label":       { "message": "IATA to ICAO autocomplete" },
   "option_iata_icao_desc":        { "message": "Automatically suggests the ICAO equivalent when an IATA airport code is entered." },
+  "option_gps_icao_label":        { "message": "Airport from photo GPS" },
+  "option_gps_icao_desc":         { "message": "Reads the GPS EXIF data from uploaded photo and matches the nearest airport's ICAO code." },
   "option_hide_guidelines_label": { "message": "Hide submission guidelines" },
   "option_hide_guidelines_desc":  { "message": "Hides the submission guidelines text found on the left-hand side of the upload page." },
   "option_localize_utc_label":    { "message": "Localize UTC timestamp" },
@@ -50,6 +52,7 @@
   "about_feature_date":      { "message": "Manual date text entry" },
   "about_feature_guidelines":{ "message": "Hide submission guidelines" },
   "about_feature_iata":      { "message": "Support for automatically swapping a provided IATA airport code for its ICAO equivalent" },
+  "about_feature_gps":       { "message": "Nearest airport from photo GPS coordinates" },
   "about_feature_offline":   { "message": "Offline tools: centering lines, horizon grid overlay, equalization, histogram preview" },
 
   "about_section_bugfixes":  { "message": "Bug Fixes" },
@@ -66,9 +69,12 @@
   "about_changelog_12_renditions": { "message": "Support for offline mode renditions at full size, compressed to 1024px (long side) or scaled to fit window" },
   "about_changelog_v121":          { "message": "Version 1.2.1" },
   "about_changelog_121_fixes":     { "message": "Minor bug fixes" },
+  "about_changelog_v130":          { "message": "Version 1.3.0" },
+  "about_changelog_130_gps":       { "message": "Support for deriving the airport code from GPS EXIF data, if present in the uploaded image." },
 
   "content_existing_entry": { "message": "Click here to view your existing submission(s)" },
   "content_latest_shoot":   { "message": "Latest shoot:" },
+  "content_gps_nearest":    { "message": "Nearest airport from photo GPS:" },
   "content_serial_number":  { "message": "Serial number" },
   "content_registration":   { "message": "Registration" }
 }

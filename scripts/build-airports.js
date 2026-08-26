@@ -35,6 +35,10 @@ function parseRow(line) {
     return fields;
 }
 
+function round4(n) {
+    return Math.round(n * 1e4) / 1e4;
+}
+
 function parseCSV(text) {
     const lines = text.split('\n');
     const headers = parseRow(lines[0]);
@@ -50,9 +54,18 @@ function parseCSV(text) {
         const iata = row['iata_code']?.trim();
         const name = row['name']?.trim();
         const city = row['municipality']?.trim();
+        const lat = parseFloat(row['latitude_deg']);
+        const lon = parseFloat(row['longitude_deg']);
 
         if (!icao || icao.length !== 4 || !iata || iata.length !== 3) continue;
-        out[icao] = [iata, name, city];
+
+        // Coordinates back the "nearest airport from photo GPS" lookup. Four
+        // decimals is ~11 m of precision, which keeps airports.json small
+        // without mattering at airport scale. Rows missing a fix stay
+        // three-element so the lookup can skip them.
+        out[icao] = Number.isFinite(lat) && Number.isFinite(lon)
+            ? [iata, name, city, round4(lat), round4(lon)]
+            : [iata, name, city];
     }
 
     return out;

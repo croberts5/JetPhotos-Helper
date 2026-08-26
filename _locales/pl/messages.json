@@ -36,6 +36,8 @@
   "option_manual_date_desc":      { "message": "Pozwala wpisać datę zdjęcia jako tekst (MM/DD/YYYY) zamiast wymuszać użycie selektora dat." },
   "option_iata_icao_label":       { "message": "Autouzupełnianie IATA na ICAO" },
   "option_iata_icao_desc":        { "message": "Automatycznie podpowiada odpowiednik ICAO po wpisaniu kodu lotniska IATA." },
+  "option_gps_icao_label":        { "message": "Lotnisko z GPS zdjęcia" },
+  "option_gps_icao_desc":         { "message": "Odczytuje dane EXIF GPS z przesłanego zdjęcia i dopasowuje kod ICAO najbliższego lotniska." },
   "option_hide_guidelines_label": { "message": "Ukryj wytyczne dotyczące zgłoszeń" },
   "option_hide_guidelines_desc":  { "message": "Ukrywa tekst wytycznych dotyczących zgłoszeń widoczny po lewej stronie strony przesyłania." },
   "option_localize_utc_label":    { "message": "Lokalizuj znaczniki czasu UTC" },
@@ -50,6 +52,7 @@
   "about_feature_date":      { "message": "Ręczne wprowadzanie daty jako tekstu" },
   "about_feature_guidelines":{ "message": "Ukrywanie wytycznych dotyczących zgłoszeń" },
   "about_feature_iata":      { "message": "Automatyczna zamiana podanego kodu lotniska IATA na jego odpowiednik ICAO" },
+  "about_feature_gps":       { "message": "Najbliższe lotnisko na podstawie współrzędnych GPS zdjęcia" },
   "about_feature_offline":   { "message": "Narzędzia offline: linie centrujące, siatka horyzontu, wyrównywanie, podgląd histogramu" },
 
   "about_section_bugfixes":  { "message": "Poprawki błędów" },
@@ -66,9 +69,12 @@
   "about_changelog_12_renditions": { "message": "Obsługa renderowania w trybie offline w pełnym rozmiarze, z kompresją do 1024 px (dłuższy bok) lub dopasowaniem do okna" },
   "about_changelog_v121":          { "message": "Wersja 1.2.1" },
   "about_changelog_121_fixes":     { "message": "Drobne poprawki błędów" },
+  "about_changelog_v130":          { "message": "Wersja 1.3.0" },
+  "about_changelog_130_gps":       { "message": "Obsługa ustalania kodu lotniska na podstawie danych EXIF GPS, jeśli są obecne w przesłanym obrazie." },
 
   "content_existing_entry": { "message": "Kliknij tutaj, aby zobaczyć swoje istniejące zgłoszenia" },
   "content_latest_shoot":   { "message": "Najnowsze zdjęcie:" },
+  "content_gps_nearest":    { "message": "Najbliższe lotnisko wg GPS zdjęcia:" },
   "content_serial_number":  { "message": "Numer seryjny" },
   "content_registration":   { "message": "Rejestracja" }
 }

@@ -36,6 +36,8 @@
   "option_manual_date_desc":      { "message": "Permite introduzir a data da foto como texto (MM/DD/AAAA) em vez de usar o seletor de datas." },
   "option_iata_icao_label":       { "message": "Autocompletar IATA para ICAO" },
   "option_iata_icao_desc":        { "message": "Sugere automaticamente o equivalente ICAO quando é introduzido um código de aeroporto IATA." },
+  "option_gps_icao_label":        { "message": "Aeroporto pelo GPS da foto" },
+  "option_gps_icao_desc":         { "message": "Lê os dados EXIF de GPS da foto carregada e encontra o código ICAO do aeroporto mais próximo." },
   "option_hide_guidelines_label": { "message": "Ocultar diretrizes de envio" },
   "option_hide_guidelines_desc":  { "message": "Oculta o texto das diretrizes de envio no lado esquerdo da página de carregamento." },
   "option_localize_utc_label":    { "message": "Converter carimbo de data/hora UTC" },
@@ -50,6 +52,7 @@
   "about_feature_date":      { "message": "Inserção manual de data" },
   "about_feature_guidelines":{ "message": "Ocultar diretrizes de envio" },
   "about_feature_iata":      { "message": "Suporte para substituição automática de um código de aeroporto IATA pelo seu equivalente ICAO" },
+  "about_feature_gps":       { "message": "Aeroporto mais próximo pelas coordenadas GPS da foto" },
   "about_feature_offline":   { "message": "Ferramentas offline: linhas de centramento, grelha de horizonte, equalização, pré-visualização de histograma" },
 
   "about_section_bugfixes":  { "message": "Correções" },
@@ -66,9 +69,12 @@
   "about_changelog_12_renditions": { "message": "Suporte para renderizações do modo offline em tamanho real, comprimidas para 1024px (lado maior) ou ajustadas à janela" },
   "about_changelog_v121":          { "message": "Versão 1.2.1" },
   "about_changelog_121_fixes":     { "message": "Pequenas correções de erros" },
+  "about_changelog_v130":          { "message": "Versão 1.3.0" },
+  "about_changelog_130_gps":       { "message": "Suporte para deduzir o código do aeroporto a partir dos dados EXIF de GPS, se presentes na imagem carregada." },
 
   "content_existing_entry": { "message": "Clique aqui para ver as suas submissões existentes" },
   "content_latest_shoot":   { "message": "Último registo:" },
+  "content_gps_nearest":    { "message": "Aeroporto mais próximo pelo GPS da foto:" },
   "content_serial_number":  { "message": "Número de série" },
   "content_registration":   { "message": "Matrícula" }
 }
